@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="56dp"
+	app:cardCornerRadius="2dp"
+	app:cardElevation="0dp"
+	app:cardUseCompatPadding="true">
+
+	<LinearLayout
+		android:id="@+id/layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/bg_row_daily_section"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			app:srcCompat="@drawable/ic_check_circle" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/txt_title"
+			fontPath="@string/font_bold"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical|start"
+			android:layout_weight="1"
+			android:text="Day 1"
+			android:textColor="@color/white"
+			android:textSize="17sp" />
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/btn_option"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:clickable="true"
+			android:focusable="true"
+			android:padding="8dp"
+			app:srcCompat="@drawable/ic_more_vert" />
+
+
+	</LinearLayout>
+</androidx.cardview.widget.CardView>

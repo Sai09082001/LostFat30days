@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	android:orientation="vertical">
+
+	<androidx.appcompat.widget.Toolbar
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		android:layout_marginTop="20dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btn_back"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:srcCompat="@drawable/ic_arrow_back_black" />
+
+			<View
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1" />
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btn_audio_settings"
+				android:layout_width="25dp"
+				android:layout_height="25dp"
+				android:layout_marginRight="30dp"
+				app:srcCompat="@drawable/sound" />
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btn_audio_background"
+				android:layout_width="25dp"
+				android:layout_height="25dp"
+				android:layout_marginRight="25dp"
+				app:srcCompat="@drawable/ic_music_enable" />
+		</LinearLayout>
+	</androidx.appcompat.widget.Toolbar>
+
+	<androidx.appcompat.widget.AppCompatImageView
+		android:id="@+id/img_thumb_run"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintDimensionRatio="4:3"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.3"/>
+
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="10dp"
+		android:orientation="vertical"
+		android:paddingLeft="@dimen/padding_start"
+		android:paddingRight="@dimen/padding_start"
+		app:layout_constraintBottom_toTopOf="@id/control_bottom">
+
+		<LinearLayout
+			android:id="@+id/info_timer"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="5dp"
+			android:orientation="horizontal">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_timer_down"
+				fontPath="@string/font_bold"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="99"
+				android:textAllCaps="true"
+				android:textColor="@color/colorAccent"
+				android:textSize="46sp" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_total_timer"
+				fontPath="@string/font_bold"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="/10"
+				android:textAllCaps="true"
+				android:textColor="@color/black"
+				android:textSize="36sp" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:orientation="horizontal">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_workout_name"
+				fontPath="@string/font_bold"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ellipsize="end"
+				android:maxWidth="260dp"
+				android:maxLines="2"
+				android:text="FLUTTER KICKS ok ook ok ok ok ok ok "
+				android:textAllCaps="true"
+				android:textColor="@color/black"
+				android:textSize="20sp" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_workout_count"
+				fontPath="@string/font_bold"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="start|center"
+				android:paddingLeft="5dp"
+				android:text="X16"
+				android:textAllCaps="true"
+				android:textColor="@color/colorAccent"
+				android:textSize="20sp" />
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btn_video"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:srcCompat="@drawable/video" />
+		</LinearLayout>
+	</LinearLayout>
+
+
+	<FrameLayout
+		android:id="@+id/control_bottom"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<FrameLayout
+			android:id="@+id/control_bottom_count"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<ProgressBar
+				android:id="@+id/progress_timer_run"
+				style="?android:attr/progressBarStyleHorizontal"
+				android:layout_width="match_parent"
+				android:layout_height="74dp"
+				android:layout_gravity="center"
+				android:max="100"
+				android:progress="0"
+				android:progressDrawable="@drawable/workout_run_progress" />
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btn_prev_run"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_gravity="start|center_vertical"
+				android:layout_marginLeft="30dp"
+				android:scaleType="fitCenter"
+				app:srcCompat="@drawable/ic_prev" />
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btn_next_run"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_gravity="end|center_vertical"
+				android:layout_marginRight="30dp"
+				android:scaleType="fitCenter"
+				app:srcCompat="@drawable/ic_next" />
+
+			<FrameLayout
+				android:id="@+id/btn_checked"
+				android:layout_width="66dp"
+				android:layout_height="66dp"
+				android:layout_gravity="center"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom="20dp"
+				android:background="@drawable/bg_btn_checked"
+				android:visibility="gone">
+
+				<androidx.appcompat.widget.AppCompatImageView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_margin="10dp"
+					android:scaleType="fitXY"
+					app:srcCompat="@drawable/ic_check_circle_black_24dp" />
+			</FrameLayout>
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:id="@+id/btn_pause"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_gravity="center"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:scaleType="fitCenter"
+				android:visibility="visible"
+				app:srcCompat="@drawable/ic_pause" />
+
+		</FrameLayout>
+
+	</FrameLayout>
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/txt_num_three"
+		fontPath="@string/font_bold"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="3"
+		android:textColor="@color/colorAccent"
+		android:textSize="72sp"
+		android:visibility="invisible"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.05" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/txt_num_two"
+		fontPath="@string/font_bold"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="2"
+		android:textColor="@color/colorAccent"
+		android:textSize="72sp"
+		android:visibility="invisible"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.05" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/txt_num_one"
+		fontPath="@string/font_bold"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="1"
+		android:textColor="@color/colorAccent"
+		android:textSize="72sp"
+		android:visibility="invisible"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.05" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

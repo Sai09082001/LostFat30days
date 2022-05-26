@@ -1,0 +1,234 @@
+<resources>
+	<string name="app_name">Lose Belly Fat</string>
+
+	<!-- TODO: Font -->
+	<string name="font_regular" translatable="false">fonts/sfprodisplay_regular.ttf</string>
+	<string name="font_bold" translatable="false">fonts/sfpro_display_semibold.otf"</string>
+	<!--<string name="font_bold">fonts/sfpro_display_bold.otf"</string>-->
+	<string name="font_medium" translatable="false">fonts/sfpro_display_medium.otf"</string>
+	<string name="font_light_1" translatable="false">fonts/helveticaneue.ttf"</string>
+	<string name="font_light_2" translatable="false">fonts/poiretone_regular.ttf"</string>
+	<!-- TODO: -->
+	<string name="repeat_sun">Sun</string>
+	<string name="repeat_sat">Sat</string>
+	<string name="repeat_fri">Fri</string>
+	<string name="repeat_thu">Thu</string>
+	<string name="repeat_wed">Wed</string>
+	<string name="repeat_tue">Tue</string>
+	<string name="repeat_mon">Mon</string>
+	<string name="level_beginner">Beginner</string>
+	<string name="level_advanced">Advanced</string>
+	<string name="level_intermediate">Intermediate</string>
+	<string name="number_workouts">%d workouts</string>
+	<string name="workouts_total">Workouts</string>
+	<string name="title_history_fullbody">Full body 1 - %s</string>
+	<string name="title_history_fullbody_2">Full body 2 - %s</string>
+	<string name="title_history_fullbody_3">Full body 3 - %s</string>
+	<string name="title_history_unknown">Unknown</string>
+	<string name="default_reminder_warm_up">Morning warm up</string>
+	<string name="default_reminder_sleepy">Sleepy time stretch</string>
+	<string name="challange_days_left">%d Days left</string>
+	<string name="progress">Progress</string>
+	<string name="sunday">Sunday</string>
+	<string name="monday">Monday</string>
+	<string name="tuesday">Tuesday</string>
+	<string name="wednesday">Wednesday</string>
+	<string name="thursday">Thursday</string>
+	<string name="friday">Friday</string>
+	<string name="saturday">Saturday</string>
+	<string name="day">day</string>
+	<string name="days">days</string>
+	<string name="workouts">workouts</string>
+	<string name="calories">Calories</string>
+	<string name="kcal" translatable="false">Kcal</string>
+	<string name="week_goal">WEEK GOAL</string>
+	<string name="full_body">Full body</string>
+	<string name="each_side">Each Side</string>
+	<string name="confirm_delete">Confirm delete?</string>
+	<string name="cancel">Cancel</string>
+	<string name="ok">OK</string>
+	<string name="tips">Tips</string>
+	<string name="reminder">Reminder</string>
+	<string name="replace">Replace</string>
+	<string name="set_duration_rest">Set duration (5 ~ 180 secs)</string>
+	<string name="set_duration_countdown">Set duration (10 ~ 30 secs)</string>
+	<string name="under_weight">Underweight</string>
+	<string name="normal_weight">Normal weight</string>
+	<string name="over_weight">Overweight</string>
+	<string name="obesity">Obesity</string>
+	<string name="ready_to_to_start_with">Ready to go. Start with</string>
+	<string name="seconds">seconds</string>
+	<string name="take_a_rest_next">Take a rest. Next.</string>
+	<string name="start">Start</string>
+	<string name="this_language_not_support">This language is not supported!</string>
+	<string name="did_you_hear_the_test_voice">Did you hear the test voice?</string>
+	<string name="please_choose_voide_engine">Please choose guide voice engine:</string>
+	<string name="please_choose_language_voice_engine">Please choose guide voice engine:</string>
+	<string name="no">No</string>
+	<string name="yes">Yes</string>
+	<string name="default_string">Default</string>
+	<string name="favorite">Favorite</string>
+	<string name="routines_tab">Routines</string>
+	<string name="title_notify">Female Fitness - Women Workout</string>
+	<string name="content_notify">Its time for Female Fitness - Women Workout, let\'s start</string>
+	<string name="snooze">Snooze</string>
+	<string name="start_notify">Start</string>
+	<string name="title_7_4_challange">7x4 Challenge</string>
+	<string name="challange_go">GO!</string>
+	<string name="week_1">Week 1</string>
+	<string name="week_2">Week 2</string>
+	<string name="week_3">Week 3</string>
+	<string name="week_4">Week 4</string>
+	<string name="title_edit_plan">Edit plan</string>
+	<string name="btn_save">Save</string>
+	<string name="title_guide">What your trouble zone?</string>
+	<string name="btn_next">Next</string>
+	<string name="title_set_week_goal">Set your weekly goal</string>
+	<string name="content_set_week_goal">We recommend training at least 3 days weekly for a better result.</string>
+	<string name="weekly_train_day">Weekly training days</string>
+	<string name="first_day_of_week">First day of week</string>
+	<string name="title_set_reminder">Set Reminder</string>
+	<string name="content_set_reminder">Achievement comes with discipline</string>
+	<string name="btn_finished">Finished</string>
+	<string name="title_history">History</string>
+	<string name="title_profile">Profile</string>
+	<string name="units">Units</string>
+	<string name="weight">Weight</string>
+	<string name="height">Height</string>
+	<string name="year_of_birth">Year of Birth</string>
+	<string name="title_reminder">Reminder</string>
+	<string name="title_replace_exercise">Replace exercise</string>
+	<string name="current">Current</string>
+	<string name="you_rock">You rock!</string>
+	<string name="exercises">Exercises</string>
+	<string name="minutes">Minutes</string>
+	<string name="btn_do_again">Do it again</string>
+	<string name="btn_share">Share</string>
+	<string name="btn_start">Start</string>
+	<string name="title_set_your_weekly_goal">Set your weekly goal</string>
+	<string name="video">Video</string>
+	<string name="animation">Animation</string>
+	<string name="btn_set">Set</string>
+	<string name="btn_reset">Reset</string>
+	<string name="repeat">Repeat</string>
+	<string name="secs">secs</string>
+	<string name="title_sound_option">Sound options</string>
+	<string name="mute">Mute</string>
+	<string name="voice_guide">Voice guide</string>
+	<string name="coach_tips">Coach tips</string>
+	<string name="content_warming_engine">The TSS engine you are using is not working now, please double check it, switch to another TTS engine, or download TTS voice language.</string>
+	<string name="btn_down_tts_engine">Download TTS Engine</string>
+	<string name="btn_select_tts_engine">Select TTS Engine</string>
+	<string name="txt_empty_favorite">Your favorite workouts will be shown here.</string>
+	<string name="btn_start_workout">Start your\nworkout</string>
+	<string name="current_text">Current</string>
+	<string name="edit">Edit</string>
+	<string name="title_chart_calories">Calories burned, estimated</string>
+	<string name="number">Number</string>
+	<string name="content_dialog_quit">If you get tired , take a break, but don\'t quit!</string>
+	<string name="btn_quit">Quit</string>
+	<string name="btn_continue">Continue</string>
+	<string name="title_report">Report</string>
+	<string name="title_settings">Setting</string>
+	<string name="settings_profile">My profile</string>
+	<string name="settings_reminder">Reminder</string>
+	<string name="title_workout">Workout</string>
+	<string name="settings_rest_set">Rest set</string>
+	<string name="settings_coundown">Countdown Time</string>
+	<string name="settings_sound">Sound</string>
+	<string name="title_voice_option">VOICE OPTIONS (TTS)</string>
+	<string name="settings_test_voice">Test Voice</string>
+	<string name="settings_select_tts_engine">Select TSS Engine</string>
+	<string name="settings_download_tts_engine">Download TTS Engine</string>
+	<string name="settings_voice_language">Voice language</string>
+	<string name="settings_down_more_tts_language">Download more TTS language data</string>
+	<string name="settings_device_tts">Device TTS Setting</string>
+	<string name="title_general">General</string>
+	<string name="settings_language">Language</string>
+	<string name="settings_share">Share with friends</string>
+	<string name="title_support">Support</string>
+	<string name="settings_ratings">Rate us 5</string>
+	<string name="settings_feedback">Feedback</string>
+	<string name="settings_help">Help</string>
+	<string name="settings_policy">Privacy policy</string>
+	<string name="last_30_days">Last 30 days</string>
+	<string name="guide_add_favorite">Click ❤️ to add workouts to the Training page.</string>
+	<string name="ready_to_go">Ready to go</string>
+	<string name="take_a_rest">Take a rest</string>
+	<string name="next">Next</string>
+	<string name="menu_reset">Reset</string>
+	<string name="title_languages_dialog">Languages</string>
+	<string name="training_tab">Training</string>
+	<string name="workouts_tab">Workouts</string>
+	<string name="report_tab">Report</string>
+	<string name="setting_tab">Settings</string>
+	<string name="come_back_in_30_mins" translatable="false">Come back in 30 minutes</string>
+
+	<string-array name="language_display" translatable="false">
+		<item>English</item>
+		<!--<item>French</item>-->
+		<!--<item>Korean</item>-->
+		<!--<item>Spanish</item>-->
+		<!--<item>Portuguese</item>-->
+		<!--<item>Russian</item>-->
+		<item>Vietnamese</item>
+	</string-array>
+
+	<string-array name="language_value" translatable="false">
+		<item>en</item>
+		<!--<item>fr</item>-->
+		<!--<item>ko</item>-->
+		<!--<item>es</item>-->
+		<!--<item>pt</item>-->
+		<!--<item>ru</item>-->
+		<item>vi</item>
+	</string-array>
+	<string name="abs_workout">Abs workout</string>
+	<string name="butt_workout">Butt workout</string>
+	<string name="arm_workout">Arm workout</string>
+	<string name="thigh_workout">Thigh workout</string>
+	<string name="routine">Routine</string>
+	<string name="title_tips_activity" translatable="false">Tips</string>
+	<string name="title_full_body_level_1">LOSE BELLY FAT</string>
+	<string name="description_full_body_level_1">BEGINNER</string>
+	<string name="title_full_body_level_2">LOSE BELLY FAT</string>
+	<string name="description_full_body_level_2">INTERMEDIATE</string>
+	<string name="title_full_body_level_3">LOSE BELLY FAT</string>
+	<string name="description_full_body_level_3">ADVANCED</string>
+	<string name="my_training">MY TRANNING</string>
+
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="add_exercise">Add Exercise</string>
+	<string name="title_activity_add_exercise">Add Exercise</string>
+	<string name="title_add_training">New Training</string>
+	<string name="title_dialog_rename_training">Please name your plan</string>
+	<string name="plan">Plan</string>
+	<string name="menu_rename">Rename</string>
+	<string name="menu_delete">Delete</string>
+	<string name="string_hi">Hi</string>
+	<string name="select_gender">Select Gender</string>
+	<string name="female">Female</string>
+	<string name="title_guide_level">Which plan do you want to start with?</string>
+	<string name="male">Male</string>
+	<string name="btn_close">Close</string>
+	<string name="btn_choose">Choose</string>
+	<string name="title_activity_choose_plan">All plans</string>
+	<string name="chart_current">Current:</string>
+	<string name="chart_maximum">Maximum:</string>
+	<string name="chart_minimum">Minimum</string>
+	<string name="waistline">Waistline</string>
+	<string name="settings_gender">Select Gender</string>
+	<string name="title_gender_dialog">Select Gender</string>
+	<string name="settings_delete_all_dât">Delete all data</string>
+	<string name="settings_restart_progress">Restart Progress</string>
+	<string name="title_restart_progress_dialog">Restart Progress</string>
+	<string name="title_delete_all_data_dialog">Are you sure to reset app and delete all data?</string>
+	<string name="ten_seconds_left">10 seconds left</string>
+	<string name="btn_ok">OK</string>
+	<string name="title_rest_day_activity">Rest day</string>
+	<string name="desc_rest_day" translatable="false">Your body and muscles need to get some rest</string>
+	<string name="link_policy">https://sasassg</string>
+
+	<string name="power_by" translatable="false">Power by LUBUTEAM</string>
+	<string name="required_missing" translatable="false">Error. This value should not be blank.</string>
+</resources>

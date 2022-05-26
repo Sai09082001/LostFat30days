@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.lubuteam.sellsource.losefat.ui.activities.MainActivity">
+
+    <com.lubuteam.sellsource.losefat.ui.customViews.CustomViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:bb_activeTabAlpha="1"
+        app:bb_activeTabColor="@color/colorAccent"
+        app:bb_badgesHideWhenActive="true"
+        app:bb_inActiveTabAlpha="0.6"
+        app:bb_inActiveTabColor="#222222"
+        app:bb_showShadow="true"
+        app:bb_tabXmlResource="@xml/bottom_bar_tab"
+        app:bb_titleTypeFace="fonts/roboto_regular.ttf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <include
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_banner_control">
+    </include>
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="60dp"
+	app:cardCornerRadius="2dp"
+	app:cardElevation="0dp"
+	app:cardUseCompatPadding="true">
+
+	<FrameLayout
+		android:id="@+id/layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/bg_row_daily_section"
+		android:orientation="horizontal">
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:id="@+id/txt_title"
+			fontPath="@string/font_bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical|start"
+			android:paddingLeft="@dimen/padding_start"
+			android:text="Day 1"
+			android:textColor="@color/white"
+			android:textSize="17sp" />
+
+		<com.lubuteam.sellsource.losefat.ui.customViews.DailyProgressView
+			android:id="@+id/daily_progress"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical|end"
+			android:layout_marginRight="20dp" />
+
+	</FrameLayout>
+</androidx.cardview.widget.CardView>

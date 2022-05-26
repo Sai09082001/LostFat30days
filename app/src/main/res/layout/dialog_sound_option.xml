@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:paddingLeft="10dp">
+
+	<androidx.appcompat.widget.AppCompatTextView
+		fontPath="@string/font_bold"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginBottom="@dimen/padding_start"
+		android:text="@string/title_sound_option"
+		android:textColor="@color/black"
+		android:textSize="18sp" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="@dimen/padding_start"
+		android:layout_marginRight="20dp"
+		android:layout_marginBottom="@dimen/padding_start"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:srcCompat="@drawable/sound" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:paddingLeft="20dp"
+			android:text="@string/mute"
+			android:textColor="@color/black"
+			android:textSize="16sp" />
+
+		<androidx.appcompat.widget.SwitchCompat
+			android:id="@+id/sw_mute"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="@dimen/padding_start"
+		android:layout_marginRight="20dp"
+		android:layout_marginBottom="@dimen/padding_start"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:srcCompat="@drawable/sound" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:paddingLeft="20dp"
+			android:text="@string/voice_guide"
+			android:textColor="@color/black"
+			android:textSize="16sp" />
+
+		<androidx.appcompat.widget.SwitchCompat
+			android:id="@+id/sw_voice"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginTop="@dimen/padding_start"
+		android:layout_marginRight="20dp"
+		android:layout_marginBottom="@dimen/padding_start"
+		android:gravity="center_vertical"
+		android:orientation="horizontal">
+
+		<androidx.appcompat.widget.AppCompatImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:srcCompat="@drawable/sound" />
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:paddingLeft="20dp"
+			android:text="@string/coach_tips"
+			android:textColor="@color/black"
+			android:textSize="16sp" />
+
+		<androidx.appcompat.widget.SwitchCompat
+			android:id="@+id/sw_coach"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="end"
+		android:padding="10dp">
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:id="@+id/btn_ok"
+			android:layout_width="60dp"
+			android:layout_height="40dp"
+			android:background="?android:attr/selectableItemBackground"
+			android:text="@string/ok"
+			android:textAllCaps="true"
+			android:textColor="@color/colorAccent"
+			android:textSize="14sp"
+			android:layout_marginRight="10dp" />
+	</LinearLayout>
+
+</LinearLayout>

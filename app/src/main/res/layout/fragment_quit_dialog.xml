@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<View
+		android:id="@+id/layout"
+		android:layout_width="match_parent"
+		android:layout_height="450dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0" />
+
+	<androidx.appcompat.widget.AppCompatImageView
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:scaleType="centerCrop"
+		app:layout_constraintBottom_toBottomOf="@id/layout"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:srcCompat="@drawable/quit_bg" />
+
+	<View
+		android:id="@+id/mask"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:background="#57000000"
+		app:layout_constraintBottom_toBottomOf="@id/layout"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		fontPath="@string/font_bold"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:text="@string/content_dialog_quit"
+		android:textAllCaps="true"
+		android:textColor="@color/white"
+		android:textSize="24sp"
+		app:layout_constraintBottom_toBottomOf="@id/layout"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.3"
+		android:paddingLeft="@dimen/padding_start" />
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_quit"
+		android:layout_width="220dp"
+		android:layout_height="wrap_content"
+		android:background="@drawable/gradient_red_btn_bg"
+		android:text="@string/btn_quit"
+		android:textAllCaps="true"
+		android:textColor="@color/white"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toBottomOf="@id/layout"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.65" />
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/btn_continue"
+		android:layout_width="220dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dip"
+		android:background="@drawable/bg_btn_border_white_transparent"
+		android:text="@string/btn_continue"
+		android:textAllCaps="true"
+		android:textColor="@color/white"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toBottomOf="@id/layout"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.78" />
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/btn_come_back"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/come_back_in_30_mins"
+		android:textAllCaps="true"
+		android:textColor="@color/white"
+		android:textSize="16sp"
+		app:layout_constraintBottom_toBottomOf="@id/layout"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
