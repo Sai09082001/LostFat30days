@@ -9,5 +9,5 @@
 	<dimen name="size_check_large">38dp</dimen>
 	<dimen name="size_check_large_radius">19dp</dimen>
 	<dimen name="size_arrow">20dp</dimen>
-	<dimen name="height_training_header">150dp</dimen>
+	<dimen name="height_training_header">180dp</dimen>
 </resources>

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.lubuteam.sellsource.losefat.ui.activities.ResultActivity">
+        tools:context="com.merryblue.femalefitness.ui.activities.ResultActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar"
@@ -272,7 +272,7 @@
                     android:layout_height="@dimen/height_divider_group"
                     android:background="@drawable/divider_group" />
 
-                <com.lubuteam.sellsource.losefat.ui.customViews.ReminderView
+                <com.merryblue.femalefitness.ui.customViews.ReminderView
                     android:id="@+id/reminder_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

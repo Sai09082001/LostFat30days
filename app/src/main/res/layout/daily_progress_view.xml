@@ -24,8 +24,8 @@
 		<ProgressBar
 			android:id="@+id/progress"
 			style="?android:attr/progressBarStyleHorizontal"
-			android:layout_width="36dp"
-			android:layout_height="36dp"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
 			android:layout_gravity="center"
 			android:background="@drawable/bg_daily_progress"
 			android:indeterminate="false"
@@ -48,8 +48,8 @@
 
 	<FrameLayout
 		android:id="@+id/locked"
-		android:layout_width="36dp"
-		android:layout_height="36dp"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
 		android:layout_gravity="center"
 		android:visibility="gone">
 

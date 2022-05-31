@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">Lose Belly Fat</string>
+	<string name="app_name">Reduce belly fat</string>
 
 	<!-- TODO: Font -->
 	<string name="font_regular" translatable="false">fonts/sfprodisplay_regular.ttf</string>
@@ -18,7 +18,7 @@
 	<string name="repeat_mon">Mon</string>
 	<string name="level_beginner">Beginner</string>
 	<string name="level_advanced">Advanced</string>
-	<string name="level_intermediate">Intermediate</string>
+	<string name="level_intermediate">Medium</string>
 	<string name="number_workouts">%d workouts</string>
 	<string name="workouts_total">Workouts</string>
 	<string name="title_history_fullbody">Full body 1 - %s</string>
@@ -47,6 +47,7 @@
 	<string name="confirm_delete">Confirm delete?</string>
 	<string name="cancel">Cancel</string>
 	<string name="ok">OK</string>
+	<string name="add_name">Add name</string>
 	<string name="tips">Tips</string>
 	<string name="reminder">Reminder</string>
 	<string name="replace">Replace</string>
@@ -68,7 +69,7 @@
 	<string name="yes">Yes</string>
 	<string name="default_string">Default</string>
 	<string name="favorite">Favorite</string>
-	<string name="routines_tab">Routines</string>
+	<string name="routines_tab">Habit</string>
 	<string name="title_notify">Female Fitness - Women Workout</string>
 	<string name="content_notify">Its time for Female Fitness - Women Workout, let\'s start</string>
 	<string name="snooze">Snooze</string>
@@ -128,7 +129,7 @@
 	<string name="content_dialog_quit">If you get tired , take a break, but don\'t quit!</string>
 	<string name="btn_quit">Quit</string>
 	<string name="btn_continue">Continue</string>
-	<string name="title_report">Report</string>
+	<string name="title_report">Statistical</string>
 	<string name="title_settings">Setting</string>
 	<string name="settings_profile">My profile</string>
 	<string name="settings_reminder">Reminder</string>
@@ -158,10 +159,10 @@
 	<string name="next">Next</string>
 	<string name="menu_reset">Reset</string>
 	<string name="title_languages_dialog">Languages</string>
-	<string name="training_tab">Training</string>
-	<string name="workouts_tab">Workouts</string>
-	<string name="report_tab">Report</string>
-	<string name="setting_tab">Settings</string>
+	<string name="training_tab">Home</string>
+	<string name="workouts_tab">Practice</string>
+	<string name="report_tab">Statistical</string>
+	<string name="setting_tab">More</string>
 	<string name="come_back_in_30_mins" translatable="false">Come back in 30 minutes</string>
 
 	<string-array name="language_display" translatable="false">
@@ -189,12 +190,12 @@
 	<string name="thigh_workout">Thigh workout</string>
 	<string name="routine">Routine</string>
 	<string name="title_tips_activity" translatable="false">Tips</string>
-	<string name="title_full_body_level_1">LOSE BELLY FAT</string>
-	<string name="description_full_body_level_1">BEGINNER</string>
-	<string name="title_full_body_level_2">LOSE BELLY FAT</string>
-	<string name="description_full_body_level_2">INTERMEDIATE</string>
-	<string name="title_full_body_level_3">LOSE BELLY FAT</string>
-	<string name="description_full_body_level_3">ADVANCED</string>
+	<string name="title_full_body_level_1">REDUCE BELLY FAT</string>
+	<string name="description_full_body_level_1">Beginner</string>
+	<string name="title_full_body_level_2">REDUCE BELLY FAT</string>
+	<string name="description_full_body_level_2">Medium</string>
+	<string name="title_full_body_level_3">REDUCE BELLY FAT</string>
+	<string name="description_full_body_level_3">Advanced</string>
 	<string name="my_training">MY TRANNING</string>
 
 	<!-- TODO: Remove or change this placeholder text -->
@@ -212,7 +213,8 @@
 	<string name="male">Male</string>
 	<string name="btn_close">Close</string>
 	<string name="btn_choose">Choose</string>
-	<string name="title_activity_choose_plan">All plans</string>
+	<string name="btn_add_exercise">Add Exercise</string>
+	<string name="title_activity_choose_plan">Select plans</string>
 	<string name="chart_current">Current:</string>
 	<string name="chart_maximum">Maximum:</string>
 	<string name="chart_minimum">Minimum</string>
@@ -231,4 +233,5 @@
 
 	<string name="power_by" translatable="false">Power by LUBUTEAM</string>
 	<string name="required_missing" translatable="false">Error. This value should not be blank.</string>
+	<string name="tv_view_all">View All</string>
 </resources>

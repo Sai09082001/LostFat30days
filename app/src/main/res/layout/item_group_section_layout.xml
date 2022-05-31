@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.GroupSections
+    <com.merryblue.femalefitness.ui.customViews.GroupSections
         android:id="@+id/group_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

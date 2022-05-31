@@ -6,43 +6,43 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp">
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.SingleDayView
+    <com.merryblue.femalefitness.ui.customViews.SingleDayView
         android:id="@+id/day_one"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.SingleDayView
+    <com.merryblue.femalefitness.ui.customViews.SingleDayView
         android:id="@+id/day_two"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.SingleDayView
+    <com.merryblue.femalefitness.ui.customViews.SingleDayView
         android:id="@+id/day_three"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.SingleDayView
+    <com.merryblue.femalefitness.ui.customViews.SingleDayView
         android:id="@+id/day_four"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.SingleDayView
+    <com.merryblue.femalefitness.ui.customViews.SingleDayView
         android:id="@+id/day_five"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.SingleDayView
+    <com.merryblue.femalefitness.ui.customViews.SingleDayView
         android:id="@+id/day_six"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.SingleDayView
+    <com.merryblue.femalefitness.ui.customViews.SingleDayView
         android:id="@+id/day_seven"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

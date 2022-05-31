@@ -14,6 +14,8 @@
     <color name="grayTextColor">#343434</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="blue">#5579E5</color>
+    <color name="accentBlue">#BCCEFC</color>
     <color name="color_today">#02b744</color>
     <color name="text_gray">#676767</color>
     <color name="text_gray_light">#BABABA</color>
@@ -24,4 +26,6 @@
     <color name="theme_bg_gray">#f4f4f4</color>
     <color name="text_color_gray">#ff9b9b9b</color>
     <color name="text_color_title_gray">#757575</color>
+    <color name="blueLight">#2538C8</color>
+    <color name="red">#DC2323</color>
 </resources>

@@ -4,20 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lubuteam.sellsource.losefat.ui.activities.RunActivity">
+    tools:context="com.merryblue.femalefitness.ui.activities.RunActivity">
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.NonSwipeAbleViewPager
+    <com.merryblue.femalefitness.ui.customViews.NonSwipeAbleViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <com.lubuteam.sellsource.losefat.ui.customViews.StepProgressBarView
-        android:id="@+id/step_progress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/container"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lubuteam.sellsource.losefat.ui.fragments.TotalFragment">
+    tools:context="com.merryblue.femalefitness.ui.fragments.TotalFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/totalLayout"
@@ -205,7 +205,7 @@
         </LinearLayout>
     </FrameLayout>
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.CurrentWeekView
+    <com.merryblue.femalefitness.ui.customViews.CurrentWeekView
         android:id="@+id/current_week_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

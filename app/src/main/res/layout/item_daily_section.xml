@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="60dp"
-	app:cardCornerRadius="2dp"
-	app:cardElevation="0dp"
-	app:cardUseCompatPadding="true">
+	android:layout_height="wrap_content"
+	app:cardCornerRadius="@dimen/_12sdp"
+	android:layout_marginTop="@dimen/_12sdp"
+	app:cardElevation="0dp">
 
 	<FrameLayout
 		android:id="@+id/layout"
@@ -14,23 +15,57 @@
 		android:background="@drawable/bg_row_daily_section"
 		android:orientation="horizontal">
 
-		<androidx.appcompat.widget.AppCompatTextView
-			android:id="@+id/txt_title"
-			fontPath="@string/font_bold"
+		<LinearLayout
+			android:layout_marginBottom="@dimen/_12sdp"
+			android:orientation="vertical"
+			android:layout_marginTop="@dimen/_12sdp"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_vertical|start"
-			android:paddingLeft="@dimen/padding_start"
-			android:text="Day 1"
-			android:textColor="@color/white"
-			android:textSize="17sp" />
+			android:layout_height="match_parent">
 
-		<com.lubuteam.sellsource.losefat.ui.customViews.DailyProgressView
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_title"
+				android:fontFamily="sans-serif-medium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingStart="@dimen/padding_start"
+				android:text="Day 1"
+				android:layout_marginBottom="2dp"
+				android:textColor="@color/white"
+				android:textSize="18dp"
+				tools:ignore="SpUsage" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_daily_exercises"
+				android:fontFamily="sans-serif-light"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingStart="@dimen/padding_start"
+				android:text="12 Excercises"
+				android:textColor="@color/white"
+				android:textSize="14dp"
+				tools:ignore="SpUsage" />
+		</LinearLayout>
+
+		<androidx.appcompat.widget.AppCompatTextView
+			android:layout_width="wrap_content"
+			android:text="Start"
+			android:visibility="gone"
+			android:id="@+id/tv_start_section"
+			android:textColor="#5579E5"
+			android:paddingVertical="4dp"
+			android:paddingHorizontal="20dp"
+			android:background="@drawable/bg_text_start_white"
+			android:layout_gravity="center_vertical|end"
+			android:layout_marginEnd="12dp"
+			android:layout_height="wrap_content"/>
+
+		<com.merryblue.femalefitness.ui.customViews.DailyProgressView
 			android:id="@+id/daily_progress"
+			android:visibility="visible"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_vertical|end"
-			android:layout_marginRight="20dp" />
+			android:layout_marginEnd="20dp" />
 
 	</FrameLayout>
 </androidx.cardview.widget.CardView>

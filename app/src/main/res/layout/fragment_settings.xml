@@ -4,7 +4,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	tools:context="com.lubuteam.sellsource.losefat.ui.fragments.SettingsFragment">
+	tools:context="com.merryblue.femalefitness.ui.fragments.SettingsFragment">
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -57,7 +57,7 @@
 
 					<androidx.appcompat.widget.AppCompatTextView
 						style="@style/TextSettings"
-						android:layout_width="wrap_content"
+						android:layout_width="0dp"
 						android:layout_height="wrap_content"
 						android:layout_gravity="center"
 						android:layout_marginLeft="33.3dp"

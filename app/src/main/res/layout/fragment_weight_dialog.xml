@@ -5,10 +5,10 @@
 	android:layout_height="match_parent"
 	android:background="@color/white"
 	android:orientation="vertical"
-	tools:context="com.lubuteam.sellsource.losefat.ui.dialogs.WeightDialogFragment">
+	tools:context="com.merryblue.femalefitness.ui.dialogs.WeightDialogFragment">
 
 
-	<com.lubuteam.sellsource.losefat.ui.lib.horizontalCalendar.HorizontalCalendarView
+	<com.merryblue.femalefitness.ui.lib.horizontalCalendar.HorizontalCalendarView
 		android:id="@+id/calender"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content" />
@@ -39,7 +39,7 @@
 			android:textColor="@android:color/black"
 			android:textSize="30sp" />
 
-		<com.lubuteam.sellsource.losefat.ui.customViews.WeightUnitSwitchView
+		<com.merryblue.femalefitness.ui.customViews.WeightUnitSwitchView
 			android:id="@+id/sw_unit"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />

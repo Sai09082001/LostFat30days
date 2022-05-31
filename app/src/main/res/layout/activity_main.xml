@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.lubuteam.sellsource.losefat.ui.activities.MainActivity">
+    tools:context="com.merryblue.femalefitness.ui.activities.MainActivity">
 
-    <com.lubuteam.sellsource.losefat.ui.customViews.CustomViewPager
+    <com.merryblue.femalefitness.ui.customViews.CustomViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -21,7 +21,7 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         app:bb_activeTabAlpha="1"
-        app:bb_activeTabColor="@color/colorAccent"
+        app:bb_activeTabColor="@color/blueLight"
         app:bb_badgesHideWhenActive="true"
         app:bb_inActiveTabAlpha="0.6"
         app:bb_inActiveTabColor="#222222"

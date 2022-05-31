@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.lubuteam.sellsource.losefat.ui.dialogs.FirstDayOfWeekDialogFragment">
+    tools:context="com.merryblue.femalefitness.ui.dialogs.FirstDayOfWeekDialogFragment">
 
     <NumberPicker
         android:id="@+id/pk_number"

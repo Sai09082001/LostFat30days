@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorVideoWorkout"
     android:fitsSystemWindows="true"
-    tools:context="com.lubuteam.sellsource.losefat.ui.fragments.VideoWorkoutFragment">
+    tools:context="com.merryblue.femalefitness.ui.fragments.VideoWorkoutFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"

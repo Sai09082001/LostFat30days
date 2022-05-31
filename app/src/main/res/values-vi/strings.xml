@@ -153,8 +153,8 @@
 
 
 
-    <string name="training_tab">Đào tạo</string>
-    <string name="workouts_tab">Tập luyện</string>
+    <string name="training_tab">Trang chủ</string>
+    <string name="workouts_tab">Luyện tập</string>
     <string name="report_tab">Thống kê</string>
     <string name="setting_tab">Cài đặt</string>
     <string name="abs_workout">Bài tập cơ bụng</string>

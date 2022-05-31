@@ -8,7 +8,7 @@
     android:clickable="true"
     android:fitsSystemWindows="true"
     android:focusable="true"
-    tools:context="com.lubuteam.sellsource.losefat.ui.activities.GuideReminderActivity">
+    tools:context="com.merryblue.femalefitness.ui.activities.GuideReminderActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         fontPath="@string/font_bold"

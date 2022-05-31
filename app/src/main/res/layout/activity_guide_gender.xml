@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/bg_guide_activity"
-	tools:context="com.lubuteam.sellsource.losefat.ui.activities.GuideGenderActivity">
+	tools:context="com.merryblue.femalefitness.ui.activities.GuideGenderActivity">
 
 	<androidx.appcompat.widget.AppCompatTextView
 		android:id="@+id/text1"

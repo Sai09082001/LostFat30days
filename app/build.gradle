@@ -4,7 +4,7 @@ android {
 
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.lubuteam.sellsource.losefat"
+        applicationId "com.merryblue.femalefitness.losefat"
         minSdkVersion 17
         targetSdkVersion 30
         versionCode 9

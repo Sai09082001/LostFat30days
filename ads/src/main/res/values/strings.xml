@@ -20,8 +20,8 @@
     <string name="install_app_ads">Install Now</string>
 
     // Title mail and email feed back
-    <string name="Title_email" translatable="false">Title FeedBack</string>
-    <string name="email_feedback" translatable="false">emailne@gmail.com</string>
+    <string name="Title_email" translatable="false">admin@merryblue.llc</string>
+    <string name="email_feedback" translatable="false">admin@merryblue.llc</string>
 
     //Info id admob, you can change
     <string name="admob_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>

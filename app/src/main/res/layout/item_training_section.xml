@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="56dp"
-	app:cardCornerRadius="2dp"
-	app:cardElevation="0dp"
-	app:cardUseCompatPadding="true">
+	android:layout_height="wrap_content"
+	app:cardCornerRadius="@dimen/_12sdp"
+	android:layout_marginTop="@dimen/_12sdp"
+	app:cardElevation="0dp">
 
-	<LinearLayout
-		android:id="@+id/layout"
+	<FrameLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@drawable/bg_row_daily_section"
-		android:gravity="center_vertical"
+		android:background="@drawable/bg_training_exercise"
 		android:orientation="horizontal">
 
-		<androidx.appcompat.widget.AppCompatImageView
-			android:layout_width="40dp"
-			android:layout_height="40dp"
-			android:layout_marginLeft="20dp"
-			android:layout_marginRight="20dp"
-			app:srcCompat="@drawable/ic_check_circle" />
+		<LinearLayout
+			android:layout_marginStart="14dp"
+			android:layout_marginBottom="@dimen/_12sdp"
+			android:orientation="vertical"
+			android:layout_marginTop="@dimen/_12sdp"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent">
 
-		<androidx.appcompat.widget.AppCompatTextView
-			android:id="@+id/txt_title"
-			fontPath="@string/font_bold"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_vertical|start"
-			android:layout_weight="1"
-			android:text="Day 1"
-			android:textColor="@color/white"
-			android:textSize="17sp" />
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_title"
+				android:fontFamily="sans-serif-medium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Day 1"
+				android:layout_marginBottom="2dp"
+				android:textColor="@color/black"
+				android:textSize="18dp"
+				tools:ignore="SpUsage" />
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/txt_daily_exercises"
+				android:fontFamily="sans-serif"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="12 Excercises"
+				android:textColor="#8D959D"
+				android:textSize="14dp"
+				tools:ignore="SpUsage" />
+		</LinearLayout>
 
 		<androidx.appcompat.widget.AppCompatImageView
-			android:id="@+id/btn_option"
-			android:layout_width="40dp"
-			android:layout_height="40dp"
-			android:clickable="true"
-			android:focusable="true"
 			android:padding="8dp"
-			app:srcCompat="@drawable/ic_more_vert" />
+			android:id="@+id/btn_option"
+			android:tint="@color/black"
+			android:layout_gravity="center|end"
+			android:src="@drawable/ic_more_vert"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
 
-
-	</LinearLayout>
+	</FrameLayout>
 </androidx.cardview.widget.CardView>

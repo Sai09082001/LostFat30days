@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.lubuteam.sellsource.losefat.ui.fragments.RunFragment">
+    tools:context="com.merryblue.femalefitness.ui.fragments.RunFragment">
 
     <include
         android:id="@+id/take_a_rest_layout"
