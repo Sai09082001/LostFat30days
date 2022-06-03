@@ -89,7 +89,7 @@ public class SplashActivity extends BaseActivity implements DatabaseListener {
         finish();
     }
     private void gotoNext() {
-        Intent intent = new Intent(this, GuideLevelActivity.class);
+        Intent intent = new Intent(this, OnBoardingActivity01.class);
         startActivity(intent);
         overridePendingTransition(0, 0);
         finish();

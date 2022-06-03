@@ -13,6 +13,10 @@
     <string name="level_intermediate">Trung gian</string>
     <string name="number_workouts">%d bài tập</string>
     <string name="workouts_total">Bài tập</string>
+    <string name="introduce">Giới thiệu</string>
+    <string name="title_introduce">Tất cả radio bạn cần trong một ứng dụng</string>
+    <string name="detail_title_introduce">Thưởng thức hơn 100 kênh phổ biến trong ứng dụng này: VOV, BBC, talkSPORT, BBC Radio 1Xtra, Classic FM, All Things Considered, Delilah, ... Tin tức: Cập nhật tin tức mới nhất từ địa phương, quốc gia , và các nguồn quốc tế, bao gồm Radio Emigranti, Nehanda Radio, BBC Radio, CBLA-FM, CBC Radio One Toronto live, ...</string>
+    <string name="detail_introduce">THƯỞNG THỨC RADIO CỦA BẠN BẤT CỨ LÚC NÀO Ứng dụng radio miễn phí là một ứng dụng radio đơn giản bao gồm mọi thứ bạn cần, bao gồm tin tức trực tiếp, thể thao, âm nhạc, podcast và các đài phát thanh yêu thích của bạn trên toàn thế giới.</string>
     <string name="title_history_fullbody">Toàn thân 1 - %s</string>
     <string name="title_history_fullbody_2">Toàn thân 2 - %s</string>
     <string name="title_history_fullbody_3">Toàn thân 3 - %s</string>
@@ -37,6 +41,7 @@
     <string name="each_side">Mỗi bên</string>
     <string name="confirm_delete">Xác nhận xóa?</string>
     <string name="cancel">Hủy bỏ</string>
+    <string name="agree">Đồng ý</string>
     <string name="ok">được</string>
     <string name="tips">Lời khuyên</string>
     <string name="reminder">Nhắc nhở</string>
@@ -91,7 +96,7 @@
     <string name="title_reminder">Nhắc nhở</string>
     <string name="title_replace_exercise">Thay thế</string>
     <string name="current">Hiện tại</string>
-    <string name="you_rock">Xin chúc mừng</string>
+    <string name="you_rock">Đã hoàn thành\nBài tập</string>
     <string name="exercises">Bài tập</string>
     <string name="minutes">Phút</string>
     <string name="btn_do_again">Tập thêm lần nữa</string>
@@ -175,11 +180,11 @@
     <string name="title_dialog_rename_training">Please name your plan</string>
 	<string name="plan">Plan</string>
 	<string name="menu_rename">Rename</string>
-    <string name="menu_delete">Delete</string>
+    <string name="menu_delete">Xóa</string>
 	<string name="string_hi">Hi</string>
     <string name="select_gender">Select Gender</string>
     <string name="female">Female</string>
-	<string name="title_guide_level">Which plan do you want to start with?</string>
+	<string name="title_guide_level">Which plan do \nyou want to start with?</string>
 	<string name="male">Male</string>
 	<string name="btn_close">Close</string>
 	<string name="btn_choose">Choose</string>
@@ -190,10 +195,11 @@
 	<string name="waistline">Waistline</string>
 	<string name="settings_gender">Select Gender</string>
     <string name="title_gender_dialog">Select Gender</string>
-	<string name="settings_delete_all_dât">Delete all data</string>
+	<string name="settings_delete_all_dât">Xóa toàn bộ dữ liệu</string>
     <string name="settings_restart_progress">Restart Progress</string>
-    <string name="title_restart_progress_dialog">Restart Progress</string>
-    <string name="title_delete_all_data_dialog">Are you sure to reset app and delete all data?</string>
+    <string name="title_restart_progress_dialog">Restart bài tập của bạn</string>
+    <string name="title_delete_all_data_dialog">Nhấp vào xóa nếu bạn muốn xóa tất cả dữ liệu của mình</string>
+    <string name="title_restart_progress">Nhấp vào OK nếu bạn muốn restart toàn bộ bài tập của mình</string>
 	<string name="ten_seconds_left">10 seconds left</string>
 	<string name="btn_ok">OK</string>
     <string name="title_rest_day_activity">Rest day</string>

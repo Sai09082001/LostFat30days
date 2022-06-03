@@ -40,7 +40,7 @@ public class HistoryActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        setStatusBarColor(getResources().getColor(R.color.white));
 
         initViews();
         initObserver();

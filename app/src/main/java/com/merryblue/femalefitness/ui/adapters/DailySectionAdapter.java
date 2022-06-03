@@ -59,7 +59,7 @@ public class DailySectionAdapter extends RecyclerView.Adapter<DailySectionAdapte
             layout = itemView.findViewById(R.id.layout);
             textView = itemView.findViewById(R.id.txt_title);
             tvDailyExercises = itemView.findViewById(R.id.txt_daily_exercises);
-            tvStartSection = itemView.findViewById(R.id.tv_start_section);
+         //   tvStartSection = itemView.findViewById(R.id.tv_start_section);
             progressView = itemView.findViewById(R.id.daily_progress);
         }
 

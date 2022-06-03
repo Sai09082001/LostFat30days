@@ -61,18 +61,21 @@ public class TrainingAdapter extends RecyclerView.Adapter<TrainingAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
         View btnOption;
-        TextView textView;
+        TextView textView ,tvExercises;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             textView = itemView.findViewById(R.id.txt_title);
+            tvExercises = itemView.findViewById(R.id.txt_daily_exercises);
             btnOption = itemView.findViewById(R.id.btn_option);
             btnOption.setOnClickListener(this);
         }
 
+        @SuppressLint("SetTextI18n")
         void bind(SectionUser item) {
             textView.setText(item.getData().getTitleDisplay());
+            tvExercises.setText(item.getData().getNumberWorkoutsString(textView.getContext()).substring(0,1));
         }
 
         @Override

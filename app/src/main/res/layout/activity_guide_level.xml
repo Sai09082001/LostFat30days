@@ -8,38 +8,38 @@
 	tools:context="com.merryblue.femalefitness.ui.activities.GuideLevelActivity">
 
 	<androidx.appcompat.widget.AppCompatTextView
-		fontPath="@string/font_bold"
+		android:id="@+id/appCompatTextView"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="50dp"
-		android:gravity="center"
-		android:paddingLeft="50dp"
-		android:paddingRight="50dp"
+		android:layout_marginStart="@dimen/_16sdp"
+		android:layout_marginTop="@dimen/_16sdp"
+		android:fontFamily="sans-serif-medium"
+		android:gravity="start"
+		android:lineSpacingExtra="6dp"
+		android:maxLines="2"
 		android:text="@string/title_guide_level"
 		android:textColor="@color/grayTextColor"
-		android:textSize="22sp"
-		app:layout_constraintTop_toTopOf="parent" />
+		android:textSize="20dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:ignore="SpUsage" />
+
 	<androidx.cardview.widget.CardView
 		android:id="@+id/card_1"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
-		android:layout_marginLeft="@dimen/padding_start"
-		android:layout_marginTop="8dp"
-		android:layout_marginRight="@dimen/padding_start"
-		android:layout_marginBottom="5dp"
-		card_view:cardCornerRadius="10dp"
-		app:layout_constraintBottom_toBottomOf="parent"
+		android:layout_marginTop="@dimen/_20sdp"
+		android:layout_marginStart="16dp"
+		android:layout_marginEnd="16dp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintVertical_bias="0.25">
+		app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+		card_view:cardCornerRadius="10dp">
 
 		<FrameLayout
-
 			android:layout_width="match_parent"
-			android:layout_height="@dimen/height_training_header"
-			>
+			android:layout_height="@dimen/height_training_header">
 
 			<androidx.appcompat.widget.AppCompatImageView
 				android:id="@+id/img_thumb"
@@ -55,54 +55,56 @@
 				android:orientation="vertical"
 				android:padding="30dp">
 
-
-				<androidx.appcompat.widget.AppCompatTextView
-					fontPath="@string/font_bold"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/level_beginner"
-					android:textColor="@color/white"
-					android:textSize="24sp" />
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="2dp"
-					android:text="@string/description_full_body_level_1"
-					android:textColor="@color/white"
-					android:textSize="16sp" />
-
 				<LinearLayout
+					android:layout_marginTop="@dimen/_24sdp"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_gravity="bottom"
-					android:layout_marginTop="8dp"
 					android:gravity="center"
-					android:orientation="horizontal"
-					android:transitionName="workout">
+					android:orientation="horizontal">
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:fontFamily="sans-serif-medium"
+						android:layout_marginEnd="@dimen/_12sdp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/level_beginner"
+						android:textColor="@color/white"
+						android:textSize="24sp" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:tint="@color/white"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
-						android:layout_marginRight="2dp"
-						app:srcCompat="@drawable/ic_flash_enable" />
+						android:layout_marginEnd="2dp"
+						app:srcCompat="@drawable/ic_flash" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
 						android:layout_marginRight="2dp"
 						app:srcCompat="@drawable/ic_flash" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
 						android:layout_marginRight="2dp"
 						app:srcCompat="@drawable/ic_flash" />
 
 				</LinearLayout>
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:id="@+id/btn_choose_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingVertical="8dp"
+					android:paddingHorizontal="28dp"
+					android:layout_marginTop="20dp"
+					android:background="@drawable/bg_btn_choose"
+					android:text="@string/btn_choose"
+					android:textColor="@color/white" />
 			</LinearLayout>
 
 		</FrameLayout>
@@ -139,53 +141,57 @@
 				android:orientation="vertical"
 				android:padding="30dp">
 
-				<androidx.appcompat.widget.AppCompatTextView
-					fontPath="@string/font_bold"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/level_intermediate"
-					android:textColor="@color/white"
-					android:textSize="24sp" />
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="2dp"
-					android:text="@string/description_full_body_level_2"
-					android:textColor="@color/white"
-					android:textSize="16sp" />
-
 				<LinearLayout
-					android:layout_width="51dp"
+					android:layout_marginTop="@dimen/_24sdp"
+					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_gravity="bottom"
-					android:layout_marginTop="8dp"
 					android:gravity="center"
-					android:orientation="horizontal"
-					android:transitionName="workout">
+					android:orientation="horizontal">
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:fontFamily="sans-serif-medium"
+						android:layout_marginEnd="@dimen/_12sdp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/level_intermediate"
+						android:textColor="@color/white"
+						android:textSize="24sp" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:tint="@color/white"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
+						android:layout_marginTop="1dp"
+						android:layout_marginEnd="2dp"
+						app:srcCompat="@drawable/ic_flash" />
+
+					<androidx.appcompat.widget.AppCompatImageView
+						android:tint="@color/white"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
 						android:layout_marginRight="2dp"
-						app:srcCompat="@drawable/ic_flash_enable" />
+						app:srcCompat="@drawable/ic_flash" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="16dp"
-						android:layout_height="16dp"
-						android:layout_marginTop="1dp"
-						android:layout_marginRight="2dp"
-						app:srcCompat="@drawable/ic_flash_enable" />
-
-					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:id="@+id/ivLevel3"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
 						android:layout_marginRight="2dp"
 						app:srcCompat="@drawable/ic_flash" />
 
 				</LinearLayout>
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:paddingVertical="8dp"
+					android:paddingHorizontal="28dp"
+					android:background="@drawable/bg_btn_choose"
+					android:text="@string/btn_choose"
+					android:textColor="@color/white" />
 			</LinearLayout>
 
 		</FrameLayout>
@@ -225,55 +231,57 @@
 				android:orientation="vertical"
 				android:padding="30dp">
 
-				<androidx.appcompat.widget.AppCompatTextView
-					fontPath="@string/font_bold"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/level_advanced"
-					android:textColor="@color/white"
-					android:textSize="24sp" />
-
-				<androidx.appcompat.widget.AppCompatTextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="2dp"
-					android:text="@string/description_full_body_level_3"
-					android:textColor="@color/white"
-					android:textSize="16sp" />
-
 				<LinearLayout
+					android:layout_marginTop="@dimen/_24sdp"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_gravity="bottom"
-					android:layout_marginTop="8dp"
 					android:gravity="center"
-					android:orientation="horizontal"
-					android:transitionName="workout">
+					android:orientation="horizontal">
+
+					<androidx.appcompat.widget.AppCompatTextView
+						android:fontFamily="sans-serif-medium"
+						android:layout_marginEnd="@dimen/_12sdp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/level_advanced"
+						android:textColor="@color/white"
+						android:textSize="24sp" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:id="@+id/ivLevel1"
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
-						android:layout_marginRight="2dp"
-						app:srcCompat="@drawable/ic_flash_enable" />
+						android:layout_marginEnd="2dp"
+						android:tint="@color/white"
+						app:srcCompat="@drawable/ic_flash" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:id="@+id/ivLevel2"
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
 						android:layout_marginRight="2dp"
-						app:srcCompat="@drawable/ic_flash_enable" />
+						android:tint="@color/white"
+						app:srcCompat="@drawable/ic_flash" />
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="16dp"
-						android:layout_height="16dp"
+						android:layout_width="12dp"
+						android:layout_height="12dp"
 						android:layout_marginTop="1dp"
 						android:layout_marginRight="2dp"
-						app:srcCompat="@drawable/ic_flash_enable" />
+						android:tint="@color/white"
+						app:srcCompat="@drawable/ic_flash" />
 
 				</LinearLayout>
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:paddingVertical="8dp"
+					android:paddingHorizontal="28dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:background="@drawable/bg_btn_choose"
+					android:text="@string/btn_choose"
+					android:textColor="@color/white" />
 			</LinearLayout>
 
 		</FrameLayout>

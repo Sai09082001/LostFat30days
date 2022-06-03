@@ -44,7 +44,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/ic_alert" />
+            android:src="@drawable/ic_add_remind" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
         android:layout_marginRight="80dp"
         android:background="@drawable/bg_btn_border_white"
         android:text="@string/btn_finished"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/blueLight"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

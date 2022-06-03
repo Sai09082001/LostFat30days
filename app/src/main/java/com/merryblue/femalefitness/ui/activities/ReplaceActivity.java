@@ -42,7 +42,7 @@ public class ReplaceActivity extends BaseActivity implements DialogResultListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        setStatusBarColor(getResources().getColor(R.color.white));
         setContentView(R.layout.activity_replace);
         initViews();
         initEvents();

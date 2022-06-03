@@ -149,6 +149,7 @@ public class RunFragment extends BaseFragment {
             rootView.findViewById(R.id.txt_workout_count).setVisibility(View.VISIBLE);
             rootView.findViewById(R.id.btn_next_run).setVisibility(View.VISIBLE);
             rootView.findViewById(R.id.btn_play).setVisibility(View.GONE);
+            rootView.findViewById(R.id.btn_pause).setVisibility(View.GONE);
             rootView.findViewById(R.id.btn_checked).setVisibility(View.VISIBLE);
             //rootView.findViewById(R.id.progress_timer_run).setVisibility(View.INVISIBLE);
         } else {

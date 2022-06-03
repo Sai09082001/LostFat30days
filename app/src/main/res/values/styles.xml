@@ -43,7 +43,7 @@
 	</style>
 
 	<style name="NumberPicker" parent="AppTheme">
-		<item name="colorControlNormal">@color/colorAccent</item>
+		<item name="colorControlNormal">@color/blueLight</item>
 		<item name="android:textColorPrimary">@android:color/black</item>
 		<item name="android:textSize">20sp</item>
 	</style>

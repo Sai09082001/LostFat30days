@@ -21,12 +21,16 @@
 	<string name="level_intermediate">Medium</string>
 	<string name="number_workouts">%d workouts</string>
 	<string name="workouts_total">Workouts</string>
+	<string name="introduce">Introduce</string>
+	<string name="title_introduce">All the radio you need in one app</string>
+	<string name="detail_title_introduce">Enjoy even more than 100+ popular channels in this app: VOV, BBC, talkSPORT, BBC Radio 1Xtra, Classic FM, All Things Considered, Delilah,... News: Stay up-to-date on the latest news from local, national, and international sources, including Radio Emigranti, Nehanda Radio, BBC Radio, CBLA-FM, CBC Radio One Toronto live,...</string>
+	<string name="detail_introduce">ENJOY YOUR RADIO ANYTIME, ANYWHERE Free radio app is a simple radio app that includes everything you need, including live news, sports, music, podcasts, and your favorite radio stations worldwide.</string>
 	<string name="title_history_fullbody">Full body 1 - %s</string>
 	<string name="title_history_fullbody_2">Full body 2 - %s</string>
 	<string name="title_history_fullbody_3">Full body 3 - %s</string>
 	<string name="title_history_unknown">Unknown</string>
-	<string name="default_reminder_warm_up">Morning warm up</string>
-	<string name="default_reminder_sleepy">Sleepy time stretch</string>
+	<string name="default_reminder_warm_up">Start when you wake up</string>
+	<string name="default_reminder_sleepy">Relax before sleeping</string>
 	<string name="challange_days_left">%d Days left</string>
 	<string name="progress">Progress</string>
 	<string name="sunday">Sunday</string>
@@ -46,13 +50,14 @@
 	<string name="each_side">Each Side</string>
 	<string name="confirm_delete">Confirm delete?</string>
 	<string name="cancel">Cancel</string>
+	<string name="agree">Agree</string>
 	<string name="ok">OK</string>
 	<string name="add_name">Add name</string>
 	<string name="tips">Tips</string>
 	<string name="reminder">Reminder</string>
 	<string name="replace">Replace</string>
-	<string name="set_duration_rest">Set duration (5 ~ 180 secs)</string>
-	<string name="set_duration_countdown">Set duration (10 ~ 30 secs)</string>
+	<string name="set_duration_rest">(5 ~ 180 secs)</string>
+	<string name="set_duration_countdown">(10 ~ 30 secs)</string>
 	<string name="under_weight">Underweight</string>
 	<string name="normal_weight">Normal weight</string>
 	<string name="over_weight">Overweight</string>
@@ -62,7 +67,7 @@
 	<string name="take_a_rest_next">Take a rest. Next.</string>
 	<string name="start">Start</string>
 	<string name="this_language_not_support">This language is not supported!</string>
-	<string name="did_you_hear_the_test_voice">Did you hear the test voice?</string>
+	<string name="did_you_hear_the_test_voice">Have you hear the voice test yet?</string>
 	<string name="please_choose_voide_engine">Please choose guide voice engine:</string>
 	<string name="please_choose_language_voice_engine">Please choose guide voice engine:</string>
 	<string name="no">No</string>
@@ -93,14 +98,14 @@
 	<string name="btn_finished">Finished</string>
 	<string name="title_history">History</string>
 	<string name="title_profile">Profile</string>
-	<string name="units">Units</string>
+	<string name="units">Unit</string>
 	<string name="weight">Weight</string>
 	<string name="height">Height</string>
 	<string name="year_of_birth">Year of Birth</string>
 	<string name="title_reminder">Reminder</string>
 	<string name="title_replace_exercise">Replace exercise</string>
 	<string name="current">Current</string>
-	<string name="you_rock">You rock!</string>
+	<string name="you_rock">Workout\ncompleted</string>
 	<string name="exercises">Exercises</string>
 	<string name="minutes">Minutes</string>
 	<string name="btn_do_again">Do it again</string>
@@ -116,7 +121,7 @@
 	<string name="title_sound_option">Sound options</string>
 	<string name="mute">Mute</string>
 	<string name="voice_guide">Voice guide</string>
-	<string name="coach_tips">Coach tips</string>
+	<string name="coach_tips">Coach Advice</string>
 	<string name="content_warming_engine">The TSS engine you are using is not working now, please double check it, switch to another TTS engine, or download TTS voice language.</string>
 	<string name="btn_down_tts_engine">Download TTS Engine</string>
 	<string name="btn_select_tts_engine">Select TTS Engine</string>
@@ -131,24 +136,24 @@
 	<string name="btn_continue">Continue</string>
 	<string name="title_report">Statistical</string>
 	<string name="title_settings">Setting</string>
-	<string name="settings_profile">My profile</string>
+	<string name="settings_profile">My Profile</string>
 	<string name="settings_reminder">Reminder</string>
 	<string name="title_workout">Workout</string>
-	<string name="settings_rest_set">Rest set</string>
+	<string name="settings_rest_set">Set a break time</string>
 	<string name="settings_coundown">Countdown Time</string>
 	<string name="settings_sound">Sound</string>
-	<string name="title_voice_option">VOICE OPTIONS (TTS)</string>
-	<string name="settings_test_voice">Test Voice</string>
+	<string name="title_voice_option">Voice selection</string>
+	<string name="settings_test_voice">Voice Test</string>
 	<string name="settings_select_tts_engine">Select TSS Engine</string>
 	<string name="settings_download_tts_engine">Download TTS Engine</string>
-	<string name="settings_voice_language">Voice language</string>
+	<string name="settings_voice_language">Spoken Language</string>
 	<string name="settings_down_more_tts_language">Download more TTS language data</string>
 	<string name="settings_device_tts">Device TTS Setting</string>
 	<string name="title_general">General</string>
 	<string name="settings_language">Language</string>
 	<string name="settings_share">Share with friends</string>
 	<string name="title_support">Support</string>
-	<string name="settings_ratings">Rate us 5</string>
+	<string name="settings_ratings">Review</string>
 	<string name="settings_feedback">Feedback</string>
 	<string name="settings_help">Help</string>
 	<string name="settings_policy">Privacy policy</string>
@@ -209,7 +214,7 @@
 	<string name="string_hi">Hi</string>
 	<string name="select_gender">Select Gender</string>
 	<string name="female">Female</string>
-	<string name="title_guide_level">Which plan do you want to start with?</string>
+	<string name="title_guide_level">Which plan do \nyou want to start with?</string>
 	<string name="male">Male</string>
 	<string name="btn_close">Close</string>
 	<string name="btn_choose">Choose</string>
@@ -224,7 +229,8 @@
 	<string name="settings_delete_all_dât">Delete all data</string>
 	<string name="settings_restart_progress">Restart Progress</string>
 	<string name="title_restart_progress_dialog">Restart Progress</string>
-	<string name="title_delete_all_data_dialog">Are you sure to reset app and delete all data?</string>
+	<string name="title_delete_all_data_dialog">Clicking delete means you will delete all your data</string>
+	<string name="title_restart_progress">Clicking OK means you will run the whole workout again</string>
 	<string name="ten_seconds_left">10 seconds left</string>
 	<string name="btn_ok">OK</string>
 	<string name="title_rest_day_activity">Rest day</string>
@@ -234,4 +240,5 @@
 	<string name="power_by" translatable="false">Power by LUBUTEAM</string>
 	<string name="required_missing" translatable="false">Error. This value should not be blank.</string>
 	<string name="tv_view_all">View All</string>
+	<string name="title_programme">Programme</string>
 </resources>

@@ -11,13 +11,13 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:paddingLeft="20dp"
+		android:paddingStart="20dp"
 		android:paddingTop="30dp"
-		android:paddingRight="10dp"
+		android:paddingEnd="10dp"
 		android:paddingBottom="10dp">
 
 		<androidx.appcompat.widget.AppCompatTextView
-			fontPath="@string/font_bold"
+			android:fontFamily="sans-serif-medium"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/weight"
@@ -94,34 +94,52 @@
 	</LinearLayout>
 
 	<LinearLayout
+		android:layout_marginBottom="16dp"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:gravity="end"
-		android:orientation="horizontal"
-		android:padding="10dp">
+		android:layout_marginTop="16dp">
 
-		<androidx.appcompat.widget.AppCompatButton
-			android:id="@+id/btn_cancel"
+		<LinearLayout
 			android:layout_width="wrap_content"
-			android:layout_height="40dp"
-			android:background="?android:attr/selectableItemBackground"
-			android:padding="6dp"
-			android:text="@string/cancel"
-			android:textAllCaps="true"
-			android:textColor="@color/colorPrimary"
-			android:textSize="14sp" />
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center">
 
-		<androidx.appcompat.widget.AppCompatButton
-			android:id="@+id/btn_save"
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/btn_cancel"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="20dp"
+				android:layout_marginEnd="10dp"
+				android:background="@drawable/bg_btn_cancel"
+				android:fontFamily="sans-serif-medium"
+				android:gravity="center"
+				android:paddingVertical="12dp"
+				android:text="@string/cancel"
+				android:textColor="@color/blueLight"
+				android:textSize="16dp" />
+		</LinearLayout>
+
+		<LinearLayout
 			android:layout_width="wrap_content"
-			android:layout_height="40dp"
-			android:background="?android:attr/selectableItemBackground"
-			android:padding="6dp"
-			android:text="@string/btn_save"
-			android:textAllCaps="true"
-			android:textColor="@color/colorPrimary"
-			android:textSize="14sp" />
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:gravity="center">
 
+			<androidx.appcompat.widget.AppCompatTextView
+				android:id="@+id/btn_save"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:layout_marginEnd="20dp"
+				android:background="@drawable/bg_btn_border_large"
+				android:fontFamily="sans-serif-medium"
+				android:gravity="center"
+				android:paddingVertical="12dp"
+				android:text="@string/ok"
+				android:textColor="@color/white"
+				android:textSize="16dp" />
+		</LinearLayout>
 	</LinearLayout>
 
 </LinearLayout>

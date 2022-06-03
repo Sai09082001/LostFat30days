@@ -85,4 +85,17 @@
 
 	</FrameLayout>
 
+	<androidx.appcompat.widget.AppCompatTextView
+		android:layout_width="wrap_content"
+		android:text="@string/start"
+		android:visibility="gone"
+		android:id="@+id/tv_start_section"
+		android:textColor="#5579E5"
+		android:paddingVertical="4dp"
+		android:paddingHorizontal="20dp"
+		android:textSize="16dp"
+		android:background="@drawable/bg_text_start_white"
+		android:layout_gravity="end"
+		android:layout_height="wrap_content"/>
+
 </FrameLayout>

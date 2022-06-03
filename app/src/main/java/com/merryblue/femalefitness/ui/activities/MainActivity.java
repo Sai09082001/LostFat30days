@@ -69,7 +69,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 if (position == 0) {
-                    setStatusBarColor(getResources().getColor(R.color.blueLight));
+                    setStatusBarColor(getResources().getColor(R.color.white));
                 } else {
                     setStatusBarColor(Color.parseColor("#DDDDDD"));
                 }

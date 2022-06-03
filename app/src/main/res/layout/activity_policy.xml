@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back_policy"
+            android:layout_gravity="center|start"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/back_black"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="@string/settings_policy"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="48dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="@string/introduce"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="8dp"
+        android:lineSpacingExtra="4dp"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:text="@string/detail_introduce"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="@string/title_introduce"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="8dp"
+        android:lineSpacingExtra="4dp"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:text="@string/detail_title_introduce"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

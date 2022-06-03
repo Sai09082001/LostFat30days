@@ -16,7 +16,7 @@ import com.merryblue.femalefitness.data.model.DailySectionUser;
 public class DailyProgressView extends FrameLayout {
     View locked, checked, progressLayout, restLayout;
     ProgressBar progressBar;
-    TextView textView;
+    TextView textView , tvStart;
     int progress = 0;
 
     public DailyProgressView(Context context) {
@@ -44,6 +44,7 @@ public class DailyProgressView extends FrameLayout {
         inflate(getContext(), R.layout.daily_progress_view, this);
         locked = findViewById(R.id.locked);
         checked = findViewById(R.id.checked);
+        tvStart = findViewById(R.id.tv_start_section);
         progressLayout = findViewById(R.id.layout_progress);
         restLayout = findViewById(R.id.layout_rest);
         textView = findViewById(R.id.txt_progress);
@@ -59,27 +60,40 @@ public class DailyProgressView extends FrameLayout {
 
     public void setData(DailySectionUser data) {
         if (data.isLocked()) {
+            tvStart.setVisibility(View.GONE);
             locked.setVisibility(View.VISIBLE);
             checked.setVisibility(View.GONE);
             progressLayout.setVisibility(View.GONE);
             restLayout.setVisibility(View.GONE);
         } else if (data.isCompleted()) {
+            tvStart.setVisibility(View.GONE);
             locked.setVisibility(View.GONE);
             checked.setVisibility(View.VISIBLE);
             progressLayout.setVisibility(View.GONE);
             restLayout.setVisibility(View.GONE);
         } else if (data.isRestDay()) {
+            tvStart.setVisibility(View.GONE);
             locked.setVisibility(View.GONE);
             checked.setVisibility(View.GONE);
             progressLayout.setVisibility(View.GONE);
             restLayout.setVisibility(View.VISIBLE);
         } else {
-            locked.setVisibility(View.GONE);
-            checked.setVisibility(View.GONE);
-            progressLayout.setVisibility(View.VISIBLE);
-            restLayout.setVisibility(View.GONE);
             progress = (int) data.getProgress();
-            setProgress();
+            if (progress == 0) {
+                tvStart.setVisibility(View.VISIBLE);
+                progressLayout.setVisibility(View.GONE);
+                restLayout.setVisibility(View.GONE);
+                locked.setVisibility(View.GONE);
+                checked.setVisibility(View.GONE);
+            }
+            else {
+                tvStart.setVisibility(View.GONE);
+                locked.setVisibility(View.GONE);
+                checked.setVisibility(View.GONE);
+                progressLayout.setVisibility(View.VISIBLE);
+                restLayout.setVisibility(View.GONE);
+                setProgress();
+            }
         }
     }
 

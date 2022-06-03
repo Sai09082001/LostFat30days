@@ -42,6 +42,9 @@ public class SoundOptionDialog extends BaseDialog implements CompoundButton.OnCh
         super.initEvents();
         addListener();
         rootView.findViewById(R.id.btn_ok).setOnClickListener(view -> dismissAllowingStateLoss());
+        rootView.findViewById(R.id.tv_dialog_cancel).setOnClickListener(view -> {
+            dismiss();
+        });
     }
 
     private void addListener() {

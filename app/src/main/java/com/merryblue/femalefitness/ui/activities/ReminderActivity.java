@@ -34,7 +34,7 @@ public class ReminderActivity extends BaseActivity implements TimePickerDialog.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        setStatusBarColor(getResources().getColor(R.color.white));
         setContentView(R.layout.activity_reminder);
         initViews();
         initEvents();
@@ -62,12 +62,14 @@ public class ReminderActivity extends BaseActivity implements TimePickerDialog.O
     }
 
     private void initViews() {
-        Toolbar toolbar = findViewById(R.id.toolBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+//        Toolbar toolbar = findViewById(R.id.toolBar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle("");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        findViewById(R.id.iv_back_reminder).setOnClickListener(view -> {
+            onBackPressed();
+        });
         recyclerView = findViewById(R.id.rv_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new ReminderDecoration(this));

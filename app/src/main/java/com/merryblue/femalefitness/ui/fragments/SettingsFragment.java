@@ -11,9 +11,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +26,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SwitchCompat;
 
 import com.ads.control.funtion.UtilsApp;
@@ -35,6 +43,7 @@ import com.merryblue.femalefitness.data.repositories.SectionHistoryRepository;
 import com.merryblue.femalefitness.data.repositories.SectionRepository;
 import com.merryblue.femalefitness.data.repositories.WorkoutRepository;
 import com.merryblue.femalefitness.data.shared.AppSettings;
+import com.merryblue.femalefitness.ui.activities.PolicyActivity;
 import com.merryblue.femalefitness.ui.activities.ProfileActivity;
 import com.merryblue.femalefitness.ui.activities.ReminderActivity;
 import com.merryblue.femalefitness.ui.activities.SplashActivity;
@@ -45,6 +54,8 @@ import com.merryblue.femalefitness.ui.interfaces.DialogResultListener;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -69,6 +80,7 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
         // Required empty public constructor
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -116,10 +128,10 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
                             @Override
                             public void onDone(String s) {
 //                                Log.e("status", "done");
-                                Flowable.just(0)
-                                        .subscribeOn(Schedulers.io())
-                                        .observeOn(AndroidSchedulers.mainThread())
-                                        .subscribe(response -> showAskDialog(), Throwable::printStackTrace);
+//                                Flowable.just(0)
+//                                        .subscribeOn(Schedulers.io())
+//                                        .observeOn(AndroidSchedulers.mainThread())
+//                                        .subscribe(response -> showAskDialog(), Throwable::printStackTrace);
                             }
 
                             @Override
@@ -176,35 +188,34 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
         rootView.findViewById(R.id.row_countdown).setOnClickListener(view -> {
             new RestSetDialog(this, false).show(getChildFragmentManager(), null);
         });
-        rootView.findViewById(R.id.row_device_setting).setOnClickListener(view -> {
-            Intent intent = new Intent();
-            intent.setAction("com.android.settings.TTS_SETTINGS");
-            startActivity(intent);
-        });
-        rootView.findViewById(R.id.row_download_engine).setOnClickListener(view -> {
-            downloadEngine();
-        });
-        rootView.findViewById(R.id.row_download_more).setOnClickListener(view -> {
-            try {
-                Intent installIntent = new Intent();
-                installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
-                startActivity(installIntent);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
+//        rootView.findViewById(R.id.row_device_setting).setOnClickListener(view -> {
+//            Intent intent = new Intent();
+//            intent.setAction("com.android.settings.TTS_SETTINGS");
+//            startActivity(intent);
+//        });
+//        rootView.findViewById(R.id.row_download_engine).setOnClickListener(view -> {
+//            downloadEngine();
+//        });
+//        rootView.findViewById(R.id.row_download_more).setOnClickListener(view -> {
+//            try {
+//                Intent installIntent = new Intent();
+//                installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+//                startActivity(installIntent);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        });
         rootView.findViewById(R.id.row_test_voice).setOnClickListener(view -> {
             speech(getResources().getString(R.string.did_you_hear_the_test_voice));
         });
-        rootView.findViewById(R.id.row_engine).setOnClickListener(view -> {
-            getEngines();
-        });
+//        rootView.findViewById(R.id.row_engine).setOnClickListener(view -> {
+//            getEngines();
+//        });
         rootView.findViewById(R.id.row_voice_language).setOnClickListener(view -> {
             showEngineLanguageDialog();
+            //showEngineLanguageDialog(view);
         });
-        rootView.findViewById(R.id.row_language).setOnClickListener(view -> {
-            showLanguageDialog();
-        });
+        rootView.findViewById(R.id.row_language).setOnClickListener(this::showLanguageDialog);
         rootView.findViewById(R.id.row_gender).setOnClickListener(view -> {
             showGenderDialog();
         });
@@ -228,17 +239,24 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
             UtilsApp.SendFeedBack(getActivity(),getString(R.string.email_feedback),"Workout for women feedback");
         });
         rootView.findViewById(R.id.row_policy).setOnClickListener(view -> {
-            UtilsApp.OpenBrower(getActivity(),getString(R.string.link_policy));
+            //UtilsApp.OpenBrower(getActivity(),getString(R.string.link_policy));
+            Intent intent = new Intent(getContext(), PolicyActivity.class);
+            startActivity(intent);
         });
     }
 
     @SuppressLint("CheckResult")
     private void showDeleteAllDataDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(getResources().getString(R.string.title_delete_all_data_dialog));
-        builder.setPositiveButton(getResources().getString(R.string.yes), (dialogInterface, i) -> {
-            // Restart progress daily
-            dialogInterface.dismiss();
+        Dialog dialog = new Dialog(getContext() ,android.R.style.Theme_DeviceDefault_Light_Dialog_MinWidth);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.dialog_delete_exercise);
+        TextView tvTitleDialog = dialog.findViewById(R.id.tv_title_dialog);
+        tvTitleDialog.setText(R.string.settings_delete_all_dât);
+        TextView tvSubTitle = dialog.findViewById(R.id.edt_name);
+        tvSubTitle.setText(R.string.title_delete_all_data_dialog);
+        TextView btDialogOk = (TextView) dialog.findViewById(R.id.tv_dialog_delete);
+        btDialogOk.setOnClickListener(view -> {
             DailySectionRepository.getInstance().resetAll();
             DayHistoryRepository.getInstance().deleteAll().subscribe(() -> {
                 ReminderRepository.getInstance().deleteAll().subscribe(() -> {
@@ -257,25 +275,39 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
                 });
             });
         });
-        builder.setNegativeButton(getResources().getString(R.string.no), (dialogInterface, i) -> dialogInterface.dismiss());
-        builder.create().show();
+        TextView btDialogCancel = (TextView) dialog.findViewById(R.id.tv_dialog_cancel);
+        btDialogCancel.setText(R.string.btn_quit);
+        btDialogCancel.setOnClickListener(view1 -> {
+            dialog.dismiss();
+        });
+        dialog.show();
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
     }
 
     private void showRestartProgressDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(getResources().getString(R.string.title_restart_progress_dialog));
-        builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Restart progress daily
-                DailySectionRepository.getInstance().resetAll();
-                Intent intent = new Intent(getContext(), SplashActivity.class);
-                getActivity().finishAffinity();
-                getActivity().startActivity(intent);
-            }
+        Dialog dialog = new Dialog(getContext(),android.R.style.Theme_DeviceDefault_Light_Dialog_MinWidth);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.dialog_delete_exercise);
+        TextView tvTitleDialog = dialog.findViewById(R.id.tv_title_dialog);
+        tvTitleDialog.setText(R.string.title_restart_progress_dialog);
+        TextView btDialogOk = (TextView) dialog.findViewById(R.id.tv_dialog_delete);
+        btDialogOk.setText(R.string.ok);
+        btDialogOk.setBackgroundResource(R.drawable.bg_btn_border_large);
+        btDialogOk.setOnClickListener(view -> {
+            DailySectionRepository.getInstance().resetAll();
+            Intent intent = new Intent(getContext(), SplashActivity.class);
+            getActivity().finishAffinity();
+            getActivity().startActivity(intent);
         });
-        builder.setNegativeButton(getResources().getString(R.string.no), (dialogInterface, i) -> dialogInterface.dismiss());
-        builder.create().show();
+        TextView btDialogCancel = (TextView) dialog.findViewById(R.id.tv_dialog_cancel);
+        btDialogCancel.setOnClickListener(view1 -> {
+            dialog.dismiss();
+        });
+        dialog.show();
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
     }
 
     private void addSoundListener() {
@@ -400,21 +432,61 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
         }
     }
 
-    private void showLanguageDialog() {
-        String[] languagesDisplay = getResources().getStringArray(R.array.language_display);
-        String[] languagesCode = getResources().getStringArray(R.array.language_value);
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(getResources().getString(R.string.title_languages_dialog));
-        builder.setItems(languagesDisplay, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-                String code = languagesCode[i];
-                AppSettings.getInstance().setLanguage(code);
-                ((BaseActivity) getActivity()).setLocale(code);
+    private void setForceShowIcon(PopupMenu popupMenu) {
+        try {
+            Field[] fields = popupMenu.getClass().getDeclaredFields();
+            for (Field field : fields) {
+                if ("mPopup".equals(field.getName())) {
+                    field.setAccessible(true);
+                    Object menuPopupHelper = field.get(popupMenu);
+                    Class<?> classPopupHelper = Class.forName(menuPopupHelper
+                            .getClass().getName());
+                    Method setForceIcons = classPopupHelper.getMethod(
+                            "setForceShowIcon", boolean.class);
+                    setForceIcons.invoke(menuPopupHelper, true);
+                    break;
+                }
             }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showLanguageDialog(View view) {
+        PopupMenu popupMenu = new PopupMenu(view.getContext(), view , Gravity.END, 0 , R.style.MyPopupMenu);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.language_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.menu_vie) {
+                String[] languagesCode = getResources().getStringArray(R.array.language_value);
+                AppSettings.getInstance().setLanguage(languagesCode[1]);
+                ((BaseActivity) getActivity()).setLocale(languagesCode[1]);
+                return true;
+            } else if (item.getItemId() == R.id.menu_eng) {
+                // delete();
+                String[] languagesCode = getResources().getStringArray(R.array.language_value);
+                AppSettings.getInstance().setLanguage(languagesCode[0]);
+                ((BaseActivity) getActivity()).setLocale(languagesCode[0]);
+                return true;
+            }
+            return false;
         });
-        builder.create().show();
+        setForceShowIcon(popupMenu);
+        popupMenu.show();
+//        String[] languagesDisplay = getResources().getStringArray(R.array.language_display);
+//        String[] languagesCode = getResources().getStringArray(R.array.language_value);
+//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//        builder.setTitle(getResources().getString(R.string.title_languages_dialog));
+//        builder.setItems(languagesDisplay, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                dialogInterface.dismiss();
+//                String code = languagesCode[i];
+//                AppSettings.getInstance().setLanguage(code);
+//                ((BaseActivity) getActivity()).setLocale(code);
+//            }
+//        });
+//        builder.create().show();
     }
 
     private void showGenderDialog() {
@@ -456,6 +528,21 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
         builder.create().show();
     }
 
+    private void showEngineLanguageDialog(View view) {
+        String[] languagesCode = getResources().getStringArray(R.array.language_value);
+        PopupMenu popupMenu = new PopupMenu(view.getContext(), view , Gravity.END, 0 , R.style.MyPopupMenu);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.language_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(item -> {
+            AppSettings.getInstance().setEngineLanguage("eng-USA");
+            refreshEngineLanguage();
+            initTTS(true);
+            return true;
+        });
+        setForceShowIcon(popupMenu);
+        popupMenu.show();
+    }
+
     private void showEngineLanguageDialog() {
         final ContainerVoiceEngine engine = AppSettings.getInstance().getEngineDefault();
         if (engine == null) return;
@@ -483,24 +570,24 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
         builder.create().show();
     }
 
-    private void showAskDialog() {
-        AlertDialog dialog = new AlertDialog.Builder(getContext())
-                .setMessage(getResources().getString(R.string.did_you_hear_the_test_voice))
-                .setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                        showWarmingDialog();
-                    }
-                })
-                .setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                }).create();
-        dialog.show();
-    }
+//    private void showAskDialog() {
+//        Dialog dialog = new Dialog(getContext(), android.R.style.Theme_DeviceDefault_Light_Dialog_MinWidth);
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        dialog.setCancelable(false);
+//        dialog.setContentView(R.layout.dialog_heard_voice_test);
+//        TextView btAgree = (TextView) dialog.findViewById(R.id.btn_agree);
+//        btAgree.setOnClickListener(view -> {
+//            dialog.dismiss();
+//        });
+//        TextView btnCancel = (TextView) dialog.findViewById(R.id.btn_cancel);
+//        btnCancel.setOnClickListener(view -> {
+//            dialog.dismiss();
+//            showWarmingDialog();
+//        });
+//        dialog.show();
+//        dialog.getWindow().setGravity(Gravity.CENTER);
+//        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+//    }
 
     private void showWarmingDialog() {
         View download, select;
@@ -560,7 +647,7 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
 
     private void refreshEngine() {
         ContainerVoiceEngine engine = AppSettings.getInstance().getEngineDefault();
-        ((TextView) rootView.findViewById(R.id.txt_engine_value)).setText(engine == null ? "" : engine.getLabel().split(" ")[0]);
+        //((TextView) rootView.findViewById(R.id.txt_engine_value)).setText(engine == null ? "" : engine.getLabel().split(" ")[0]);
     }
 
     private void refreshEngineLanguage() {

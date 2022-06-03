@@ -22,7 +22,7 @@ public class RestDayActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_day);
-        setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        setStatusBarColor(getResources().getColor(R.color.white));
         initViews();
     }
 

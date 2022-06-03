@@ -6,23 +6,61 @@
 	android:layout_height="match_parent"
 	tools:context="com.merryblue.femalefitness.ui.activities.ReminderActivity">
 
-	<androidx.appcompat.widget.Toolbar
-		android:id="@+id/toolBar"
+	<FrameLayout
+		android:id="@+id/reminder_action_bar"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="@color/colorPrimary"
-		android:theme="@style/ToolbarDark"
+		android:layout_height="56dp"
+		android:background="@color/white"
+		android:orientation="horizontal"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
 
+		<androidx.appcompat.widget.AppCompatImageView
+			android:id="@+id/iv_back_reminder"
+			android:layout_gravity="center|start"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:padding="8dp"
+			android:src="@drawable/back_black" />
+
 		<androidx.appcompat.widget.AppCompatTextView
-			fontPath="@string/font_bold"
+			android:id="@+id/txt_title_reminder"
+			android:layout_gravity="center|start"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:text="@string/title_reminder"
-			android:textAllCaps="true"
-			android:textColor="@color/white"
-			android:textSize="18sp" />
-	</androidx.appcompat.widget.Toolbar>
+			android:layout_height="wrap_content"
+			android:layout_marginStart="56dp"
+			android:fontFamily="sans-serif-medium"
+			android:text="@string/reminder"
+			android:textColor="@color/black"
+			android:textSize="20dp" />
+
+		<TableRow
+			android:id="@+id/btn_add"
+			android:gravity="center"
+			android:layout_marginEnd="16dp"
+			android:layout_gravity="end|center"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<androidx.appcompat.widget.AppCompatTextView
+				android:layout_gravity="center|start"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:fontFamily="sans-serif-medium"
+				android:text="Add"
+				android:textColor="@color/blueLight"
+				android:textSize="16dp"/>
+
+			<androidx.appcompat.widget.AppCompatImageView
+				android:layout_marginStart="4dp"
+				app:srcCompat="@drawable/ic_add_remind"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+		</TableRow>
+
+	</FrameLayout>
 
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/rv_list"
@@ -31,18 +69,17 @@
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/toolBar">
+		app:layout_constraintTop_toBottomOf="@id/reminder_action_bar">
 
 	</androidx.recyclerview.widget.RecyclerView>
 
-	<com.google.android.material.floatingactionbutton.FloatingActionButton
-		android:id="@+id/btn_add"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginBottom="30dp"
-		app:srcCompat="@drawable/ic_add_reminder"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent" />
+<!--	<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--		android:layout_width="wrap_content"-->
+<!--		android:layout_height="wrap_content"-->
+<!--		android:layout_marginBottom="30dp"-->
+<!--		app:srcCompat="@drawable/ic_add_reminder"-->
+<!--		app:layout_constraintBottom_toBottomOf="parent"-->
+<!--		app:layout_constraintEnd_toEndOf="parent"-->
+<!--		app:layout_constraintStart_toStartOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

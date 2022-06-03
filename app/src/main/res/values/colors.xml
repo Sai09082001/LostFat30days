@@ -28,4 +28,7 @@
     <color name="text_color_title_gray">#757575</color>
     <color name="blueLight">#2538C8</color>
     <color name="red">#DC2323</color>
+    <color name="text_change_select">#F3F7FB</color>
+    <color name="text_unselect">#4D2538C8</color>
+    <color name="gray_gradient">#40000000</color>
 </resources>

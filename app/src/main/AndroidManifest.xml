@@ -69,6 +69,22 @@
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
+			android:name="com.merryblue.femalefitness.ui.activities.PolicyActivity"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name="com.merryblue.femalefitness.ui.activities.OnBoardingActivity01"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name="com.merryblue.femalefitness.ui.activities.OnBoardingActivity02"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name="com.merryblue.femalefitness.ui.activities.OnBoardingActivity03"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
 			android:name="com.merryblue.femalefitness.ui.activities.SplashActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize"
