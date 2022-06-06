@@ -2,10 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:background="@drawable/bg_quit_dialog"
 	android:layout_height="wrap_content"
 	android:layout_marginHorizontal="16dp"
 	android:orientation="vertical">
+
+	<androidx.appcompat.widget.AppCompatImageView
+		android:src="@drawable/bg_quit_dialog"
+		android:scaleType="centerCrop"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"/>
 
 	<LinearLayout
 		android:background="@color/gray_gradient"
@@ -27,7 +32,6 @@
 			tools:ignore="SpUsage" />
 
 		<LinearLayout
-			android:paddingBottom="64dp"
 			android:layout_marginTop="56dp"
 			android:layout_gravity="center"
 			android:orientation="vertical"
@@ -35,20 +39,21 @@
 			android:layout_height="wrap_content">
 
 			<androidx.appcompat.widget.AppCompatButton
-				android:id="@+id/btn_quit"
+				android:id="@+id/btn_continue"
 				android:layout_width="220dp"
+				android:textAllCaps="false"
 				android:layout_height="wrap_content"
-				android:background="@drawable/gradient_red_btn_bg"
-				android:text="@string/btn_quit"
+				android:layout_marginBottom="@dimen/_16sdp"
+				android:background="@drawable/bg_btn_border_large"
+				android:text="@string/resume"
 				android:textColor="@color/white"
 				android:textSize="16sp" />
 
 			<androidx.appcompat.widget.AppCompatButton
-				android:id="@+id/btn_continue"
+				android:id="@+id/btn_quit"
 				android:layout_width="220dp"
 				android:layout_height="wrap_content"
-				android:layout_marginTop="15dp"
-				android:background="@drawable/bg_btn_border_white_transparent"
+				android:background="@drawable/bg_btn_cancel"
 				android:text="@string/btn_quit"
 				android:textColor="@color/white"
 				android:textSize="16sp" />
@@ -61,6 +66,7 @@
 				android:text="@string/come_back_in_30_mins"
 				android:textAllCaps="true"
 				android:textColor="@color/white"
+				android:layout_gravity="center"
 				android:textSize="16dp"
 				tools:ignore="SpUsage" />
 		</LinearLayout>
