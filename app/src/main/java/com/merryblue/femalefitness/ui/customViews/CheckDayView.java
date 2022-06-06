@@ -96,7 +96,7 @@ public class CheckDayView extends FrameLayout {
                 finished.setVisibility(GONE);
                 not_finished.setVisibility(VISIBLE);
                 txtDay.setText(day + "");
-                txtDay.setTextColor(getResources().getColor(R.color.colorAccent));
+                txtDay.setTextColor(getResources().getColor(R.color.blueLight));
                 not_finished.setBackgroundResource(R.drawable.bg_circle_check_large_prepare);
                 break;
             case 2:

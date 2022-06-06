@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/chart_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,12 +13,13 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/padding_start"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="0dp"
             android:text="@string/title_chart_calories"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            tools:ignore="SpUsage" />
 
     </FrameLayout>
 
@@ -32,7 +34,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
         android:layout_weight="1"
-        android:paddingLeft="@dimen/padding_start">
+        android:paddingStart="@dimen/padding_start">
 
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/test_chart"
@@ -43,24 +45,27 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/sticky_label"
             android:layout_width="wrap_content"
+            android:fontFamily="sans-serif-thin"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center_horizontal"
-            android:layout_marginRight="7dp"
+            android:layout_marginEnd="8dp"
             android:background="#ffffff"
             android:text="Jun, 2019"
-            android:textColor="#000000"
-            android:textSize="10sp" />
+            android:textColor="@color/grayTextColor"
+            android:textSize="14dp"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label_y"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|start"
-            android:layout_marginLeft="5dp"
-            android:background="#ffffff"
+            android:layout_marginStart="6dp"
+            android:background="@color/white"
             android:text="@string/calories"
-            android:textColor="#000000"
-            android:textSize="13sp" />
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_loading"
@@ -68,7 +73,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Loading"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blueLight"
             android:textSize="14sp"
             android:visibility="gone" />
     </FrameLayout>

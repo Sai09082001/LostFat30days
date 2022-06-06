@@ -13,6 +13,7 @@
     <string name="level_intermediate">Trung gian</string>
     <string name="number_workouts">%d bài tập</string>
     <string name="workouts_total">Bài tập</string>
+    <string name="total">Tổng số</string>
     <string name="introduce">Giới thiệu</string>
     <string name="title_introduce">Tất cả radio bạn cần trong một ứng dụng</string>
     <string name="detail_title_introduce">Thưởng thức hơn 100 kênh phổ biến trong ứng dụng này: VOV, BBC, talkSPORT, BBC Radio 1Xtra, Classic FM, All Things Considered, Delilah, ... Tin tức: Cập nhật tin tức mới nhất từ địa phương, quốc gia , và các nguồn quốc tế, bao gồm Radio Emigranti, Nehanda Radio, BBC Radio, CBLA-FM, CBC Radio One Toronto live, ...</string>
@@ -120,7 +121,7 @@
     <string name="btn_start_workout">"Bắt đầu \nchương trình của bạn "</string>
     <string name="current_text">Hiện hành</string>
     <string name="edit">Chỉnh sửa</string>
-    <string name="title_chart_calories">Calo đốt cháy, ước tính</string>
+    <string name="title_chart_calories">Calo đốt cháy, ước tính(Kcal)</string>
     <string name="number">Con số</string>
     <string name="content_dialog_quit">Nếu bạn mệt, nghỉ ngơi một tý, nhưng đừng bỏ cuộc! Cố lên !</string>
     <string name="btn_quit">Thoát</string>

@@ -61,11 +61,14 @@ public class HistoryActivity extends BaseActivity {
     }
 
     private void initViews() {
-        Toolbar toolbar = findViewById(R.id.toolBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        Toolbar toolbar = findViewById(R.id.toolBar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        findViewById(R.id.history_action_bar).setOnClickListener(view -> {
+            onBackPressed();
+        });
         calendarView = findViewById(R.id.calendar_view);
         calendarView.setFirstDayOfWeek(AppSettings.getInstance().getFirstDayOfWeek());
         calendarView.setSelectionType(SelectionType.NONE);

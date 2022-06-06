@@ -83,7 +83,7 @@ public class VideoWorkoutFragment extends BaseFragment implements YouTubePlayer.
 
         tabVideo = rootView.findViewById(R.id.video);
         tabAnimation = rootView.findViewById(R.id.animation);
-        contentVideo = rootView.findViewById(R.id.video_layout);
+       // contentVideo = rootView.findViewById(R.id.video_layout);
         contentAnimation = rootView.findViewById(R.id.animation_layout);
 
         if (workout == null) {

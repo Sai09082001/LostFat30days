@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        setStatusBarColor(getResources().getColor(R.color.white));
         initViews();
         initObservers();
         initEvents();
@@ -68,12 +68,9 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if (position == 0) {
-                    setStatusBarColor(getResources().getColor(R.color.white));
-                } else {
-                    setStatusBarColor(Color.parseColor("#DDDDDD"));
-                }
+                setStatusBarColor(getResources().getColor(R.color.white));
             }
+
 
             @Override
             public void onPageScrollStateChanged(int state) {

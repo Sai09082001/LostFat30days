@@ -60,11 +60,11 @@ public class SettingGoalActivity extends BaseActivity implements DialogResultLis
     }
 
     private void initEvents() {
-        findViewById(R.id.btn_weekly).setOnClickListener(view -> {
+        findViewById(R.id.layout_weekly).setOnClickListener(view -> {
             new WeeklyDialogFragment(currentNum).show(getSupportFragmentManager(), null);
         });
 
-        findViewById(R.id.btn_first_day).setOnClickListener(view -> {
+        findViewById(R.id.layout_first_day).setOnClickListener(view -> {
             new FirstDayOfWeekDialogFragment(currentFirst).show(getSupportFragmentManager(), null);
         });
 
@@ -76,11 +76,9 @@ public class SettingGoalActivity extends BaseActivity implements DialogResultLis
     }
 
     private void initViews() {
-        Toolbar toolbar = findViewById(R.id.toolBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        findViewById(R.id.iv_back_goal_setting).setOnClickListener(view -> {
+            onBackPressed();
+        });
     }
 
     @Override
@@ -99,8 +97,12 @@ public class SettingGoalActivity extends BaseActivity implements DialogResultLis
     @Override
     public void onResult(int type, Object value) {
         if (type == DialogResultListener.FIRST_DAY_OF_WEEK) {
+            TextView tv = findViewById(R.id.txt_first_day_of_week);
+            tv.setTextColor(getResources().getColor(R.color.black));
             currentFirst = (int) value;
         } else if (type == DialogResultListener.NUMBER_DAYS_WEEKLY) {
+            TextView tv = findViewById(R.id.txt_number_days_of_week);
+            tv.setTextColor(getResources().getColor(R.color.black));
             currentNum = (int) value;
         }
         refreshState();

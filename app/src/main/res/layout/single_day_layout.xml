@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -10,12 +11,16 @@
 
     <TextView
         android:id="@+id/day_name"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
+        android:textSize="16dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="sds"
-        android:textColor="@color/text_color_title_gray" />
+        android:textColor="@color/black"
+        tools:ignore="SpUsage" />
 
     <FrameLayout
         android:layout_width="36dp"
@@ -28,18 +33,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:background="@drawable/circle_gray"
             android:gravity="center"
-            android:padding="7dp"
+            android:padding="6dp"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="16dp"
             android:text="10"
-            android:textColor="#ff999999" />
+            android:textColor="@color/black"
+            tools:ignore="SpUsage" />
 
         <FrameLayout
             android:id="@+id/date_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_circle_check_single_day"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"

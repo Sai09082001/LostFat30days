@@ -27,7 +27,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class SplashActivity extends BaseActivity implements DatabaseListener {
 
-    private int timeout = 3000;
+    private int timeout = 1000;
     ProgressBar pbLoadData;
     TextView tvStatus;
     Handler mHandler;
@@ -40,10 +40,10 @@ public class SplashActivity extends BaseActivity implements DatabaseListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_splash);
-        LinearLayout lr = (LinearLayout) findViewById(R.id.ll_workout);
-        lr.startAnimation(AnimationUtils.loadAnimation(SplashActivity.this, R.anim.left_to_right));
-        tvStatus = (TextView)findViewById(R.id.tv_slogan);
-        pbLoadData = (ProgressBar)findViewById(R.id.pbLoadData);
+//        LinearLayout lr = (LinearLayout) findViewById(R.id.ll_workout);
+//        lr.startAnimation(AnimationUtils.loadAnimation(SplashActivity.this, R.anim.left_to_right));
+//        tvStatus = (TextView)findViewById(R.id.tv_slogan);
+//        pbLoadData = (ProgressBar)findViewById(R.id.pbLoadData);
         AdmobHelp.getInstance().init(this);
         /**
          *  Important

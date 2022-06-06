@@ -67,12 +67,12 @@
 		android:layout_gravity="right"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginRight="5dp"
+		android:layout_marginRight="6dp"
 		android:background="?android:attr/selectableItemBackground"
 		android:text="@string/btn_close"
-		android:textAllCaps="true"
-		android:textColor="@color/colorAccent"
-		android:textSize="14sp" />
+		android:textAllCaps="false"
+		android:textColor="@color/blueLight"
+		android:textSize="16dp" />
 </LinearLayout>
 
 

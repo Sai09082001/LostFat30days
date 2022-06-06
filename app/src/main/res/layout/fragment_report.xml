@@ -80,10 +80,10 @@
 				android:layout_height="@dimen/height_divider_group"
 				android:background="@color/theme_bg_gray" />
 
-			<FrameLayout
-				android:id="@+id/chart_waistline"
-				android:layout_width="match_parent"
-				android:layout_height="540dp" />
+<!--			<FrameLayout-->
+<!--				android:id="@+id/chart_waistline"-->
+<!--				android:layout_width="match_parent"-->
+<!--				android:layout_height="540dp" />-->
 
 			<View
 				android:layout_width="match_parent"

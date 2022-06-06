@@ -40,12 +40,12 @@
 	<string name="thursday">Thursday</string>
 	<string name="friday">Friday</string>
 	<string name="saturday">Saturday</string>
-	<string name="day">day</string>
-	<string name="days">days</string>
+	<string name="day">Day</string>
+	<string name="days">Days</string>
 	<string name="workouts">workouts</string>
 	<string name="calories">Calories</string>
 	<string name="kcal" translatable="false">Kcal</string>
-	<string name="week_goal">WEEK GOAL</string>
+	<string name="week_goal">Weekly Goals</string>
 	<string name="full_body">Full body</string>
 	<string name="each_side">Each Side</string>
 	<string name="confirm_delete">Confirm delete?</string>
@@ -111,7 +111,7 @@
 	<string name="btn_do_again">Do it again</string>
 	<string name="btn_share">Share</string>
 	<string name="btn_start">Start</string>
-	<string name="title_set_your_weekly_goal">Set your weekly goal</string>
+	<string name="title_set_your_weekly_goal">Weekly goal setting</string>
 	<string name="video">Video</string>
 	<string name="animation">Animation</string>
 	<string name="btn_set">Set</string>
@@ -129,7 +129,7 @@
 	<string name="btn_start_workout">Start your\nworkout</string>
 	<string name="current_text">Current</string>
 	<string name="edit">Edit</string>
-	<string name="title_chart_calories">Calories burned, estimated</string>
+	<string name="title_chart_calories">Calories burned, estimated (Kcal)</string>
 	<string name="number">Number</string>
 	<string name="content_dialog_quit">If you get tired , take a break, but don\'t quit!</string>
 	<string name="btn_quit">Quit</string>
@@ -242,4 +242,5 @@
 	<string name="tv_view_all">View All</string>
 	<string name="title_programme">Programme</string>
 	<string name="resume">Resume</string>
+	<string name="total">Total</string>
 </resources>

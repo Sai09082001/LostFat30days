@@ -126,9 +126,9 @@ public class CaloriesChartFragment extends BaseFragment {
     private void initChartView(List<BarEntry> entries) {
         BarDataSet lds = new BarDataSet(entries, "date");
         lds.setBarBorderWidth(0f);
-        lds.setColor(getResources().getColor(R.color.colorAccent));
+        lds.setColor(getResources().getColor(R.color.blueLight));
         lds.setValueTextSize(10f);
-        lds.setValueTextColor(getResources().getColor(R.color.colorAccent));
+        lds.setValueTextColor(getResources().getColor(R.color.blueLight));
         BarData ld = new BarData(lds);
         ld.setDrawValues(true);
         ld.setBarWidth(0.6f);

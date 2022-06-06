@@ -165,10 +165,10 @@ public class WeightChartFragment extends BaseFragment implements DialogResultLis
 
     private void initChartView(List<Entry> entries) {
         LineDataSet lds = new LineDataSet(entries, "date");
-        lds.setCircleColor(getResources().getColor(R.color.colorAccent));
+        lds.setCircleColor(getResources().getColor(R.color.blueLight));
         lds.setCircleRadius(3f);
         lds.setCircleHoleRadius(2f);
-        lds.setColor(getResources().getColor(R.color.colorAccent));
+        lds.setColor(getResources().getColor(R.color.blueLight));
         lds.setLineWidth(1f);
         LineData ld = new LineData(lds);
         ld.setDrawValues(false);

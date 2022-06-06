@@ -41,6 +41,6 @@ public class ReportFragment extends BaseFragment {
        replaceChildFragment(R.id.ads, new AdsSmallFragment(), null, false, -1);
         replaceChildFragment(R.id.bmi, new BMIFragment(), null, false, -1);
         replaceChildFragment(R.id.chart_calories, new CaloriesChartFragment(), null, false, -1);
-        replaceChildFragment(R.id.chart_waistline, new WaistlineChartFragment(), null, false, -1);
+       // replaceChildFragment(R.id.chart_waistline, new WaistlineChartFragment(), null, false, -1);
     }
 }

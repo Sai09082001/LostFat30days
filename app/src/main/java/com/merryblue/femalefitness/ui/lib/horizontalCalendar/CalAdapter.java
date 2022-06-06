@@ -52,8 +52,8 @@ public class CalAdapter extends RecyclerView.Adapter<CalAdapter.MyViewHolder> {
                 date.setTextColor(context.getResources().getColor(R.color.text_gray_light));
                 day.setTextColor(context.getResources().getColor(R.color.text_gray_light));
             } else if (item.equals(current)) {
-                date.setTextColor(context.getResources().getColor(R.color.colorAccent));
-                day.setTextColor(context.getResources().getColor(R.color.colorAccent));
+                date.setTextColor(context.getResources().getColor(R.color.blueLight));
+                day.setTextColor(context.getResources().getColor(R.color.blueLight));
             } else if (item.isToday()) {
                 date.setTextColor(context.getResources().getColor(R.color.color_today));
                 day.setTextColor(context.getResources().getColor(R.color.color_today));

@@ -80,7 +80,7 @@ public class ChallengeActivity extends BaseActivity {
         }
         switch (posWeek) {
             case 0:
-                dvOne.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                dvOne.setBackgroundColor(getResources().getColor(R.color.blueLight));
                 dvTwo.setBackgroundColor(getResources().getColor(R.color.text_gray_light));
                 dvThree.setBackgroundColor(getResources().getColor(R.color.text_gray_light));
                 filterColor(imgCheckOne, true);

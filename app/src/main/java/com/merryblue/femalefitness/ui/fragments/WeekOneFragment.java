@@ -108,7 +108,7 @@ public class WeekOneFragment extends BaseFragment {
                 arSix.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 break;
             case 1:
-                arOne.setColorFilter(getResources().getColor(R.color.colorAccent));
+                arOne.setColorFilter(getResources().getColor(R.color.blueLight));
                 arTwo.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 arThree.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 arFour.setColorFilter(getResources().getColor(R.color.text_gray_light));
@@ -116,8 +116,8 @@ public class WeekOneFragment extends BaseFragment {
                 arSix.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 break;
             case 2:
-                arOne.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arTwo.setColorFilter(getResources().getColor(R.color.colorAccent));
+                arOne.setColorFilter(getResources().getColor(R.color.blueLight));
+                arTwo.setColorFilter(getResources().getColor(R.color.blueLight));
                 arThree.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 arFour.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 arFive.setColorFilter(getResources().getColor(R.color.text_gray_light));
@@ -125,36 +125,36 @@ public class WeekOneFragment extends BaseFragment {
                 break;
             case 3:
             case 4:
-                arOne.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arTwo.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arThree.setColorFilter(getResources().getColor(R.color.colorAccent));
+                arOne.setColorFilter(getResources().getColor(R.color.blueLight));
+                arTwo.setColorFilter(getResources().getColor(R.color.blueLight));
+                arThree.setColorFilter(getResources().getColor(R.color.blueLight));
                 arFour.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 arFive.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 arSix.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 break;
             case 5:
-                arOne.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arTwo.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arThree.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arFour.setColorFilter(getResources().getColor(R.color.colorAccent));
+                arOne.setColorFilter(getResources().getColor(R.color.blueLight));
+                arTwo.setColorFilter(getResources().getColor(R.color.blueLight));
+                arThree.setColorFilter(getResources().getColor(R.color.blueLight));
+                arFour.setColorFilter(getResources().getColor(R.color.blueLight));
                 arFive.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 arSix.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 break;
             case 6:
-                arOne.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arTwo.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arThree.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arFour.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arFive.setColorFilter(getResources().getColor(R.color.colorAccent));
+                arOne.setColorFilter(getResources().getColor(R.color.blueLight));
+                arTwo.setColorFilter(getResources().getColor(R.color.blueLight));
+                arThree.setColorFilter(getResources().getColor(R.color.blueLight));
+                arFour.setColorFilter(getResources().getColor(R.color.blueLight));
+                arFive.setColorFilter(getResources().getColor(R.color.blueLight));
                 arSix.setColorFilter(getResources().getColor(R.color.text_gray_light));
                 break;
             case 7:
-                arOne.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arTwo.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arThree.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arFour.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arFive.setColorFilter(getResources().getColor(R.color.colorAccent));
-                arSix.setColorFilter(getResources().getColor(R.color.colorAccent));
+                arOne.setColorFilter(getResources().getColor(R.color.blueLight));
+                arTwo.setColorFilter(getResources().getColor(R.color.blueLight));
+                arThree.setColorFilter(getResources().getColor(R.color.blueLight));
+                arFour.setColorFilter(getResources().getColor(R.color.blueLight));
+                arFive.setColorFilter(getResources().getColor(R.color.blueLight));
+                arSix.setColorFilter(getResources().getColor(R.color.blueLight));
                 imgCup.setColorFilter(getResources().getColor(R.color.yellow));
                 break;
         }

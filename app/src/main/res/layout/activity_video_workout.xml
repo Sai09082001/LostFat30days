@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -14,172 +14,85 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_gravity="center_vertical"
-            app:srcCompat="@drawable/back_black" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/back_black" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="Detail"
-            android:textSize="@dimen/_20sdp"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="@color/black"
-            android:layout_marginStart="48dp"
-            android:layout_height="wrap_content"/>
-        <!--            <LinearLayout-->
-        <!--                android:id="@+id/animation"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="match_parent"-->
-        <!--                android:layout_gravity="end|center_vertical"-->
-        <!--                android:background="@drawable/bg_animation_video"-->
-        <!--                android:gravity="center"-->
-        <!--                android:orientation="horizontal"-->
-        <!--                android:visibility="gone">-->
-
-        <!--                <androidx.appcompat.widget.AppCompatImageView-->
-        <!--                    android:layout_width="wrap_content"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_marginLeft="10dp"-->
-        <!--                    android:layout_marginRight="6dp"-->
-        <!--                    app:srcCompat="@drawable/ic_image" />-->
-
-
-        <!--                <androidx.appcompat.widget.AppCompatTextView-->
-        <!--                    android:id="@+id/txt_animation"-->
-        <!--                    fontPath="@string/font_bold"-->
-        <!--                    android:layout_width="wrap_content"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_marginRight="10dp"-->
-        <!--                    android:text="@string/animation"-->
-        <!--                    android:textAllCaps="true"-->
-        <!--                    android:textColor="@android:color/white"-->
-        <!--                    android:textSize="16sp" />-->
-        <!--            </LinearLayout>-->
-
-        <!--            <LinearLayout-->
-        <!--                android:id="@+id/video"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="match_parent"-->
-        <!--                android:layout_gravity="end|center_vertical"-->
-        <!--                android:background="@drawable/bg_animation_video"-->
-        <!--                android:gravity="center"-->
-        <!--                android:orientation="horizontal">-->
-
-        <!--                <androidx.appcompat.widget.AppCompatImageView-->
-        <!--                    android:layout_width="wrap_content"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_marginLeft="10dp"-->
-        <!--                    android:layout_marginRight="6dp"-->
-        <!--                    app:srcCompat="@drawable/ic_video_white" />-->
-
-
-        <!--                <androidx.appcompat.widget.AppCompatTextView-->
-        <!--                    android:id="@+id/txt_video"-->
-        <!--                    fontPath="@string/font_bold"-->
-        <!--                    android:layout_width="wrap_content"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_marginRight="10dp"-->
-        <!--                    android:text="@string/video"-->
-        <!--                    android:textAllCaps="true"-->
-        <!--                    android:textColor="@android:color/white"-->
-        <!--                    android:textSize="16sp" />-->
-        <!--            </LinearLayout>-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="Detail"
+        android:textSize="@dimen/_20sdp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:layout_marginStart="48dp"
+        android:layout_height="wrap_content"/>
     </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/ln_animation_video"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_thumb"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_gravity="end|center_vertical"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
-
-        <FrameLayout
-            android:id="@+id/layout_animation"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_animation"
-                android:fontFamily="sans-serif-medium"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:text="@string/animation"
-                android:textColor="@color/text_gray"
-                android:textSize="16dp" />
-            <View
-                android:visibility="invisible"
-                android:background="@color/blueLight"
-                android:layout_gravity="bottom"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/layout_video"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_video"
-                android:fontFamily="sans-serif-medium"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:text="@string/video"
-                android:textColor="@color/text_gray"
-                android:textSize="16dp" />
-            <View
-                android:visibility="invisible"
-                android:background="@color/blueLight"
-                android:layout_gravity="bottom"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-        </FrameLayout>
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
+        android:paddingHorizontal="16dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_logo_app"
+        app:layout_constraintDimensionRatio="16:8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ln_animation_video">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="5dip">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title_anim"
+        android:fontFamily="sans-serif-medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="STANDING BICYCLE CRUNCHES x12"
+        android:textAllCaps="true"
+        android:textColor="@color/blueLight"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_thumb" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_count_anim"
+        android:fontFamily="sans-serif-medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Each Side x8"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title_anim" />
 
-                <include
-                    android:id="@+id/video_layout"
-                    layout="@layout/video_layout" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_content_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="2dp"
+        android:text="Start in the push-up position. Bend your riight knee towards your chest and keep your left leg straight, then quickly switch from one leg to the other.\n\n This exercise stregthens multiple muscle groups."
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_count_anim" />
+    <include
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_ads_control"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_content_anim">
+    </include>
 
-                <include
-                    android:id="@+id/animation_layout"
-                    layout="@layout/animation_layout" />
-            </FrameLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

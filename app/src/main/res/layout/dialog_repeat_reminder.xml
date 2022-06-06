@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
@@ -9,18 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:paddingTop="20dp"
-        android:paddingRight="@dimen/padding_start">
+        android:paddingEnd="@dimen/padding_start">
 
         <androidx.appcompat.widget.AppCompatTextView
-            fontPath="@string/font_bold"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="@string/repeat"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="20dp"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_sun"
@@ -28,11 +31,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:text="@string/sunday"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:theme="@style/CheckBox" />
+            android:textSize="16dp"
+            android:theme="@style/CheckBox"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_mon"
@@ -40,11 +44,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:text="@string/monday"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:theme="@style/CheckBox" />
+            android:textSize="16dp"
+            android:theme="@style/CheckBox"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_tue"
@@ -52,11 +57,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:text="@string/tuesday"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:theme="@style/CheckBox" />
+            android:textSize="16dp"
+            android:theme="@style/CheckBox"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_wed"
@@ -64,11 +70,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:text="@string/wednesday"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:theme="@style/CheckBox" />
+            android:textSize="16dp"
+            android:theme="@style/CheckBox"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_thu"
@@ -76,11 +83,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:text="@string/thursday"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:theme="@style/CheckBox" />
+            android:textSize="16dp"
+            android:theme="@style/CheckBox"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_fri"
@@ -88,54 +96,75 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:text="@string/friday"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:theme="@style/CheckBox" />
+            android:textSize="16dp"
+            android:theme="@style/CheckBox"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/cb_sat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:text="@string/saturday"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:theme="@style/CheckBox" />
+            android:textSize="16dp"
+            android:theme="@style/CheckBox"
+            tools:ignore="SpUsage" />
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="@dimen/_16sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:paddingBottom="16dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_cancel"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="10dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:text="@string/cancel"
-            android:textAllCaps="true"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_ok"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="10dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:text="@string/ok"
-            android:textAllCaps="true"
-            android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_btn_cancel"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="@string/cancel"
+                android:textColor="@color/blueLight"
+                android:textSize="16dp"
+                tools:ignore="SpUsage" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bg_btn_border_large"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                tools:ignore="SpUsage" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

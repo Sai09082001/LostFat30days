@@ -55,7 +55,7 @@
 
 			<androidx.appcompat.widget.AppCompatImageView
 				android:layout_marginStart="4dp"
-				app:srcCompat="@drawable/ic_add_remind"
+				app:srcCompat="@drawable/ic_alarm"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"/>
 		</TableRow>
