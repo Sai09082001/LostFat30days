@@ -52,7 +52,7 @@ public class RountinesListFragment extends BaseFragment {
                         GroupViewModel.TYPE_GROUP_SECTION,
                         new GroupSectionModel(
                                 0,
-                                getString(R.string.routine),
+                                getString(R.string.routines_tab),
                                 new ArrayList<String>() {{
                                     add("11");
                                     add("12");

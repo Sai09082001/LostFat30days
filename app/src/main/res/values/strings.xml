@@ -203,6 +203,7 @@
 	<string name="title_full_body_level_3">REDUCE BELLY FAT</string>
 	<string name="description_full_body_level_3">Advanced</string>
 	<string name="my_training">MY TRANNING</string>
+	<string name="title_my_training">Create the most suitable workouts according to your needs</string>
 
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="add_exercise">Add Exercise</string>

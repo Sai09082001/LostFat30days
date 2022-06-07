@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.vuthaihung.loseflat.R;
@@ -25,6 +26,7 @@ public class WeeklyDialogFragment extends BaseDialog {
     private boolean saving = false;
 
     public WeeklyDialogFragment(int current) {
+        setStyle(DialogFragment.STYLE_NO_TITLE,R.style.WeeklyDialog);
         this.current = current;
     }
 

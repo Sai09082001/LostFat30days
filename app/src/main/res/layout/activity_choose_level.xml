@@ -341,7 +341,7 @@
 							android:layout_marginHorizontal="@dimen/_40sdp"
 							android:layout_height="wrap_content"
 							android:gravity="center"
-							android:text="Create the most suitable workouts according to your needs"
+							android:text="@string/title_my_training"
 							android:textColor="@color/white"
 							android:textSize="14sp" />
 

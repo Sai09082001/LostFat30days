@@ -18,9 +18,10 @@
             style="@style/CustomTabLayout"
             android:layout_weight="1"
             android:layout_width="0dp"
+            app:tabTextAppearance="@style/CustomTabText"
             app:tabTextColor="@color/gray"
             android:layout_height="wrap_content"
-            android:background="@android:color/white" />
+            android:background="@color/white" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.NumberPicker;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.vuthaihung.loseflat.R;
@@ -26,6 +27,7 @@ public class FirstDayOfWeekDialogFragment extends BaseDialog {
     private boolean saving = false;
 
     public FirstDayOfWeekDialogFragment(int current) {
+        setStyle(DialogFragment.STYLE_NO_TITLE,R.style.WeeklyDialog);
         this.current = current;
     }
 

@@ -1,5 +1,6 @@
 package com.vuthaihung.loseflat.ui.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -50,7 +51,7 @@ public class DailySectionAdapter extends RecyclerView.Adapter<DailySectionAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         View layout;
-        TextView textView, tvStartSection, tvDailyExercises;
+        TextView textView, tvDailyExercises, tvExercises;
         DailyProgressView progressView;
 
         public ViewHolder(@NonNull View itemView) {
@@ -59,15 +60,19 @@ public class DailySectionAdapter extends RecyclerView.Adapter<DailySectionAdapte
             layout = itemView.findViewById(R.id.layout);
             textView = itemView.findViewById(R.id.txt_title);
             tvDailyExercises = itemView.findViewById(R.id.txt_daily_exercises);
+            tvExercises = itemView.findViewById(R.id.txt_exercises);
          //   tvStartSection = itemView.findViewById(R.id.tv_start_section);
             progressView = itemView.findViewById(R.id.daily_progress);
         }
 
+        @SuppressLint("SetTextI18n")
         void bind(DailySectionUser item) {
             if (item.isLocked()) {
                 layout.setBackgroundColor(Color.WHITE);
                 textView.setTextColor(Color.BLACK);
                 tvDailyExercises.setTextColor(Color.GRAY);
+                tvExercises.setTextColor(Color.GRAY);
+                tvDailyExercises.setText(item.getData().getData().getWorkoutsId().size()+"");
             } else if (item.isCompleted()) {
                 layout.setBackgroundColor(Color.WHITE);
                 textView.setTextColor(Color.BLACK);
@@ -75,6 +80,8 @@ public class DailySectionAdapter extends RecyclerView.Adapter<DailySectionAdapte
                 layout.setBackgroundResource(R.drawable.bg_row_daily_section);
                 textView.setTextColor(Color.WHITE);
                 tvDailyExercises.setTextColor(Color.WHITE);
+                tvExercises.setTextColor(Color.WHITE);
+                tvDailyExercises.setText(item.getData().getData().getWorkoutsId().size()+"");
             }
             textView.setText(item.getData().getData().getData().getTitleDisplay().toUpperCase());
             progressView.setData(item);

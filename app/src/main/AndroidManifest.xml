@@ -6,17 +6,13 @@
 	<uses-permission android:name="android.permission.INTERNET" />
 
 	<application
-
+		android:exported="true"
 		android:name="com.vuthaihung.loseflat.ui.base.BaseApplication"
-		android:allowBackup="false"
 		android:icon="@drawable/logo"
 		android:label="@string/app_name"
-		android:largeHeap="true"
 		android:screenOrientation="portrait"
 		android:supportsRtl="true"
-		android:theme="@style/AppTheme"
-		tools:ignore="GoogleAppIndexingWarning"
-		tools:replace="android:allowBackup">
+		android:theme="@style/AppTheme">
 
 		<meta-data
 			android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -88,7 +84,8 @@
 			android:name="com.vuthaihung.loseflat.ui.activities.SplashActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize"
-			android:theme="@style/Theme_AppCompat_Light_NoActionBar_FullScreen">
+			android:theme="@style/Theme_AppCompat_Light_NoActionBar_FullScreen"
+			android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 
@@ -100,12 +97,14 @@
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 
-		<receiver android:name="com.vuthaihung.loseflat.utils.AlarmReceiver">
+		<receiver android:name="com.vuthaihung.loseflat.utils.AlarmReceiver"
+			android:exported="true">
 			<intent-filter>
 				<action android:name="com.app.action.alarmmanager" />
 			</intent-filter>
 		</receiver>
-		<receiver android:name="com.vuthaihung.loseflat.utils.MyBroadcastReceiver">
+		<receiver android:name="com.vuthaihung.loseflat.utils.MyBroadcastReceiver"
+			android:exported="true">
 			<intent-filter>
 				<action android:name="com.tuankhaiit.fitness.cancel_notifycation" />
 			</intent-filter>
