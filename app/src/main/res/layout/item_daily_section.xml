@@ -46,7 +46,7 @@
 				tools:ignore="SpUsage" />
 		</LinearLayout>
 
-		<com.merryblue.femalefitness.ui.customViews.DailyProgressView
+		<com.vuthaihung.loseflat.ui.customViews.DailyProgressView
 			android:id="@+id/daily_progress"
 			android:visibility="visible"
 			android:layout_width="wrap_content"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.merryblue.femalefitness.ui.activities.ReplaceActivity">
+    tools:context="com.vuthaihung.loseflat.ui.activities.ReplaceActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"

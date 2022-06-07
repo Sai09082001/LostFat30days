@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.merryblue.femalefitness.ui.fragments.WorkoutsFragment">
+    tools:context="com.vuthaihung.loseflat.ui.fragments.WorkoutsFragment">
 
     <TableRow
         android:id="@+id/tableRow"

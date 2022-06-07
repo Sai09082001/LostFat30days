@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        tools:context="com.merryblue.femalefitness.ui.activities.ResultActivity">
+        tools:context="com.vuthaihung.loseflat.ui.activities.ResultActivity">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/main.collapsing"
@@ -254,7 +254,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <com.merryblue.femalefitness.ui.customViews.ReminderView
+            <com.vuthaihung.loseflat.ui.customViews.ReminderView
                 android:id="@+id/reminder_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

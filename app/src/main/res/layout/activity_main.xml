@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.merryblue.femalefitness.ui.activities.MainActivity">
+    tools:context="com.vuthaihung.loseflat.ui.activities.MainActivity">
 
-    <com.merryblue.femalefitness.ui.customViews.CustomViewPager
+    <com.vuthaihung.loseflat.ui.customViews.CustomViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

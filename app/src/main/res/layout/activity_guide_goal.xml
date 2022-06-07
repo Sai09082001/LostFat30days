@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_guide_activity"
     android:fitsSystemWindows="true"
-    tools:context="com.merryblue.femalefitness.ui.activities.GuideGoalActivity">
+    tools:context="com.vuthaihung.loseflat.ui.activities.GuideGoalActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         fontPath="@string/font_bold"

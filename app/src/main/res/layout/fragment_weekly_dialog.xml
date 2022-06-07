@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.merryblue.femalefitness.ui.dialogs.WeeklyDialogFragment">
+    tools:context="com.vuthaihung.loseflat.ui.dialogs.WeeklyDialogFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_gravity="center|top"

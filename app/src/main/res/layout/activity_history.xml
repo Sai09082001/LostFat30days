@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:fitsSystemWindows="true"
-    tools:context="com.merryblue.femalefitness.ui.activities.HistoryActivity">
+    tools:context="com.vuthaihung.loseflat.ui.activities.HistoryActivity">
 
     <FrameLayout
         android:id="@+id/history_action_bar"

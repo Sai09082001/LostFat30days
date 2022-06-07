@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.merryblue.femalefitness.ui.activities.RunActivity">
+    tools:context="com.vuthaihung.loseflat.ui.activities.RunActivity">
 
-    <com.merryblue.femalefitness.ui.customViews.NonSwipeAbleViewPager
+    <com.vuthaihung.loseflat.ui.customViews.NonSwipeAbleViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -235,7 +235,7 @@
 
 	</FrameLayout>
 
-	<com.merryblue.femalefitness.ui.customViews.StepProgressBarView
+	<com.vuthaihung.loseflat.ui.customViews.StepProgressBarView
 		android:id="@+id/step_progress"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"

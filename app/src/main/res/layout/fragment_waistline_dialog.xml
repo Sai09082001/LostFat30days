@@ -4,10 +4,10 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	tools:context="com.merryblue.femalefitness.ui.dialogs.WaistlineDialogFragment">
+	tools:context="com.vuthaihung.loseflat.ui.dialogs.WaistlineDialogFragment">
 
 
-	<com.merryblue.femalefitness.ui.lib.horizontalCalendar.HorizontalCalendarView
+	<com.vuthaihung.loseflat.ui.lib.horizontalCalendar.HorizontalCalendarView
 		android:id="@+id/calender"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content" />
@@ -38,7 +38,7 @@
 			android:textColor="@android:color/black"
 			android:textSize="30sp" />
 
-		<com.merryblue.femalefitness.ui.customViews.HeightUnitSwitchView
+		<com.vuthaihung.loseflat.ui.customViews.HeightUnitSwitchView
 			android:id="@+id/sw_unit"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />

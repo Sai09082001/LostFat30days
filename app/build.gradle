@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
 
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.merryblue.femalefitness.losefat"
-        minSdkVersion 17
+        applicationId "com.vuthaihung.loseflat"
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 9
         versionName "1.2"
@@ -105,6 +106,8 @@ dependencies {
     // Required Dependency by Audience Network SDK
 
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
 
-
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation "androidx.multidex:multidex:2.0.1"
 }

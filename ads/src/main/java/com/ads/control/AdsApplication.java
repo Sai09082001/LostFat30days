@@ -1,10 +1,12 @@
 package com.ads.control;
 
+import android.os.Bundle;
+
 import androidx.multidex.MultiDexApplication;
 
 import com.google.android.gms.ads.MobileAds;
 
-public class AdsApplication extends MultiDexApplication {
+public abstract class AdsApplication extends MultiDexApplication {
 
     private static AppOpenManager appOpenManager;
 
@@ -17,4 +19,6 @@ public class AdsApplication extends MultiDexApplication {
                 });
         appOpenManager = new AppOpenManager(this);
     }
+
+    protected abstract void onCreate(Bundle savedInstanceState);
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="com.merryblue.femalefitness.losefat">
+	package="com.vuthaihung.loseflat">
 
 	<uses-permission android:name="android.permission.INTERNET" />
 
 	<application
 
-		android:name="com.merryblue.femalefitness.ui.base.BaseApplication"
+		android:name="com.vuthaihung.loseflat.ui.base.BaseApplication"
 		android:allowBackup="false"
 		android:icon="@drawable/logo"
 		android:label="@string/app_name"
@@ -23,69 +23,69 @@
 			android:value="@string/admob_app_id"/>
 		<uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
-		<activity android:name="com.merryblue.femalefitness.ui.activities.RestDayActivity"/>
-		<activity android:name="com.merryblue.femalefitness.ui.activities.ChooseLevelActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.GuideLevelActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.GuideGenderActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.EditTrainingActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.AddExerciseActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.RestDayActivity"/>
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.ChooseLevelActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.GuideLevelActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.GuideGenderActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.EditTrainingActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.AddExerciseActivity" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.ResultActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.ResultActivity"
 			android:theme="@style/FullScreen" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.RunActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.RunActivity"
 			android:theme="@style/FullScreen" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.ChallengeActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.ReminderActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.ReplaceActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.ProfileActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.TipsListActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.TipsDetailActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.EditExerciseActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.ChallengeActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.ReminderActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.ReplaceActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.ProfileActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.TipsListActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.TipsDetailActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.EditExerciseActivity" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.VideoWorkoutActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.VideoWorkoutActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.EditPlanActivity" />
-		<activity android:name="com.merryblue.femalefitness.ui.activities.SectionDetailActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.EditPlanActivity" />
+		<activity android:name="com.vuthaihung.loseflat.ui.activities.SectionDetailActivity" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.GuideReminderActivity"
-			android:screenOrientation="portrait"
-			android:windowSoftInputMode="adjustResize" />
-		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.GuideGoalActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.GuideReminderActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.GuideActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.GuideGoalActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.SettingGoalActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.GuideActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.HistoryActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.SettingGoalActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.PolicyActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.HistoryActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.OnBoardingActivity01"
+			android:name="com.vuthaihung.loseflat.ui.activities.PolicyActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.OnBoardingActivity02"
+			android:name="com.vuthaihung.loseflat.ui.activities.OnBoardingActivity01"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.OnBoardingActivity03"
+			android:name="com.vuthaihung.loseflat.ui.activities.OnBoardingActivity02"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.SplashActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.OnBoardingActivity03"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustResize" />
+		<activity
+			android:name="com.vuthaihung.loseflat.ui.activities.SplashActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize"
 			android:theme="@style/Theme_AppCompat_Light_NoActionBar_FullScreen">
@@ -96,16 +96,16 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="com.merryblue.femalefitness.ui.activities.MainActivity"
+			android:name="com.vuthaihung.loseflat.ui.activities.MainActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 
-		<receiver android:name="com.merryblue.femalefitness.utils.AlarmReceiver">
+		<receiver android:name="com.vuthaihung.loseflat.utils.AlarmReceiver">
 			<intent-filter>
 				<action android:name="com.app.action.alarmmanager" />
 			</intent-filter>
 		</receiver>
-		<receiver android:name="com.merryblue.femalefitness.utils.MyBroadcastReceiver">
+		<receiver android:name="com.vuthaihung.loseflat.utils.MyBroadcastReceiver">
 			<intent-filter>
 				<action android:name="com.tuankhaiit.fitness.cancel_notifycation" />
 			</intent-filter>
