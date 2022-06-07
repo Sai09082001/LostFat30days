@@ -39,27 +39,27 @@ public class ResultActivity extends BaseActivity {
     }
 
     private void initEvents() {
-//        findViewById(R.id.btn_again).setOnClickListener(view -> {
-//            AdmobHelp.getInstance().showInterstitialAd(this, () -> {
-//                Intent intent = new Intent(ResultActivity.this, RunActivity.class);
-//                SectionUser sectionUser = getIntent().getParcelableExtra("section");
-//                ArrayList<WorkoutUser> workoutUsers = getIntent().getParcelableArrayListExtra("workouts");
-//                intent.putExtra("section", sectionUser);
-//                intent.putExtra("workouts", workoutUsers);
-//                if (sectionUser.getData().getType() == 1) {
-//                    DailySectionUser dailySectionUser = getIntent().getParcelableExtra("challenge");
-//                    intent.putExtra("challenge", dailySectionUser);
-//                }
-//                startActivity(intent);
-//                finish();
-//            });
-//
-//
-//        });
-//        findViewById(R.id.btn_share).setOnClickListener(view -> {
-//            UtilsApp.shareApp(this);
-//
-//        });
+        findViewById(R.id.btn_again).setOnClickListener(view -> {
+            AdmobHelp.getInstance().showInterstitialAd(this, () -> {
+                Intent intent = new Intent(ResultActivity.this, RunActivity.class);
+                SectionUser sectionUser = getIntent().getParcelableExtra("section");
+                ArrayList<WorkoutUser> workoutUsers = getIntent().getParcelableArrayListExtra("workouts");
+                intent.putExtra("section", sectionUser);
+                intent.putExtra("workouts", workoutUsers);
+                if (sectionUser.getData().getType() == 1) {
+                    DailySectionUser dailySectionUser = getIntent().getParcelableExtra("challenge");
+                    intent.putExtra("challenge", dailySectionUser);
+                }
+                startActivity(intent);
+                finish();
+            });
+
+
+        });
+        findViewById(R.id.btn_share).setOnClickListener(view -> {
+            UtilsApp.shareApp(this);
+
+        });
         findViewById(R.id.btn_close).setOnClickListener(view -> {
             AdmobHelp.getInstance().showInterstitialAd(this, () -> {
                 Intent intent = new Intent(ResultActivity.this, HistoryActivity.class);
@@ -103,7 +103,7 @@ public class ResultActivity extends BaseActivity {
         int totalTime = getIntent().getIntExtra("timer", 0);
         int hours = totalTime / 60 / 60;
         int mins = (Math.round(totalTime / 60f)) % 60;
-       // ((TextView) findViewById(R.id.txt_exercises)).setText(totalExercises + "");
+        ((TextView) findViewById(R.id.txt_exercises)).setText(totalExercises + "");
         ((TextView) findViewById(R.id.txt_calories)).setText(String.format(Locale.US, "%.0f", totalCalories));
         ((TextView) findViewById(R.id.txt_timer)).setText(String.format("%02d:%02d", hours, mins));
 

@@ -105,11 +105,12 @@
 	<string name="title_reminder">Reminder</string>
 	<string name="title_replace_exercise">Replace exercise</string>
 	<string name="current">Current</string>
-	<string name="you_rock">Workout\ncompleted</string>
+	<string name="you_rock">Workout\n completed</string>
 	<string name="exercises">Exercises</string>
 	<string name="minutes">Minutes</string>
 	<string name="btn_do_again">Do it again</string>
 	<string name="btn_share">Share</string>
+	<string name="btn_share_with_friend">Share with friends</string>
 	<string name="btn_start">Start</string>
 	<string name="title_set_your_weekly_goal">Weekly goal setting</string>
 	<string name="video">Video</string>
