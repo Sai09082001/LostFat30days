@@ -248,4 +248,5 @@
 	<string name="remind_name">Remind name</string>
 	<string name="detail_text_training">Create the most suitable workouts according to your needs</string>
 	<string name="txt_detail_delete_progress">Clicking delete means that you agree to delete your fitness exercises</string>
+	<string name="feedback">Feedback</string>
 </resources>

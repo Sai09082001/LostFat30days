@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_gravity="center|start"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/back_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:text="@string/feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="SpUsage" />
+    </TableRow>
+</LinearLayout>

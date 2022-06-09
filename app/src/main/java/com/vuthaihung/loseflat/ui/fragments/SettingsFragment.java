@@ -40,6 +40,7 @@ import com.vuthaihung.loseflat.data.repositories.SectionHistoryRepository;
 import com.vuthaihung.loseflat.data.repositories.SectionRepository;
 import com.vuthaihung.loseflat.data.repositories.WorkoutRepository;
 import com.vuthaihung.loseflat.data.shared.AppSettings;
+import com.vuthaihung.loseflat.ui.activities.FeedBackActivity;
 import com.vuthaihung.loseflat.ui.activities.PolicyActivity;
 import com.vuthaihung.loseflat.ui.activities.ProfileActivity;
 import com.vuthaihung.loseflat.ui.activities.ReminderActivity;
@@ -225,11 +226,13 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
             UtilsApp.RateApp(getActivity());
         });
         rootView.findViewById(R.id.row_feed_back).setOnClickListener(view -> {
-            UtilsApp.SendFeedBack(getActivity(),getString(R.string.email_feedback),getString(R.string.Title_email));
+           // UtilsApp.SendFeedBack(getActivity(),getString(R.string.email_feedback),getString(R.string.Title_email));
+            Intent intent = new Intent(getContext(), FeedBackActivity.class);
+            startActivity(intent);
         });
-        rootView.findViewById(R.id.row_help).setOnClickListener(view -> {
-            UtilsApp.SendFeedBack(getActivity(),getString(R.string.email_feedback),"Workout for women feedback");
-        });
+//        rootView.findViewById(R.id.row_help).setOnClickListener(view -> {
+//            UtilsApp.SendFeedBack(getActivity(),getString(R.string.email_feedback),"Workout for women feedback");
+//        });
         rootView.findViewById(R.id.row_policy).setOnClickListener(view -> {
             //UtilsApp.OpenBrower(getActivity(),getString(R.string.link_policy));
             Intent intent = new Intent(getContext(), PolicyActivity.class);
