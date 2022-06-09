@@ -1,57 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:gravity="center"
-    android:layout_height="wrap_content">
+    android:orientation="vertical"
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:paddingVertical="16dp"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:text="@string/units"
+        android:text="@string/remind_name"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
         android:textStyle="bold"
-        android:textColor="@color/black"
         android:textSize="20dp"
-        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="SpUsage" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_kg_cm"
-        android:paddingVertical="16dp"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_remind_name"
         android:layout_width="match_parent"
-        android:text="Kg, Cm"
-        android:textStyle="bold"
-        android:background="@drawable/bg_change_unit_select"
-        android:gravity="center"
-        android:layout_marginHorizontal="16dp"
-        android:textColor="@color/blueLight"
-        android:textSize="24dp"
-        android:fontFamily="sans-serif-medium"
         android:layout_height="wrap_content"
-        tools:ignore="SpUsage" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_lb_ft"
-        android:paddingVertical="16dp"
+        android:layout_gravity="center"
         android:layout_marginHorizontal="16dp"
-        android:layout_width="match_parent"
-        android:text="Lb, Ft"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/text_unselect"
-        android:textSize="24dp"
-        android:fontFamily="sans-serif-medium"
-        android:layout_height="wrap_content"
-        tools:ignore="SpUsage" />
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_circle_check_large_disable"
+        android:hint="Wake up"
+        android:paddingVertical="12dp"
+        android:paddingStart="8dp" />
 
     <LinearLayout
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginBottom="16dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -60,7 +43,7 @@
             android:gravity="center">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_cancel"
+                android:id="@+id/tv_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -81,7 +64,7 @@
             android:gravity="center">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btn_save"
+                android:id="@+id/btn_ok"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

@@ -250,22 +250,19 @@ public class SettingsFragment extends BaseFragment implements DialogResultListen
         TextView btDialogOk = (TextView) dialog.findViewById(R.id.tv_dialog_delete);
         btDialogOk.setOnClickListener(view -> {
             DailySectionRepository.getInstance().resetAll();
-            DayHistoryRepository.getInstance().deleteAll().subscribe(() -> {
-                ReminderRepository.getInstance().deleteAll().subscribe(() -> {
-                    SectionHistoryRepository.getInstance().deleteAll().subscribe(() -> {
-                        SectionRepository.getInstance().deleteAllTraining();
-                        SectionRepository.getInstance().resetAll();
-                        WorkoutRepository.getInstance().resetAll();
-                        AppSettings.getInstance().clearAll();
-                        refreshAllView();
-                        AppSettings.getInstance().markedFirstOpen();
-                        AppSettings.getInstance().setLastVersion(BuildConfig.VERSION_CODE);
-                        Intent intent = new Intent(getContext(), SplashActivity.class);
-                        getActivity().finishAffinity();
-                        getActivity().startActivity(intent);
-                    });
-                });
-            });
+            DayHistoryRepository.getInstance().deleteAll();
+            ReminderRepository.getInstance().deleteAll();
+            SectionHistoryRepository.getInstance().deleteAll();
+            SectionRepository.getInstance().deleteAllTraining();
+            SectionRepository.getInstance().resetAll();
+            WorkoutRepository.getInstance().resetAll();
+            AppSettings.getInstance().clearAll();
+            refreshAllView();
+            AppSettings.getInstance().markedFirstOpen();
+            AppSettings.getInstance().setLastVersion(BuildConfig.VERSION_CODE);
+            Intent intent = new Intent(getContext(), SplashActivity.class);
+            getActivity().finishAffinity();
+            getActivity().startActivity(intent);
         });
         TextView btDialogCancel = (TextView) dialog.findViewById(R.id.tv_dialog_cancel);
         btDialogCancel.setText(R.string.btn_quit);

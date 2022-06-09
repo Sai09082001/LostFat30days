@@ -8,12 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TimePicker;
 
+import com.google.gson.Gson;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.Reminder;
 import com.vuthaihung.loseflat.data.repositories.ReminderRepository;
+import com.vuthaihung.loseflat.data.room.AppDatabase;
 import com.vuthaihung.loseflat.ui.adapters.ReminderAdapter;
 import com.vuthaihung.loseflat.ui.adapters.decoration.ReminderDecoration;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;

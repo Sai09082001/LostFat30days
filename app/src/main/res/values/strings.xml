@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">Reduce belly fat</string>
+	<string name="app_name">Burn Fat 30 days - Home Workout</string>
 
 	<!-- TODO: Font -->
 	<string name="font_regular" translatable="false">fonts/sfprodisplay_regular.ttf</string>
@@ -245,4 +245,7 @@
 	<string name="title_programme">Programme</string>
 	<string name="resume">Resume</string>
 	<string name="total">Total</string>
+	<string name="remind_name">Remind name</string>
+	<string name="detail_text_training">Create the most suitable workouts according to your needs</string>
+	<string name="txt_detail_delete_progress">Clicking delete means that you agree to delete your fitness exercises</string>
 </resources>

@@ -16,19 +16,26 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent">
 
-		<FrameLayout
+		<LinearLayout
+			android:orientation="horizontal"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent">
 
-			<androidx.appcompat.widget.AppCompatTextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center_vertical"
-				android:text="@string/app_name"
-				android:textAllCaps="true"
-				android:textColor="@color/black"
-				android:textSize="18sp"
-				app:textAllCaps="false" />
+			<LinearLayout
+				android:layout_weight="3"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content">
+
+				<androidx.appcompat.widget.AppCompatTextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:text="@string/app_name"
+					android:textAllCaps="true"
+					android:textColor="@color/black"
+					android:textSize="18sp"
+					app:textAllCaps="false" />
+			</LinearLayout>
 <!--			<include-->
 <!--				android:layout_width="wrap_content"-->
 <!--				android:layout_height="wrap_content"-->
@@ -62,7 +69,7 @@
 				android:layout_gravity="end|center_vertical"
 				android:padding="14dp"
 				app:srcCompat="@drawable/ic_tips" />
-		</FrameLayout>
+		</LinearLayout>
 	</androidx.appcompat.widget.Toolbar>
 
 	<androidx.viewpager.widget.ViewPager

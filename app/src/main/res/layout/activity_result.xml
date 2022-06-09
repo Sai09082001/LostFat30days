@@ -150,7 +150,8 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/minutes"
                                         android:textColor="@color/black"
-                                        android:textSize="16dp" />
+                                        android:textSize="16dp"
+                                        tools:ignore="SpUsage" />
 
                                     <androidx.appcompat.widget.AppCompatTextView
                                         android:id="@+id/txt_timer"

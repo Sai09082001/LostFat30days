@@ -1,14 +1,19 @@
 package com.vuthaihung.loseflat.ui.adapters;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -69,6 +74,7 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHo
             btnDelete.setOnClickListener(this);
             txtRepeat.setOnClickListener(this);
             txtRepeatTitle.setOnClickListener(this);
+            txtTitle.setOnClickListener(this);
             txtTime.setOnClickListener(this);
         }
 
@@ -79,9 +85,10 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHo
                 txtTitle.setVisibility(View.VISIBLE);
                 txtTitle.setText(reminder.getTitle());
             } else {
-                txtTitle.setVisibility(View.INVISIBLE);
+                txtTitle.setVisibility(View.VISIBLE);
                 btnDelete.setVisibility(View.VISIBLE);
             }
+            txtTitle.setText(reminder.getTitle());
             txtRepeat.setText(reminder.getRepeatsString(txtRepeat.getContext()));
             swEnable.setChecked(reminder.isEnable());
             swEnable.setOnCheckedChangeListener(this);
@@ -98,6 +105,11 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHo
                 case R.id.txt_repeat:
                     if (!reminder.isAdmin()) {
                         new ReminderRepeatPicker(reminder).show(fragmentManager, null);
+                    }
+                    break;
+                case R.id.txt_title:
+                    if (!reminder.isAdmin()) {
+                       showDialogRenameReminder();
                     }
                     break;
                 case R.id.btn_delete:
@@ -121,6 +133,29 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHo
                     }
                     break;
             }
+        }
+
+        @SuppressLint("CheckResult")
+        private void showDialogRenameReminder() {
+            Dialog dialog = new Dialog(itemView.getContext() ,android.R.style.Theme_DeviceDefault_Light_Dialog_MinWidth);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setContentView(R.layout.dialog_rename_reminder);
+            EditText edtTitle = dialog.findViewById(R.id.edt_remind_name);
+            TextView btOk = (TextView) dialog.findViewById(R.id.btn_ok);
+            btOk.setOnClickListener(view -> {
+                Reminder reminder = reminders.get(getAdapterPosition());
+                reminder.setTitle(edtTitle.getText().toString());
+                ReminderRepository.getInstance().update(reminder).subscribe();
+                dialog.dismiss();
+            });
+            TextView tvCancel = (TextView) dialog.findViewById(R.id.tv_cancel);
+            tvCancel.setOnClickListener(view1 -> {
+                dialog.dismiss();
+            });
+            dialog.show();
+            dialog.getWindow().setGravity(Gravity.CENTER);
+            dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
         }
 
         private void setTime(Context context, Reminder reminder) {

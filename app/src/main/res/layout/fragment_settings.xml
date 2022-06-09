@@ -820,7 +820,8 @@
 						android:layout_weight="1"
 						android:fontFamily="sans-serif"
 						android:text="@string/settings_delete_all_dât"
-						android:textSize="16dp" />
+						android:textSize="16dp"
+						tools:ignore="SpUsage" />
 
 					<androidx.appcompat.widget.AppCompatImageView
 						android:src="@drawable/ic_next"

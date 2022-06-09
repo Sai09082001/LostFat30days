@@ -601,9 +601,9 @@ public class RunFragment extends BaseFragment {
     private void runAnimationAudioBackground(boolean isEnable) {
         View audioBackground = rootView.findViewById(R.id.btn_audio_background);
         if (isEnable) {
-            audioBackground.setBackgroundResource(R.drawable.ic_play);
+            audioBackground.setBackgroundResource(R.drawable.ic_music_on);
         } else {
-            audioBackground.setBackgroundResource(R.drawable.ic_pause);
+            audioBackground.setBackgroundResource(R.drawable.ic_music_off);
         }
     }
 

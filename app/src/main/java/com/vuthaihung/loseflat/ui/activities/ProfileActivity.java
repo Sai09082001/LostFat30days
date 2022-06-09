@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ProfileActivity extends BaseActivity implements DialogResultListener {
 
     private AppCompatRadioButton rbKg, rbLb;
-    private TextView txtWeight, txtHeight, txtBirthday;
+    private TextView txtWeight, txtHeight, txtBirthday, tvUnitKgLb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +143,9 @@ public class ProfileActivity extends BaseActivity implements DialogResultListene
         txtWeight.setText(df.format(weight) + (type == 1 ? " LB" : " KG"));
         txtHeight.setText((type == 0 ? df2.format(height) : df.format(height)) + (type == 1 ? " FT" : " CM"));
         txtBirthday.setText(DateUtils.formatBirthday(birthday));
+        if (AppSettings.getInstance().getUnitType() == 0){
+            tvUnitKgLb.setText("Kg, Cm");
+        }else tvUnitKgLb.setText("Lb, Ft");
     }
 
     private void initViews() {
@@ -157,6 +160,7 @@ public class ProfileActivity extends BaseActivity implements DialogResultListene
         txtBirthday = findViewById(R.id.txt_birthday);
         txtHeight = findViewById(R.id.txt_height);
         txtWeight = findViewById(R.id.txt_weight);
+        tvUnitKgLb = findViewById(R.id.tv_unit_kg_lb);
 
 //        rbKg = findViewById(R.id.rb_kg);
 //        rbLb = findViewById(R.id.rb_lb);

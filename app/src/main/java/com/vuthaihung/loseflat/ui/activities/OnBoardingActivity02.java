@@ -2,6 +2,7 @@ package com.vuthaihung.loseflat.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
 import android.view.WindowManager;
 
 import com.vuthaihung.loseflat.R;
@@ -12,8 +13,9 @@ public class OnBoardingActivity02 extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_onboarding_02);
         initEvents();
     }

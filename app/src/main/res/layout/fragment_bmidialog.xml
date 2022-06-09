@@ -136,7 +136,7 @@
 				android:fontFamily="sans-serif-medium"
 				android:gravity="center"
 				android:paddingVertical="12dp"
-				android:text="@string/ok"
+				android:text="@string/agree"
 				android:textColor="@color/white"
 				android:textSize="16dp" />
 		</LinearLayout>
