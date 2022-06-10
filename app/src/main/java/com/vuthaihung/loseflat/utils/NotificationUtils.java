@@ -12,6 +12,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.service.MyBroadcastReceiver;
 import com.vuthaihung.loseflat.ui.activities.SplashActivity;
 
 public class NotificationUtils {

@@ -1,9 +1,11 @@
-package com.vuthaihung.loseflat.utils;
+package com.vuthaihung.loseflat.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import com.vuthaihung.loseflat.utils.NotificationUtils;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
     public static final String CANCEL_NOTIFY = "com.lubuteam.sellsource.losefat.cancel_notifycation";

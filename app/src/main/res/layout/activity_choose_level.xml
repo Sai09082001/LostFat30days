@@ -118,11 +118,13 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:paddingVertical="8dp"
+							android:textSize="16dp"
 							android:paddingHorizontal="28dp"
 							android:layout_marginTop="20dp"
 							android:background="@drawable/bg_btn_un_choose"
 							android:text="@string/btn_choose"
-							android:textColor="@color/white" />
+							android:textColor="@color/white"
+							tools:ignore="SpUsage" />
 
 					</LinearLayout>
 
@@ -202,12 +204,14 @@
 							android:id="@+id/btn_choose_2"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
+							android:textSize="16dp"
 							android:layout_marginTop="20dp"
 							android:paddingVertical="8dp"
 							android:paddingHorizontal="28dp"
 							android:background="@drawable/bg_btn_un_choose"
 							android:text="@string/btn_choose"
-							android:textColor="@color/white" />
+							android:textColor="@color/white"
+							tools:ignore="SpUsage" />
 
 					</LinearLayout>
 
@@ -290,8 +294,10 @@
 							android:layout_height="wrap_content"
 							android:layout_marginTop="20dp"
 							android:background="@drawable/bg_btn_un_choose"
+							android:textSize="16dp"
 							android:text="@string/btn_choose"
-							android:textColor="@color/white" />
+							android:textColor="@color/white"
+							tools:ignore="SpUsage" />
 
 					</LinearLayout>
 
@@ -355,7 +361,9 @@
 							android:paddingHorizontal="28dp"
 							android:paddingVertical="8dp"
 							android:text="@string/add_exercise"
-							android:textColor="@color/white" />
+							android:textSize="16dp"
+							android:textColor="@color/white"
+							tools:ignore="SpUsage" />
 
 					</LinearLayout>
 

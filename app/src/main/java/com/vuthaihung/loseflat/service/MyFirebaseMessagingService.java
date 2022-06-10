@@ -1,4 +1,4 @@
-package com.vuthaihung.loseflat.utils;
+package com.vuthaihung.loseflat.service;
 
 
 import android.util.Log;
@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.vuthaihung.loseflat.utils.NotificationUtils;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 

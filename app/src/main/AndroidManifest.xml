@@ -19,7 +19,7 @@
 			android:value="@string/admob_app_id"/>
 		<uses-library android:name="org.apache.http.legacy" android:required="false"/>
 		<service
-			android:name=".utils.MyFirebaseMessagingService"
+			android:name=".service.MyFirebaseMessagingService"
 			android:stopWithTask="false">
 			<intent-filter>
 				<action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -44,6 +44,7 @@
 		<activity android:name="com.vuthaihung.loseflat.ui.activities.TipsListActivity" />
 		<activity android:name="com.vuthaihung.loseflat.ui.activities.TipsDetailActivity" />
 		<activity android:name="com.vuthaihung.loseflat.ui.activities.EditExerciseActivity" />
+		<activity android:name=".ui.activities.FeedBackActivity"/>
 		<activity
 			android:name="com.vuthaihung.loseflat.ui.activities.VideoWorkoutActivity"
 			android:screenOrientation="portrait"
@@ -103,13 +104,13 @@
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize" />
 
-		<receiver android:name="com.vuthaihung.loseflat.utils.AlarmReceiver"
+		<receiver android:name="com.vuthaihung.loseflat.service.AlarmReceiver"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="com.app.action.alarmmanager" />
 			</intent-filter>
 		</receiver>
-		<receiver android:name="com.vuthaihung.loseflat.utils.MyBroadcastReceiver"
+		<receiver android:name="com.vuthaihung.loseflat.service.MyBroadcastReceiver"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="com.tuankhaiit.fitness.cancel_notifycation" />

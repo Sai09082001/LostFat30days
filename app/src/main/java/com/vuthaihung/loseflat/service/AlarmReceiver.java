@@ -1,4 +1,4 @@
-package com.vuthaihung.loseflat.utils;
+package com.vuthaihung.loseflat.service;
 
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
@@ -9,6 +9,8 @@ import android.util.Log;
 import com.vuthaihung.loseflat.data.model.Reminder;
 import com.vuthaihung.loseflat.data.repositories.ReminderRepository;
 import com.vuthaihung.loseflat.data.room.AppDatabase;
+import com.vuthaihung.loseflat.utils.AlarmUtils;
+import com.vuthaihung.loseflat.utils.NotificationUtils;
 
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;

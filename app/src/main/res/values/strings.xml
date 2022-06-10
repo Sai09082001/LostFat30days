@@ -52,6 +52,7 @@
 	<string name="cancel">Cancel</string>
 	<string name="agree">Agree</string>
 	<string name="ok">OK</string>
+	<string name="send">Send</string>
 	<string name="add_name">Add name</string>
 	<string name="tips">Tips</string>
 	<string name="reminder">Reminder</string>
@@ -280,4 +281,12 @@
 	<string name="txt_children_s_privacy">8. Children\'s Privacy</string>
 	<string name="txt_changes_to_this_privacy_policy">9. Changes to This Privacy Policy</string>
 	<string name="txt_contact_us">10. Contact Us</string>
+	<string name="txt_content_feedback">Content</string>
+	<string name="txt_content_to_report">Enter the content to report</string>
+	<string name="txt_report_topic">Report topic</string>
+	<string name="txt_error_feedback">Error</string>
+	<string name="txt_full_name">Full name</string>
+	<string name="txt_input_your_name">Input your name</string>
+	<string name="txt_email_feedback">Email</string>
+	<string name="txt_input_your_email">Input your email</string>
 </resources>
