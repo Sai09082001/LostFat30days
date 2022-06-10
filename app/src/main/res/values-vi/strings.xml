@@ -211,6 +211,37 @@
     <string name="app_name" translatable="false">Burn Fat 30 days - Home Workout</string>
     <string name="detail_text_training">Tạo các bài tập phù hợp nhất theo nhu cầu của bạn</string>
     <string name="txt_detail_delete_progress">Ấn vào xóa nếu bạn đồng ý xóa các bài tập thể dục của mình</string>
+    <string name="txt_onboarding">Lấy lại vóc dáng mọi lúc, mọi nơi \nvới Burn Fat 30 ngày</string>
+    <string name="txt_title_policy1">MERRYBLUE built Burn Fat 30 days- Home Workout app as a Free app.</string>
+    <string name="txt_title_policy2">This SERVICE is provided by MERRYBLUE at no cost and is intended for use as is.\nThis page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.\nIf you choose to use my Service, then you agree to the collection and use of information in relation to this policy.\nThe Personal Information that I collect is used for providing and improving the Service.I will not use or share your information with anyone except as described in this Privacy Policy.</string>
+    <string name="txt_title_dot1">Images: We are not responsible for the image content created by users or searched on the internet.</string>
+    <string name="txt_title_dot2">Stories: User-generated stories in the app for political, offensive, or deceptive purposes.</string>
+    <string name="txt_title_dot3">We are not responsible when users of the application for malicious purposes, political purposes, vote, and violate applicable national laws.</string>
+    <string name="txt_detail1">For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information.The information that I request will be retained on your device and is not collected by me in any way.\nThe app does use third party services that may collect information used to identify you.\nLinks to the privacy policies of third party service providers can be used in the app AdMob (dán link https://support.google.com/admob/answer/6128543?hl=en)</string>
+    <string name="txt_detail2">I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third party products) on your phone called Log Data.\nThis Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.</string>
+    <string name="txt_detail3">Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers.\nThese are sent to your browser from the websites that you visit and are stored on your device\'s internal memory.\nThis Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services.\nYou have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.</string>
+    <string name="txt_detail4">The permissions we use in the application:\nandroid.permission.WRITE_EXTERNAL_STORAGE\n\nandroid.permission.READ_EXTERNAL_STORAGE\n\nandroid.permission.WAKE_LOCK android.permission.VIBRATE\n\nandroid.permission.INTERNET\n\nandroid.permission.ACCESS_NETWORK_STATE\n\nandroid.permission.RECEIVE_BOOT_COMPLETED</string>
+    <string name="txt_note1">We are committed to using the above rights only for the purpose of serving the function of the application and fully comply with the policies of google play and not for any other purpose.</string>
+    <string name="txt_note2">All information provided by users will only be stored on their device and we do not collect and store it in any form (including on servers or on cloud services...).</string>
+    <string name="txt_note3">We do not disclose, store or share any sensitive information of users (email, bank account...).</string>
+    <string name="txt_note4">Any questions or complaints please contact us via email: admin@merryblue.llc</string>
+    <string name="txt_detail5">I may employ third-party companies and individuals due to the following reasons:\nTo facilitate our Service;\n\nTo provide the Service on our behalf;\n\nTo perform Service-related services;\nTo assist us in analyzing how our Service is used.\nI want to inform users of this Service that these third parties have access to your Personal Information.\nThe reason is to perform the tasks assigned to them on our behalf.However, they are obligated not to disclose or use the information for any other purpose.</string>
+    <string name="txt_detail6">I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it.\nBut remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.</string>
+    <string name="txt_detail7">This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site.\nNote that these external sites are not operated by me.Therefore, I strongly advise you to review the Privacy Policy of these websites.\n\nI have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</string>
+    <string name="txt_detail8">These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13.\nIn the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers.\nIf you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.</string>
+    <string name="txt_detail9">I may update our Privacy Policy from time to time.Thus, you are advised to review this page periodically for any changes.\nI will notify you of any changes by posting the new Privacy Policy on this page.These changes are effective immediately after they are posted on this page.</string>
+    <string name="txt_detail10">If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at admin@merryblue.llc</string>
+    <string name="txt_information_collection_and_use">1. Information Collection and Use</string>
+    <string name="txt_log_data">2. Log Data</string>
+    <string name="txt_cookies">3. Cookies</string>
+    <string name="txt_permission">4. Permission</string>
+    <string name="txt_note_policy">NOTE:</string>
+    <string name="txt_service_providers">5. Service Providers</string>
+    <string name="txt_security">6. Security</string>
+    <string name="txt_links_to_other_sites">7. Links to Other Sites</string>
+    <string name="txt_children_s_privacy">8. Children\'s Privacy</string>
+    <string name="txt_changes_to_this_privacy_policy">9. Changes to This Privacy Policy</string>
+    <string name="txt_contact_us">10. Contact Us</string>
     <!-- Generated by Automatic String Resource Translation
 	--><!--          https://asrt.gluege.boerde.de
 --></resources>
