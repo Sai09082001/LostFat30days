@@ -39,6 +39,7 @@ import com.vuthaihung.loseflat.ui.activities.viewmodel.RunViewModel;
 import com.vuthaihung.loseflat.ui.adapters.RunPageAdapter;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.base.MyViewModelFactory;
+import com.vuthaihung.loseflat.ui.dialogs.QuitDialog;
 import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.DateUtils;
 import com.vuthaihung.loseflat.utils.Utils;
@@ -426,6 +427,7 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
     }
 
     private void backAction() {
+        new QuitDialog().show(getSupportFragmentManager(),null);
         if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
             if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
                 Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
@@ -433,7 +435,6 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
                 startActivity(intentAd);
             }
         }
-        finish();
     }
 
     @Override

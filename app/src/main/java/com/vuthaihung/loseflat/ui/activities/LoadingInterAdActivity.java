@@ -16,7 +16,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
-import com.vuthaihung.loseflat.ui.dialogs.QuitDialog;
 import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.Utils;
 
@@ -76,6 +75,7 @@ public class LoadingInterAdActivity extends BaseActivity {
             case "ProfileActivity":
             case "ResultActivity":
             case "RestDayActivity":
+            case "RunActivity":
                 AdmobHelp.getInstance().showInterstitialAd(this,null);
                 break;
             case "GuideReminderActivity":
@@ -84,9 +84,6 @@ public class LoadingInterAdActivity extends BaseActivity {
                     startActivity(intent);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 });
-                break;
-            case "RunActivity":
-                AdmobHelp.getInstance().showInterstitialAd(this, () -> new QuitDialog().show(getSupportFragmentManager(), null));
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + keyAd);
