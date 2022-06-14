@@ -13,12 +13,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.ads.control.AdmobHelp;
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.Workout;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.dialogs.viewmodel.EditWorkoutViewModel;
+import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.Utils;
 import com.vuthaihung.loseflat.utils.ViewUtils;
 
@@ -26,6 +27,7 @@ import com.vuthaihung.loseflat.utils.ViewUtils;
 
 public class EditExerciseActivity extends BaseActivity {
 
+    private static final String TAG_NAME = EditExerciseActivity.class.getSimpleName();
     private EditWorkoutViewModel viewModel;
     private WorkoutUser workoutUser;
     private boolean autoIncrement = false;
@@ -211,7 +213,14 @@ public class EditExerciseActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
+        if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
+                Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
+                intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
+                startActivity(intentAd);
+            }
+        }
+        finish();
     }
 }
 

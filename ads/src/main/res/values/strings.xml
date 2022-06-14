@@ -24,7 +24,7 @@
     <string name="email_feedback" translatable="false">admin@merryblue.llc</string>
 
     //Info id admob, you can change
-    <string name="admob_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-7986427789852792~1259071117</string>
     <string name="admob_native" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
     <string name="admob_full" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
     <string name="admob_banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>

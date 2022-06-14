@@ -1,5 +1,7 @@
 package com.vuthaihung.loseflat.ui.activities;
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -9,12 +11,17 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
-import com.ads.control.AdmobHelp;
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.model.ContainerVoiceEngine;
 import com.vuthaihung.loseflat.data.model.DailySectionUser;
 import com.vuthaihung.loseflat.data.model.DayHistoryModel;
@@ -31,7 +38,7 @@ import com.vuthaihung.loseflat.ui.activities.viewmodel.RunViewModel;
 import com.vuthaihung.loseflat.ui.adapters.RunPageAdapter;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.base.MyViewModelFactory;
-import com.vuthaihung.loseflat.ui.dialogs.QuitDialog;
+import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.DateUtils;
 
 import org.greenrobot.eventbus.EventBus;
@@ -45,6 +52,7 @@ import java.util.UUID;
 
 
 public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
+    private static final String TAG_NAME = RunActivity.class.getSimpleName();
     private RunViewModel viewModel;
 
     private SectionUser sectionUser;
@@ -56,7 +64,7 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
 
     private int resume = 0;
     private MediaPlayer mediaPlayer;
-
+    private int indexAdmob;
     // TTS
     private TextToSpeech tts;
     private boolean ready = false;
@@ -69,11 +77,32 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
 
         sectionUser = getIntent().getParcelableExtra("section");
         workoutUsers = getIntent().getParcelableArrayListExtra("workouts");
-
+        indexAdmob = 0;
         initTTS();
         initViews();
         initObservers();
         initEvents();
+        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                .setMinimumFetchIntervalInSeconds(3600)
+                .build();
+        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+        mFirebaseRemoteConfig.fetchAndActivate()
+                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Boolean> task) {
+                        if (task.isSuccessful()) {
+                            onFirebaseRemoteSuccess();
+                        } else {
+                            // do nothing
+                        }
+                    }
+                });
+    }
+
+    private void onFirebaseRemoteSuccess() {
+        String admobId = mFirebaseRemoteConfig.getString("admob_ready_to_go_banner");
+        AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        AdmobHelp.getInstance().loadBanner(RunActivity.this, admobFirebaseModel.getListAdmob().get(indexAdmob));
     }
 
     @Override
@@ -389,8 +418,13 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
     }
 
     private void backAction() {
-        AdmobHelp.getInstance().showInterstitialAd(this, () -> new QuitDialog().show(getSupportFragmentManager(), null));
-
+        if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
+                Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
+                intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
+                startActivity(intentAd);
+            }
+        }
 
     }
 

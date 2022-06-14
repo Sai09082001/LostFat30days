@@ -10,5 +10,6 @@ public class Constants {
     public static final int REST_SET_MAX = 180;
     public static final int COUNTDOWN_MIN = 10;
     public static final int COUNTDOWN_MAX = 30;
+    public static final String KEY_LOADING_AD = "KEY_LOADING_AD";
     public static final int GENDER = 0;     // 0: female    1: male
 }

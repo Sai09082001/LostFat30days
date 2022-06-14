@@ -1,20 +1,27 @@
 package com.vuthaihung.loseflat.ui.activities;
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.ads.control.AdmobHelp;
-import com.ads.control.Rate;
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.vuthaihung.loseflat.funtion.Rate;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.roughike.bottombar.BottomBar;
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.model.MessageEvent;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.customViews.CustomViewPager;
@@ -35,16 +42,39 @@ import java.util.Random;
 public class MainActivity extends BaseActivity {
     private CustomViewPager viewPager;
     private BottomBar bottomBar;
+    private int indexAdmob;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setStatusBarColor(getResources().getColor(R.color.white));
+        indexAdmob = 0;
         initViews();
         initObservers();
         initEvents();
-        AdmobHelp.getInstance().loadBanner(MainActivity.this );
+
+        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                .setMinimumFetchIntervalInSeconds(3600)
+                .build();
+        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+        mFirebaseRemoteConfig.fetchAndActivate()
+                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Boolean> task) {
+                        if (task.isSuccessful()) {
+                           onFirebaseRemoteSuccess();
+                        } else {
+                           // do nothing
+                        }
+                    }
+                });
+    }
+
+    private void onFirebaseRemoteSuccess() {
+        String admobId = mFirebaseRemoteConfig.getString("admob_home_workout_banner");
+        AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        AdmobHelp.getInstance().loadBanner(MainActivity.this, admobFirebaseModel.getListAdmob().get(indexAdmob));
     }
 
     private void initEvents() {

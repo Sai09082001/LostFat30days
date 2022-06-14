@@ -25,6 +25,7 @@
 				<action android:name="com.google.firebase.MESSAGING_EVENT" />
 			</intent-filter>
 		</service>
+		<activity android:name=".ui.activities.LoadingInterAdActivity"/>
 		<activity android:name="com.vuthaihung.loseflat.ui.activities.RestDayActivity"/>
 		<activity android:name="com.vuthaihung.loseflat.ui.activities.ChooseLevelActivity" />
 		<activity android:name="com.vuthaihung.loseflat.ui.activities.GuideLevelActivity" />

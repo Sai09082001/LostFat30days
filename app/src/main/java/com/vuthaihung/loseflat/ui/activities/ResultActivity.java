@@ -1,5 +1,7 @@
 package com.vuthaihung.loseflat.ui.activities;
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -7,9 +9,15 @@ import android.os.Bundle;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
-import com.ads.control.AdmobHelp;
-import com.ads.control.funtion.UtilsApp;
+import androidx.annotation.NonNull;
+
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.vuthaihung.loseflat.funtion.UtilsApp;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.model.DailySectionUser;
 import com.vuthaihung.loseflat.data.model.SectionUser;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;
@@ -17,6 +25,7 @@ import com.vuthaihung.loseflat.data.shared.AppSettings;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.fragments.AdsFragment;
 import com.vuthaihung.loseflat.ui.fragments.BMIFragment;
+import com.vuthaihung.loseflat.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -27,19 +36,54 @@ import nl.dionsegijn.konfetti.models.Size;
 
 public class ResultActivity extends BaseActivity {
 
+    private static final String TAG_NAME = ResultActivity.class.getSimpleName();
+    private int indexAdmob;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
+        indexAdmob = 0;
         playAudio();
         initAnimation();
         initViews();
         initEvents();
+        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                .setMinimumFetchIntervalInSeconds(3600)
+                .build();
+        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+        mFirebaseRemoteConfig.fetchAndActivate()
+                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Boolean> task) {
+                        if (task.isSuccessful()) {
+                            onFirebaseRemoteSuccess();
+                        } else {
+                            // do nothing
+                        }
+                    }
+                });
     }
+
+    private void onFirebaseRemoteSuccess() {
+        String admobId = mFirebaseRemoteConfig.getString("admob_home_workout_banner");
+        AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        AdmobHelp.getInstance().loadBanner(this, admobFirebaseModel.getListAdmob().get(indexAdmob));
+    }
+
+    private void handleLoadingAdmob() {
+        if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
+                Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
+                intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
+                startActivity(intentAd);
+            }
+        }
+    }
+
 
     private void initEvents() {
         findViewById(R.id.btn_again).setOnClickListener(view -> {
+            handleLoadingAdmob();
             AdmobHelp.getInstance().showInterstitialAd(this, () -> {
                 Intent intent = new Intent(ResultActivity.this, RunActivity.class);
                 SectionUser sectionUser = getIntent().getParcelableExtra("section");
@@ -61,6 +105,7 @@ public class ResultActivity extends BaseActivity {
 
         });
         findViewById(R.id.btn_close).setOnClickListener(view -> {
+            handleLoadingAdmob();
             AdmobHelp.getInstance().showInterstitialAd(this, () -> {
                 Intent intent = new Intent(ResultActivity.this, HistoryActivity.class);
                 startActivity(intent);
@@ -113,6 +158,8 @@ public class ResultActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
+        handleLoadingAdmob();
+        finish();
+       // AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
     }
 }

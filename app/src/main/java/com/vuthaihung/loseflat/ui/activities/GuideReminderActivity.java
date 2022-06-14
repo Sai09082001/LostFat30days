@@ -7,18 +7,19 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.NumberPicker;
 
-import com.ads.control.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.Reminder;
 import com.vuthaihung.loseflat.data.repositories.ReminderRepository;
 import com.vuthaihung.loseflat.data.shared.AppSettings;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
+import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.Utils;
 
 import java.util.Calendar;
 
 
 public class GuideReminderActivity extends BaseActivity {
+    private static final String TAG_NAME = GuideReminderActivity.class.getSimpleName();
     private String[] hours = new String[]{"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"};
     private String[] mins = new String[]{"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"};
 
@@ -63,13 +64,7 @@ public class GuideReminderActivity extends BaseActivity {
                     GuideReminderActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            AdmobHelp.getInstance().showInterstitialAd(GuideReminderActivity.this, () -> {
-                                Intent intent = new Intent(GuideReminderActivity.this, MainActivity.class);
-                                startActivity(intent);
-                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                                finish();
-                            });
-
+                            handleLoadingAdmob();
                         }
                     });
 
@@ -83,6 +78,13 @@ public class GuideReminderActivity extends BaseActivity {
 
             }));
         });
+    }
+
+    private void handleLoadingAdmob() {
+        Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
+        intentAd.putExtra(Constants.KEY_LOADING_AD , TAG_NAME);
+        startActivity(intentAd);
+        finish();
     }
 
     private void initViews() {

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/ads/src/main/res/drawable/ic_info_outline_black_24dp.xml" value="0.1625" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/ads/src/main/res/drawable/tab_selector.xml" value="0.1625" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/ads/src/main/res/layout/layout_ads_control_dialog.xml" value="0.1625" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/ads/src/main/res/layout/load_banner.xml" value="0.1625" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/ads/src/main/res/layout/layout_banner_control.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/ads/src/main/res/layout/load_banner.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/drawable/bg_animation_video.xml" value="0.2715" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/drawable/bg_box.xml" value="0.2715" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/drawable/bg_btn_border.xml" value="0.2715" />
@@ -80,15 +83,19 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_choose_level.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_edit_exercise.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_edit_training.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_guide_level.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_guide_reminder.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_history.xml" value="0.20625" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_loading_inter_ad.xml" value="0.365625" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_reminder.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_replace.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_rest_day.xml" value="0.23229166666666667" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_result.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_run.xml" value="0.18" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_result.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_run.xml" value="0.22" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_section_detail.xml" value="0.14" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/activity_video_workout.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/animation_layout.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/check_day_layout.xml" value="0.36666666666666664" />
@@ -101,6 +108,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/enter_name_training.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/exercise_item_add_layout.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/exercise_item_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/fragment_ads.xml" value="0.25" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/fragment_bmidialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/fragment_daily_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/fragment_first_day_of_week_dialog.xml" value="0.36666666666666664" />
@@ -126,6 +134,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/item_section_history.xml" value="0.5" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/item_training_section.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/item_viewpager.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/native_admob_ad_item.xml" value="0.153125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/row_of_recycleview.xml" value="0.25" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/run_layout.xml" value="0.18" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/lost-fat-30-days/app/src/main/res/layout/step_progress_run.xml" value="0.36666666666666664" />

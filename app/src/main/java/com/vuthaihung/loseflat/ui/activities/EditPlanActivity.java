@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ads.control.AdmobHelp;
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.SectionUser;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;
@@ -27,6 +27,7 @@ import com.vuthaihung.loseflat.ui.adapters.helper.ItemTouchHelperAdapter;
 import com.vuthaihung.loseflat.ui.adapters.helper.OnStartDragListener;
 import com.vuthaihung.loseflat.ui.adapters.helper.SimpleItemTouchHelperCallback;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
+import com.vuthaihung.loseflat.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,6 +35,7 @@ import java.util.Collections;
 
 public class EditPlanActivity extends BaseActivity implements OnStartDragListener,
         ItemTouchHelperAdapter, DialogInterface.OnDismissListener, WorkoutAdapter.WorkoutChangeClickListener {
+    private static final String TAG_NAME = EditPlanActivity.class.getSimpleName();
     private SectionUser sectionUser;
     private WorkoutAdapter adapter;
     private ArrayList<WorkoutUser> list = new ArrayList<>();
@@ -180,6 +182,13 @@ public class EditPlanActivity extends BaseActivity implements OnStartDragListene
 
     @Override
     public void onBackPressed() {
-        AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
+        if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
+                Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
+                intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
+                startActivity(intentAd);
+            }
+        }
+        finish();
     }
 }

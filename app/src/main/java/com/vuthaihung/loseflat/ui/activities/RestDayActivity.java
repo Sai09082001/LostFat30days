@@ -1,22 +1,26 @@
 package com.vuthaihung.loseflat.ui.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
-import com.ads.control.AdmobHelp;
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.DailySectionUser;
 import com.vuthaihung.loseflat.data.repositories.DailySectionRepository;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
+import com.vuthaihung.loseflat.utils.Constants;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
 
 public class RestDayActivity extends BaseActivity {
+
+    private static final String TAG_NAME = RestDayActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,14 @@ public class RestDayActivity extends BaseActivity {
     }
     @Override
     public void onBackPressed() {
-        AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
+        if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
+                Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
+                intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
+                startActivity(intentAd);
+            }
+        }
+        finish();
+       // AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
     }
 }

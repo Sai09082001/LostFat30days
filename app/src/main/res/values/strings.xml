@@ -289,4 +289,5 @@
 	<string name="txt_input_your_name">Input your name</string>
 	<string name="txt_email_feedback">Email</string>
 	<string name="txt_input_your_email">Input your email</string>
+    <string name="this_action_contain_ads">This action contain Ads....</string>
 </resources>

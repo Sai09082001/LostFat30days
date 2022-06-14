@@ -8,6 +8,8 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
@@ -16,6 +18,7 @@ public abstract class BaseFragment extends Fragment {
     private Disposable lastDisposable;
     protected BaseViewModel viewModel;
     protected View rootView;
+    protected FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

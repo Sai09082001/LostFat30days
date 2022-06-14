@@ -1,10 +1,8 @@
 package com.vuthaihung.loseflat.ui.base;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.ads.control.AdsApplication;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.MemoryCategory;
 import com.vuthaihung.loseflat.R;

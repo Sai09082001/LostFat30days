@@ -1,5 +1,7 @@
 package com.vuthaihung.loseflat.ui.activities;
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +11,15 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.ads.control.AdmobHelp;
+import androidx.annotation.NonNull;
+
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.BuildConfig;
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.room.AppDatabase;
 import com.vuthaihung.loseflat.data.room.AppDatabaseConst;
 import com.vuthaihung.loseflat.data.shared.AppSettings;
@@ -30,6 +38,7 @@ public class SplashActivity extends BaseActivity implements DatabaseListener {
     TextView tvStatus;
     Handler mHandler;
     Runnable r;
+    private int indexAdmob;
 
     @SuppressLint("CheckResult")
     @Override
@@ -38,11 +47,26 @@ public class SplashActivity extends BaseActivity implements DatabaseListener {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_splash);
+        indexAdmob = 0;
 //        LinearLayout lr = (LinearLayout) findViewById(R.id.ll_workout);
 //        lr.startAnimation(AnimationUtils.loadAnimation(SplashActivity.this, R.anim.left_to_right));
 //        tvStatus = (TextView)findViewById(R.id.tv_slogan);
 //        pbLoadData = (ProgressBar)findViewById(R.id.pbLoadData);
-        AdmobHelp.getInstance().init(this);
+        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                .setMinimumFetchIntervalInSeconds(3600)
+                .build();
+        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+        mFirebaseRemoteConfig.fetchAndActivate()
+                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Boolean> task) {
+                        if (task.isSuccessful()) {
+                            onFirebaseRemoteSuccess();
+                        } else {
+                            // do nothing
+                        }
+                    }
+                });
         /**
          *  Important
          */
@@ -78,6 +102,13 @@ public class SplashActivity extends BaseActivity implements DatabaseListener {
         }
 
 
+    }
+
+    private void onFirebaseRemoteSuccess() {
+        String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
+        AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        AdmobHelp.getInstance().init(this,admobFirebaseModel.getListAdmob().get(indexAdmob));
+        Log.i("KMFG", "onFirebaseRemoteSuccess: "+admobFirebaseModel.getListAdmob().get(indexAdmob));
     }
 
     private void gotoHome() {

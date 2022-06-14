@@ -1,6 +1,7 @@
 package com.vuthaihung.loseflat.ui.activities;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -12,13 +13,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatRadioButton;
 
-import com.ads.control.AdmobHelp;
+import com.vuthaihung.loseflat.ui.base.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.shared.AppSettings;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.dialogs.BMIDialogFragment;
 import com.vuthaihung.loseflat.ui.dialogs.BirthdayDialog;
 import com.vuthaihung.loseflat.ui.interfaces.DialogResultListener;
+import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.DateUtils;
 import com.vuthaihung.loseflat.utils.Utils;
 
@@ -29,6 +31,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ProfileActivity extends BaseActivity implements DialogResultListener {
 
+    private static final String TAG_NAME = ProfileActivity.class.getSimpleName();
     private AppCompatRadioButton rbKg, rbLb;
     private TextView txtWeight, txtHeight, txtBirthday, tvUnitKgLb;
 
@@ -181,7 +184,13 @@ public class ProfileActivity extends BaseActivity implements DialogResultListene
 
     @Override
     public void onBackPressed() {
-        AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
-
+        if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
+                Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
+                intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
+                startActivity(intentAd);
+            }
+        }
+        finish();
     }
 }
