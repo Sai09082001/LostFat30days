@@ -1,5 +1,7 @@
 package com.vuthaihung.loseflat.ui.activities;
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +19,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ads.control.AdmobHelp;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.model.SectionUser;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;
 import com.vuthaihung.loseflat.data.repositories.SectionRepository;
@@ -28,6 +34,7 @@ import com.vuthaihung.loseflat.ui.adapters.helper.OnStartDragListener;
 import com.vuthaihung.loseflat.ui.adapters.helper.SimpleItemTouchHelperCallback;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.utils.Constants;
+import com.vuthaihung.loseflat.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,7 +49,9 @@ public class EditPlanActivity extends BaseActivity implements OnStartDragListene
     private ArrayList<WorkoutUser> listEdited = new ArrayList<>();
     private boolean isLoaded = false;
     private int lastPosChange = -1;
-
+    private int indexAdmob;
+    private AdmobFirebaseModel admobFirebaseModel;
+    private String admobStringId;
     private ItemTouchHelper itemTouchHelper;
 
     @Override
@@ -106,7 +115,7 @@ public class EditPlanActivity extends BaseActivity implements OnStartDragListene
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+        handleLoadAdFirebase();
         RecyclerView recyclerView = findViewById(R.id.rv_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -180,9 +189,39 @@ public class EditPlanActivity extends BaseActivity implements OnStartDragListene
         startActivityForResult(intent, 123);
     }
 
+    private void handleLoadAdFirebase() {
+        if (Utils.isNetworkConnected(this)){
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                onFirebaseRemoteSuccess();
+                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
+                            } else {
+                                // do nothing
+                            }
+                        }
+                    });
+        }
+    }
+
+    private void onFirebaseRemoteSuccess() {
+        String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
+        admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null) {
+            admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+        }
+    }
+
     @Override
     public void onBackPressed() {
         if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            AdmobHelp.getInstance().loadInterstitialAd(this , admobStringId);
             if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
                 Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
                 intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);

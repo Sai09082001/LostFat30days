@@ -1,5 +1,7 @@
 package com.vuthaihung.loseflat.ui.activities;
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatRadioButton;
 
 import com.ads.control.AdmobHelp;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.shared.AppSettings;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.dialogs.BMIDialogFragment;
@@ -35,6 +41,9 @@ public class ProfileActivity extends BaseActivity implements DialogResultListene
     private static final String TAG_NAME = ProfileActivity.class.getSimpleName();
     private AppCompatRadioButton rbKg, rbLb;
     private TextView txtWeight, txtHeight, txtBirthday, tvUnitKgLb;
+    private int indexAdmob;
+    private AdmobFirebaseModel admobFirebaseModel;
+    private String admobStringId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,11 +170,12 @@ public class ProfileActivity extends BaseActivity implements DialogResultListene
         findViewById(R.id.profile_action_bar).setOnClickListener(view -> {
             onBackPressed();
         });
+        indexAdmob = 0;
         txtBirthday = findViewById(R.id.txt_birthday);
         txtHeight = findViewById(R.id.txt_height);
         txtWeight = findViewById(R.id.txt_weight);
         tvUnitKgLb = findViewById(R.id.tv_unit_kg_lb);
-
+        handleLoadAdFirebase();
 //        rbKg = findViewById(R.id.rb_kg);
 //        rbLb = findViewById(R.id.rb_lb);
     }
@@ -186,6 +196,7 @@ public class ProfileActivity extends BaseActivity implements DialogResultListene
     @Override
     public void onBackPressed() {
         if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            AdmobHelp.getInstance().loadInterstitialAd(this , admobStringId);
             if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
                 Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
                 intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
@@ -193,5 +204,34 @@ public class ProfileActivity extends BaseActivity implements DialogResultListene
             }
         }
         finish();
+    }
+
+    private void handleLoadAdFirebase() {
+        if (Utils.isNetworkConnected(this)){
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                onFirebaseRemoteSuccess();
+                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
+                            } else {
+                                // do nothing
+                            }
+                        }
+                    });
+        }
+    }
+
+    private void onFirebaseRemoteSuccess() {
+        String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
+        admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null) {
+            admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+        }
     }
 }

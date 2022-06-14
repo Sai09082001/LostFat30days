@@ -38,25 +38,26 @@ public class LoadingInterAdActivity extends BaseActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_loading_inter_ad);
         indexAdmob=0;
-        if (Utils.isNetworkConnected(this)){
-            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                    .setMinimumFetchIntervalInSeconds(3600)
-                    .build();
-            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-            mFirebaseRemoteConfig.fetchAndActivate()
-                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Boolean> task) {
-                            if (task.isSuccessful()) {
-                                onFirebaseRemoteSuccess();
-                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
-                            } else {
-                                // do nothing
-                            }
-                        }
-                    });
-        }
+//        if (Utils.isNetworkConnected(this)){
+//            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+//                    .setMinimumFetchIntervalInSeconds(3600)
+//                    .build();
+//            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+//            mFirebaseRemoteConfig.fetchAndActivate()
+//                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<Boolean> task) {
+//                            if (task.isSuccessful()) {
+//                                onFirebaseRemoteSuccess();
+//                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
+//                            } else {
+//                                // do nothing
+//                            }
+//                        }
+//                    });
+//        }
 //        initViews();
+        loadingInterAd();
     }
 
     @Override
@@ -65,15 +66,15 @@ public class LoadingInterAdActivity extends BaseActivity {
         Log.i("KMFG", "onStart: admob ");
     }
 
-    private void onFirebaseRemoteSuccess() {
-        String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
-        admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
-        if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null){
-            admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
-            loadingInterAd();
-        }
-       // Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
-    }
+//    private void onFirebaseRemoteSuccess() {
+//        String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
+//        admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+//        if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null){
+//            admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+//            loadingInterAd();
+//        }
+//        Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
+//    }
 
     private void initViews() {
        // loadingInterAd();
@@ -83,7 +84,6 @@ public class LoadingInterAdActivity extends BaseActivity {
     private void loadingInterAd() {
         Intent intentAd = getIntent();
         String keyAd = intentAd.getStringExtra(Constants.KEY_LOADING_AD);
-        AdmobHelp.getInstance().loadInterstitialAd(this,admobStringId);
         if (keyAd == null) return;
         switch (keyAd) {
             case "EditExerciseActivity":
@@ -95,16 +95,16 @@ public class LoadingInterAdActivity extends BaseActivity {
                 AdmobHelp.getInstance().showInterstitialAd(this,null);
                 break;
             case "ResultActivity01":
-                AdmobHelp.getInstance().showInterstitialAd(this, () -> {
-                    Intent intent = new Intent(this, HistoryActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                });
+                AdmobHelp.getInstance().showInterstitialAd(this, null);
+                Intent intent = new Intent(this, HistoryActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + keyAd);
         }
-        if (indexAdmob >= admobFirebaseModel.getListAdmob().size()) indexAdmob = 0;
-        else  indexAdmob++;
+//        if (indexAdmob >= admobFirebaseModel.getListAdmob().size()) indexAdmob = 0;
+//        else  indexAdmob++;
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
     }

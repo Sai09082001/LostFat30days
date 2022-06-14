@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
@@ -38,6 +39,8 @@ import nl.dionsegijn.konfetti.models.Size;
 
 public class ResultActivity extends BaseActivity {
 
+    private AdmobFirebaseModel admobFirebaseModel;
+    private String admobStringId;
     private static final String TAG_NAME = ResultActivity.class.getSimpleName();
     private int indexAdmob;
     @Override
@@ -49,37 +52,11 @@ public class ResultActivity extends BaseActivity {
         initAnimation();
         initViews();
         initEvents();
-        if (Utils.isNetworkConnected(this)) {
-            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                    .setMinimumFetchIntervalInSeconds(3600)
-                    .build();
-            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-            mFirebaseRemoteConfig.fetchAndActivate()
-                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Boolean> task) {
-                            if (task.isSuccessful()) {
-                                onFirebaseRemoteSuccess();
-                            } else {
-                                // do nothing
-                            }
-                        }
-                    });
-        }
-    }
-
-    private void onFirebaseRemoteSuccess() {
-        String admobId = mFirebaseRemoteConfig.getString("admob_home_workout_banner");
-        AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
-        if (admobFirebaseModel.getStatus()) {
-            AdmobHelp.getInstance().loadBanner(this, admobFirebaseModel.getListAdmob().get(indexAdmob));
-            if (indexAdmob >= admobFirebaseModel.getListAdmob().size()) indexAdmob = 0;
-            else  indexAdmob++;
-        }
     }
 
     private void handleLoadingAdmob(String keyName) {
         if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            AdmobHelp.getInstance().loadInterstitialAd(this , admobStringId);
             if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
                 Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
                 intentAd.putExtra(Constants.KEY_LOADING_AD, keyName);
@@ -152,7 +129,7 @@ public class ResultActivity extends BaseActivity {
         ((TextView) findViewById(R.id.txt_exercises)).setText(totalExercises + "");
         ((TextView) findViewById(R.id.txt_calories)).setText(String.format(Locale.US, "%.0f", totalCalories));
         ((TextView) findViewById(R.id.txt_timer)).setText(String.format("%02d:%02d", hours, mins));
-
+        handleLoadAdFirebase();
         addFragment(new BMIFragment(), R.id.bmi, null, false, -1);
         addFragment(new AdsFragment(), R.id.ads, null, false, -1);
     }
@@ -162,5 +139,30 @@ public class ResultActivity extends BaseActivity {
         handleLoadingAdmob("ResultActivity02");
         finish();
        // AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
+    }
+
+    private void handleLoadAdFirebase() {
+        if (Utils.isNetworkConnected(this)){
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
+                                admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+                                if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null) {
+                                    admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+                                }
+                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
+                            } else {
+                                // do nothing
+                            }
+                        }
+                    });
+        }
     }
 }

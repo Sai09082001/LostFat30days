@@ -1,20 +1,28 @@
 package com.vuthaihung.loseflat.ui.activities;
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.ads.control.AdmobHelp;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.R;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.model.Workout;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
@@ -33,6 +41,9 @@ public class EditExerciseActivity extends BaseActivity {
     private boolean autoIncrement = false;
     private boolean autoDecrement = false;
     private final long REPEAT_DELAY = 50;
+    private int indexAdmob;
+    private AdmobFirebaseModel admobFirebaseModel;
+    private String admobStringId;
     private Handler repeatUpdateHandler = new Handler();
 
     @Override
@@ -81,6 +92,7 @@ public class EditExerciseActivity extends BaseActivity {
         ImageView imageView = findViewById(R.id.img_thumb);
         ViewUtils.bindImage(this, ViewUtils.getPathWorkout(workoutUser.getData().getImageGender()), imageView);
         ((TextView) findViewById(R.id.btn_save)).setText(getResources().getString(R.string.btn_save));
+        handleLoadAdFirebase();
         if (workoutUser.getData().getType() == 1 && workoutUser.getData().isTwoSides()) {
             findViewById(R.id.txt_each_side).setVisibility(View.VISIBLE);
         } else {
@@ -214,6 +226,7 @@ public class EditExerciseActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
+            AdmobHelp.getInstance().loadInterstitialAd(this , admobStringId);
             if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
                 Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
                 intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
@@ -221,6 +234,35 @@ public class EditExerciseActivity extends BaseActivity {
             }
         }
         finish();
+    }
+
+    private void handleLoadAdFirebase() {
+        if (Utils.isNetworkConnected(this)){
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                onFirebaseRemoteSuccess();
+                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
+                            } else {
+                                // do nothing
+                            }
+                        }
+                    });
+        }
+    }
+
+    private void onFirebaseRemoteSuccess() {
+        String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
+        admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null) {
+            admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+        }
     }
 }
 

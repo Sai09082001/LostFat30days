@@ -29,6 +29,10 @@ public class DailyListFragment extends BaseFragment {
     private DailySectionAdapter adapter;
     private int level = 1;
 
+    public DailyListFragment() {
+        // doesn't do anything special
+    }
+
     public DailyListFragment(int level) {
         this.level = level;
     }

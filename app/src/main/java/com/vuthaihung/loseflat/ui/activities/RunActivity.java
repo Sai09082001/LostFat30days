@@ -68,6 +68,8 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
     private int resume = 0;
     private MediaPlayer mediaPlayer;
     private int indexAdmob;
+    private AdmobFirebaseModel admobFirebaseModel;
+    private String admobStringId;
     // TTS
     private TextToSpeech tts;
     private boolean ready = false;
@@ -424,6 +426,31 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
     @Override
     public void onBackPressed() {
         backAction();
+    }
+
+    private void handleLoadAdFirebase() {
+        if (Utils.isNetworkConnected(this)){
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
+                                admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+                                if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null) {
+                                    admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+                                }
+                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
+                            } else {
+                                // do nothing
+                            }
+                        }
+                    });
+        }
     }
 
     private void backAction() {
