@@ -146,7 +146,6 @@ public class CaloriesChartFragment extends BaseFragment {
         xa.setTextSize(textSize);
         xa.setDrawAxisLine(false);
         xa.setDrawGridLines(false);
-
         initYAxis();
 
         chart.setPadding(0, 0, 0, 0);

@@ -137,14 +137,14 @@ public class HorizontalCalendarView extends LinearLayout implements HorizontalCa
                 }
 
                 // Load more => Don't use
-//                if (!loading && totalItemCount <= (lastVisibleItem + visibleThreshold)) {
-//                    // End has been reached
-//                    // Do something
-//                    // Handle load more right
-//                    loading = true;
-//                    loadMoreRight();
-//                    Log.e("status", "loadmore right");
-//                }
+                if (!loading && totalItemCount <= (lastVisibleItem + visibleThreshold)) {
+                    // End has been reached
+                    // Do something
+                    // Handle load more right
+                    loading = true;
+                    loadMoreRight();
+                    // Log.e("status", "loadmore right");
+                }
                 if (!loading && (firstVisibleItem - visibleThreshold) <= 0 && DateUtils.getIdDay(list.get(0).getCalendar()) > 17167) { // 1/1/2017 + 1
 //                    Log.e("status", firstVisibleItem - visibleThreshold + "");
                     // End has been reached
