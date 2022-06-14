@@ -78,11 +78,11 @@ public class ResultActivity extends BaseActivity {
         }
     }
 
-    private void handleLoadingAdmob() {
+    private void handleLoadingAdmob(String keyName) {
         if ((AdmobHelp.getInstance().getTimeLoad() + AdmobHelp.getInstance().getTimeReload()) < System.currentTimeMillis()) {
             if (AdmobHelp.getInstance().canShowInterstitialAd(this)) {
                 Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
-                intentAd.putExtra(Constants.KEY_LOADING_AD, TAG_NAME);
+                intentAd.putExtra(Constants.KEY_LOADING_AD, keyName);
                 startActivity(intentAd);
             }
         }
@@ -91,7 +91,6 @@ public class ResultActivity extends BaseActivity {
 
     private void initEvents() {
         findViewById(R.id.btn_again).setOnClickListener(view -> {
-            handleLoadingAdmob();
             AdmobHelp.getInstance().showInterstitialAd(this, () -> {
                 Intent intent = new Intent(ResultActivity.this, RunActivity.class);
                 SectionUser sectionUser = getIntent().getParcelableExtra("section");
@@ -113,14 +112,8 @@ public class ResultActivity extends BaseActivity {
 
         });
         findViewById(R.id.btn_close).setOnClickListener(view -> {
-            handleLoadingAdmob();
-            AdmobHelp.getInstance().showInterstitialAd(this, () -> {
-                Intent intent = new Intent(ResultActivity.this, HistoryActivity.class);
-                startActivity(intent);
-                finish();
-            });
-
-
+            handleLoadingAdmob("ResultActivity01");
+            finish();
         });
     }
 
@@ -166,7 +159,7 @@ public class ResultActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        handleLoadingAdmob();
+        handleLoadingAdmob("ResultActivity02");
         finish();
        // AdmobHelp.getInstance().showInterstitialAd(this, () -> finish());
     }

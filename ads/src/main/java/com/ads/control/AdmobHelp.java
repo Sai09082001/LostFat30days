@@ -118,8 +118,6 @@ public class AdmobHelp {
                 this.adCloseListener = adCloseListener;
                 mInterstitialAd.show(activity);
                 timeLoad = System.currentTimeMillis();
-            } else {
-                adCloseListener.onAdClosed();
             }
         } else {
             adCloseListener.onAdClosed();

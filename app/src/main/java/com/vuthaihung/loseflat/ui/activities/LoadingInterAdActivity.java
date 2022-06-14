@@ -15,9 +15,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
+import com.vuthaihung.loseflat.data.model.DailySectionUser;
+import com.vuthaihung.loseflat.data.model.SectionUser;
+import com.vuthaihung.loseflat.data.model.WorkoutUser;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.Utils;
+
+import java.util.ArrayList;
 
 public class LoadingInterAdActivity extends BaseActivity {
 
@@ -73,11 +78,17 @@ public class LoadingInterAdActivity extends BaseActivity {
             case "EditExerciseActivity":
             case "EditPlanActivity":
             case "ProfileActivity":
-            case "ResultActivity":
+            case "ResultActivity02":
             case "RestDayActivity":
             case "RunActivity":
                 AdmobHelp.getInstance().showInterstitialAd(this,null);
                 break;
+            case "ResultActivity01":
+                AdmobHelp.getInstance().showInterstitialAd(this, () -> {
+                    Intent intent = new Intent(this, HistoryActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                });
             case "GuideReminderActivity":
                 AdmobHelp.getInstance().showInterstitialAd(this, () -> {
                     Intent intent = new Intent(this, MainActivity.class);

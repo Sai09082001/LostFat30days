@@ -551,7 +551,11 @@ public class RunFragment extends BaseFragment {
             onClickPrev();
         });
         rootView.findViewById(R.id.btn_next_run).setOnClickListener(view -> {
-            onClickNext();
+            if (rootView.findViewById(R.id.txt_num_one).getVisibility() == View.INVISIBLE &&
+                    rootView.findViewById(R.id.txt_num_two).getVisibility() == View.INVISIBLE &&
+                    rootView.findViewById(R.id.txt_num_three).getVisibility() == View.INVISIBLE) {
+                onClickNext();
+            }
         });
         rootView.findViewById(R.id.btn_checked).setOnClickListener(view -> {
             onClickNext();
