@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 
-import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.ads.control.AdmobHelp;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;

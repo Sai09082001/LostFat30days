@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.ads.control.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.SectionUser;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;

@@ -42,6 +42,15 @@ public class AdmobHelp {
     private NativeAd nativeAd;
 
     private long timeLoad = 0;
+    private String admobStringId;
+    public long getTimeLoad() {
+        return timeLoad;
+    }
+
+    public long getTimeReload() {
+        return TimeReload;
+    }
+
     private long TimeReload = 45 * 1000;
     private boolean isReload = false;
 
@@ -56,17 +65,17 @@ public class AdmobHelp {
 
     }
 
-    public void init(Context context) {
+    public void init(Context context, String admobStringId) {
         MobileAds.initialize(context, initializationStatus -> {
         });
-        loadInterstitialAd(context);
+        loadInterstitialAd(context,admobStringId);
     }
 
-    private void loadInterstitialAd(final Context context) {
+    public void loadInterstitialAd(final Context context, String admobStringId) {
         if (mInterstitialAd != null)
             return;
         AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(context, context.getString(R.string.admob_full), adRequest, new InterstitialAdLoadCallback() {
+        InterstitialAd.load(context, admobStringId, adRequest, new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 mInterstitialAd = interstitialAd;
@@ -76,7 +85,7 @@ public class AdmobHelp {
                     public void onAdDismissedFullScreenContent() {
                         // Called when fullscreen content is dismissed.
                         adCloseListener.onAdClosed();
-                        loadInterstitialAd(context);
+                        loadInterstitialAd(context,admobStringId);
                     }
 
                     @Override
@@ -97,7 +106,7 @@ public class AdmobHelp {
                 mInterstitialAd = null;
                 if (!isReload) {
                     isReload = true;
-                    loadInterstitialAd(context);
+                    loadInterstitialAd(context,admobStringId);
                 }
             }
         });
@@ -118,7 +127,7 @@ public class AdmobHelp {
 
     }
 
-    private boolean canShowInterstitialAd(Context context) {
+    public boolean canShowInterstitialAd(Context context) {
         return mInterstitialAd != null && context instanceof Activity;
     }
 
@@ -126,7 +135,7 @@ public class AdmobHelp {
         void onAdClosed();
     }
 
-    public void loadBanner(final Activity mActivity) {
+    public void loadBanner(final Activity mActivity, String admobStringId) {
         final ShimmerFrameLayout containerShimmer = mActivity.findViewById(R.id.shimmer_container);
         containerShimmer.setVisibility(View.GONE);
         if (!containerShimmer.isShimmerStarted())
@@ -135,7 +144,7 @@ public class AdmobHelp {
 
         try {
             AdView adView = new AdView(mActivity);
-            adView.setAdUnitId(mActivity.getString(R.string.admob_banner));
+            adView.setAdUnitId(admobStringId);
             adContainer.addView(adView);
             AdSize adSize = getAdSize(mActivity);
             // Step 4 - Set the adaptive ad size on the ad view.
@@ -289,11 +298,11 @@ public class AdmobHelp {
 
     }
 
-    public void loadNativeFragment(final Activity mActivity, final View rootView) {
+    public void loadNativeFragment(final Activity mActivity, final View rootView, String admobStringId) {
         final ShimmerFrameLayout containerShimmer = rootView.findViewById(R.id.shimmer_container);
         containerShimmer.setVisibility(View.VISIBLE);
         containerShimmer.startShimmer();
-        AdLoader.Builder builder = new AdLoader.Builder(mActivity, mActivity.getString(R.string.admob_native))
+        AdLoader.Builder builder = new AdLoader.Builder(mActivity, admobStringId)
                 .forNativeAd(nati -> {
                     nativeAd = nati;
                     containerShimmer.stopShimmer();

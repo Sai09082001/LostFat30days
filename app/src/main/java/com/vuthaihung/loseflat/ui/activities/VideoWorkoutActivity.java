@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.ads.control.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.Workout;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;

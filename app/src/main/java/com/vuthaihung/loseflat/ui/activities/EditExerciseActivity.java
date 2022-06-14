@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+import com.ads.control.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.Workout;
 import com.vuthaihung.loseflat.data.model.WorkoutUser;

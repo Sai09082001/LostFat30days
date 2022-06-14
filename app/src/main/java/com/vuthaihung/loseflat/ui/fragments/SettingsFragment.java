@@ -28,7 +28,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SwitchCompat;
 
-import com.vuthaihung.loseflat.funtion.UtilsApp;
+import com.ads.control.funtion.UtilsApp;
 import com.vuthaihung.loseflat.BuildConfig;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.ContainerVoiceEngine;

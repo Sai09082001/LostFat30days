@@ -8,7 +8,8 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
-import com.vuthaihung.loseflat.ui.base.AdmobHelp;
+
+import com.ads.control.AdmobHelp;
 import com.vuthaihung.loseflat.R;
 import com.vuthaihung.loseflat.data.model.DailySectionUser;
 import com.vuthaihung.loseflat.data.repositories.DailySectionRepository;

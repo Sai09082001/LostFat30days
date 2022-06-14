@@ -14,8 +14,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.vuthaihung.loseflat.ui.base.AdmobHelp;
-import com.vuthaihung.loseflat.funtion.Rate;
+import com.ads.control.AdmobHelp;
+import com.ads.control.Rate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
