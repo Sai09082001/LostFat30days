@@ -433,7 +433,7 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
                 startActivity(intentAd);
             }
         }
-
+        finish();
     }
 
     @Override

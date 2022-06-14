@@ -5,7 +5,6 @@ import static com.vuthaihung.loseflat.service.ApiService.gson;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
@@ -69,6 +68,7 @@ public class LoadingInterAdActivity extends BaseActivity {
     private void loadingInterAd() {
         Intent intentAd = getIntent();
         String keyAd = intentAd.getStringExtra(Constants.KEY_LOADING_AD);
+        AdmobHelp.getInstance().loadInterstitialAd(this,admobStringId);
         if (keyAd == null) return;
         switch (keyAd) {
             case "EditExerciseActivity":
@@ -76,7 +76,6 @@ public class LoadingInterAdActivity extends BaseActivity {
             case "ProfileActivity":
             case "ResultActivity":
             case "RestDayActivity":
-                AdmobHelp.getInstance().loadInterstitialAd(this,admobStringId);
                 AdmobHelp.getInstance().showInterstitialAd(this,null);
                 break;
             case "GuideReminderActivity":
