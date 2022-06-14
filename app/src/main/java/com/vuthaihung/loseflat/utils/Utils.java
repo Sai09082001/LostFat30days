@@ -1,6 +1,8 @@
 package com.vuthaihung.loseflat.utils;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
 
 import androidx.annotation.NonNull;
 
@@ -106,6 +108,12 @@ public class Utils {
     public static boolean isValidateEmail(String emailStr) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
         return matcher.find();
+    }
+
+    public static boolean isNetworkConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 
     public static String changeUpperString(String name){

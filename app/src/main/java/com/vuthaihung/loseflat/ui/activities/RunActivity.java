@@ -41,6 +41,7 @@ import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.base.MyViewModelFactory;
 import com.vuthaihung.loseflat.utils.Constants;
 import com.vuthaihung.loseflat.utils.DateUtils;
+import com.vuthaihung.loseflat.utils.Utils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -83,27 +84,33 @@ public class RunActivity extends BaseActivity implements ViewPager.OnPageChangeL
         initViews();
         initObservers();
         initEvents();
-        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                .setMinimumFetchIntervalInSeconds(3600)
-                .build();
-        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-        mFirebaseRemoteConfig.fetchAndActivate()
-                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Boolean> task) {
-                        if (task.isSuccessful()) {
-                            onFirebaseRemoteSuccess();
-                        } else {
-                            // do nothing
+        if (Utils.isNetworkConnected(this)) {
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                onFirebaseRemoteSuccess();
+                            } else {
+                                // do nothing
+                            }
                         }
-                    }
-                });
+                    });
+        }
     }
 
     private void onFirebaseRemoteSuccess() {
         String admobId = mFirebaseRemoteConfig.getString("admob_ready_to_go_banner");
         AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
-        AdmobHelp.getInstance().loadBanner(RunActivity.this, admobFirebaseModel.getListAdmob().get(indexAdmob));
+        if (admobFirebaseModel.getStatus()){
+            AdmobHelp.getInstance().loadBanner(RunActivity.this, admobFirebaseModel.getListAdmob().get(indexAdmob));
+            if (indexAdmob >= admobFirebaseModel.getListAdmob().size()) indexAdmob = 0;
+            else  indexAdmob++;
+        }
     }
 
     @Override

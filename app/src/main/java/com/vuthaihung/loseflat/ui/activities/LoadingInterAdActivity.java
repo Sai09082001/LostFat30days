@@ -19,11 +19,14 @@ import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.dialogs.QuitDialog;
 import com.vuthaihung.loseflat.utils.Constants;
+import com.vuthaihung.loseflat.utils.Utils;
 
 public class LoadingInterAdActivity extends BaseActivity {
 
     private String admobStringId;
     private int indexAdmob;
+    private AdmobFirebaseModel admobFirebaseModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,28 +35,31 @@ public class LoadingInterAdActivity extends BaseActivity {
         setContentView(R.layout.activity_loading_inter_ad);
         initViews();
         indexAdmob=0;
-        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                .setMinimumFetchIntervalInSeconds(3600)
-                .build();
-        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-        mFirebaseRemoteConfig.fetchAndActivate()
-                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Boolean> task) {
-                        if (task.isSuccessful()) {
-                            onFirebaseRemoteSuccess();
-                        } else {
-                            // do nothing
+        if (Utils.isNetworkConnected(this)){
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                    onFirebaseRemoteSuccess();
+                            } else {
+                                // do nothing
+                            }
                         }
-                    }
-                });
+                    });
+        }
     }
 
     private void onFirebaseRemoteSuccess() {
         String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
-        AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
-        admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
-        Log.i("KMFG", "onFirebaseRemoteSuccess: "+admobFirebaseModel.getListAdmob().get(indexAdmob));
+        admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+        if (admobFirebaseModel.getStatus()){
+            admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+        }
     }
 
     private void initViews() {
@@ -86,6 +92,8 @@ public class LoadingInterAdActivity extends BaseActivity {
             default:
                 throw new IllegalStateException("Unexpected value: " + keyAd);
         }
+        if (indexAdmob >= admobFirebaseModel.getListAdmob().size()) indexAdmob = 0;
+        else  indexAdmob++;
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
     }

@@ -6,20 +6,15 @@ import java.util.List;
 
 public class AdmobFirebaseModel {
     @SerializedName("status")
-    private String status;
+    private boolean status;
     @SerializedName("list")
     private List<String> listAdmob;
 
-    public AdmobFirebaseModel(String status, List<String> listAdmob) {
-        this.status = status;
-        this.listAdmob = listAdmob;
-    }
-
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

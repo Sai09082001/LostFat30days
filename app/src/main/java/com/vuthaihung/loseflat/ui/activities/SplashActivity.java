@@ -27,6 +27,7 @@ import com.vuthaihung.loseflat.data.shared.AppSettings;
 import com.vuthaihung.loseflat.ui.base.BaseActivity;
 import com.vuthaihung.loseflat.ui.base.BaseApplication;
 import com.vuthaihung.loseflat.ui.interfaces.DatabaseListener;
+import com.vuthaihung.loseflat.utils.Utils;
 
 import io.reactivex.schedulers.Schedulers;
 
@@ -53,21 +54,23 @@ public class SplashActivity extends BaseActivity implements DatabaseListener {
 //        lr.startAnimation(AnimationUtils.loadAnimation(SplashActivity.this, R.anim.left_to_right));
 //        tvStatus = (TextView)findViewById(R.id.tv_slogan);
 //        pbLoadData = (ProgressBar)findViewById(R.id.pbLoadData);
-        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                .setMinimumFetchIntervalInSeconds(3600)
-                .build();
-        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-        mFirebaseRemoteConfig.fetchAndActivate()
-                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Boolean> task) {
-                        if (task.isSuccessful()) {
-                            onFirebaseRemoteSuccess();
-                        } else {
-                            // do nothing
+        if (Utils.isNetworkConnected(this)) {
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                onFirebaseRemoteSuccess();
+                            } else {
+                                // do nothing
+                            }
                         }
-                    }
-                });
+                    });
+        }
         /**
          *  Important
          */
@@ -108,8 +111,11 @@ public class SplashActivity extends BaseActivity implements DatabaseListener {
     private void onFirebaseRemoteSuccess() {
         String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
         AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
-        AdmobHelp.getInstance().init(this,admobFirebaseModel.getListAdmob().get(indexAdmob));
-        Log.i("KMFG", "onFirebaseRemoteSuccess: "+admobFirebaseModel.getListAdmob().get(indexAdmob));
+        if (admobFirebaseModel.getStatus()){
+            AdmobHelp.getInstance().init(this,admobFirebaseModel.getListAdmob().get(indexAdmob));
+            if (indexAdmob >= admobFirebaseModel.getListAdmob().size()) indexAdmob = 0;
+            else  indexAdmob++;
+        }
     }
 
     private void gotoHome() {

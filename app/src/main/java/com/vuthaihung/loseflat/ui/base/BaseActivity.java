@@ -1,6 +1,8 @@
 package com.vuthaihung.loseflat.ui.base;
 
 
+import static com.vuthaihung.loseflat.service.ApiService.gson;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -9,17 +11,27 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.ads.control.AdmobHelp;
+import com.ads.control.AppOpenManager;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
+import com.google.gson.Gson;
+import com.vuthaihung.loseflat.data.model.AdmobFirebaseModel;
 import com.vuthaihung.loseflat.data.shared.AppSettings;
 import com.vuthaihung.loseflat.ui.activities.MainActivity;
+import com.vuthaihung.loseflat.utils.Utils;
 
 import java.util.Locale;
 
@@ -30,6 +42,7 @@ import io.reactivex.disposables.Disposable;
 public abstract class BaseActivity extends AppCompatActivity {
     protected CompositeDisposable compositeDisposable = new CompositeDisposable();
     protected boolean fullscreen = false;
+    private int indexAdmob;
     protected FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
     @Override
@@ -43,6 +56,32 @@ public abstract class BaseActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(Color.TRANSPARENT);
+        }
+        if (Utils.isNetworkConnected(this)) {
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            indexAdmob = 0;
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                String admobId = mFirebaseRemoteConfig.getString("admob_open_ads");
+                                Gson gson = new Gson();
+                                AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
+                                if (admobFirebaseModel.getStatus()) {
+                                    AppOpenManager.admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+                                    if (indexAdmob >= admobFirebaseModel.getListAdmob().size())
+                                        indexAdmob = 0;
+                                    else indexAdmob++;
+                                }
+                            } else {
+                                // do nothing
+                            }
+                        }
+                    });
         }
         initLocale();
     }

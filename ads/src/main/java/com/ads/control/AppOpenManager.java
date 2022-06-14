@@ -18,7 +18,9 @@ import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.appopen.AppOpenAd;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static androidx.lifecycle.Lifecycle.Event.ON_START;
 
@@ -31,6 +33,7 @@ public class AppOpenManager implements Application.ActivityLifecycleCallbacks, L
     private long timeshowAds = 0;
     private long timeReshow = 30 * 1000;
     private AppOpenAd.AppOpenAdLoadCallback loadCallback;
+    public static String admobStringId;
 
     private final AdsApplication myApplication;
     private Activity currentActivity;
@@ -84,9 +87,12 @@ public class AppOpenManager implements Application.ActivityLifecycleCallbacks, L
 
                 };
         AdRequest request = getAdRequest();
-        AppOpenAd.load(
-                myApplication, myApplication.getString(R.string.admob_open_app), request,
-                AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback);
+        if (admobStringId == null) return;
+        else
+            AppOpenAd.load(
+                    myApplication, admobStringId, request,
+                    AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT, loadCallback);
+
     }
 
     /**

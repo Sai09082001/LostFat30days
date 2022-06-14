@@ -30,6 +30,7 @@ import com.vuthaihung.loseflat.ui.fragments.SettingsFragment;
 import com.vuthaihung.loseflat.ui.fragments.TrainingFragment;
 import com.vuthaihung.loseflat.ui.fragments.WorkoutsFragment;
 import com.vuthaihung.loseflat.utils.NotificationUtils;
+import com.vuthaihung.loseflat.utils.Utils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -53,28 +54,33 @@ public class MainActivity extends BaseActivity {
         initViews();
         initObservers();
         initEvents();
-
-        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                .setMinimumFetchIntervalInSeconds(3600)
-                .build();
-        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
-        mFirebaseRemoteConfig.fetchAndActivate()
-                .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Boolean> task) {
-                        if (task.isSuccessful()) {
-                           onFirebaseRemoteSuccess();
-                        } else {
-                           // do nothing
+        if (Utils.isNetworkConnected(this)){
+            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                    .setMinimumFetchIntervalInSeconds(3600)
+                    .build();
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings);
+            mFirebaseRemoteConfig.fetchAndActivate()
+                    .addOnCompleteListener(this, new OnCompleteListener<Boolean>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Boolean> task) {
+                            if (task.isSuccessful()) {
+                                onFirebaseRemoteSuccess();
+                            } else {
+                                // do nothing
+                            }
                         }
-                    }
-                });
+                    });
+        }
     }
 
     private void onFirebaseRemoteSuccess() {
         String admobId = mFirebaseRemoteConfig.getString("admob_home_workout_banner");
         AdmobFirebaseModel admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
-        AdmobHelp.getInstance().loadBanner(MainActivity.this, admobFirebaseModel.getListAdmob().get(indexAdmob));
+        if (admobFirebaseModel.getStatus()) {
+            AdmobHelp.getInstance().loadBanner(MainActivity.this, admobFirebaseModel.getListAdmob().get(indexAdmob));
+            if (indexAdmob >= admobFirebaseModel.getListAdmob().size()) indexAdmob = 0;
+            else  indexAdmob++;
+        }
     }
 
     private void initEvents() {
