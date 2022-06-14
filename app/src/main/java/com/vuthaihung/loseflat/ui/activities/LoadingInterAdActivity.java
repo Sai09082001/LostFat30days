@@ -5,6 +5,7 @@ import static com.vuthaihung.loseflat.service.ApiService.gson;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,6 @@ public class LoadingInterAdActivity extends BaseActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_loading_inter_ad);
-        initViews();
         indexAdmob=0;
         if (Utils.isNetworkConnected(this)){
             FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
@@ -48,25 +48,36 @@ public class LoadingInterAdActivity extends BaseActivity {
                         @Override
                         public void onComplete(@NonNull Task<Boolean> task) {
                             if (task.isSuccessful()) {
-                                    onFirebaseRemoteSuccess();
+                                onFirebaseRemoteSuccess();
+                                Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
                             } else {
                                 // do nothing
                             }
                         }
                     });
         }
+//        initViews();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("KMFG", "onStart: admob ");
     }
 
     private void onFirebaseRemoteSuccess() {
         String admobId = mFirebaseRemoteConfig.getString("admob_workout_complete_back_interstital");
         admobFirebaseModel = gson.fromJson(admobId, AdmobFirebaseModel.class);
-        if (admobFirebaseModel.getStatus()){
+        if (admobFirebaseModel.getStatus() && admobFirebaseModel!=null){
             admobStringId = admobFirebaseModel.getListAdmob().get(indexAdmob);
+            loadingInterAd();
         }
+       // Log.i("KMFG", "onFirebaseRemoteSuccess: ok ");
     }
 
     private void initViews() {
-        new Handler().postDelayed(this::loadingInterAd, 2000);
+       // loadingInterAd();
+//        new Handler().postDelayed(this::, 2000);
     }
 
     private void loadingInterAd() {
@@ -89,13 +100,6 @@ public class LoadingInterAdActivity extends BaseActivity {
                     startActivity(intent);
                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 });
-            case "GuideReminderActivity":
-                AdmobHelp.getInstance().showInterstitialAd(this, () -> {
-                    Intent intent = new Intent(this, MainActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                });
-                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + keyAd);
         }

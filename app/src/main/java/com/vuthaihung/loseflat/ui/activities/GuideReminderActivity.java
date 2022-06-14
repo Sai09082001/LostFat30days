@@ -64,7 +64,11 @@ public class GuideReminderActivity extends BaseActivity {
                     GuideReminderActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            handleLoadingAdmob();
+                            Intent intent = new Intent(GuideReminderActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                            finish();
+
                         }
                     });
 
@@ -78,13 +82,6 @@ public class GuideReminderActivity extends BaseActivity {
 
             }));
         });
-    }
-
-    private void handleLoadingAdmob() {
-        Intent intentAd = new Intent(this, LoadingInterAdActivity.class);
-        intentAd.putExtra(Constants.KEY_LOADING_AD , TAG_NAME);
-        startActivity(intentAd);
-        finish();
     }
 
     private void initViews() {
