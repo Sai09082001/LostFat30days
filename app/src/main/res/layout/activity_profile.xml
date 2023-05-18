@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vuthaihung.loseflat.ui.activities.ProfileActivity">
+    tools:context="com.nhn.fitness.ui.activities.ProfileActivity">
 
     <LinearLayout
         android:id="@+id/profile_action_bar"

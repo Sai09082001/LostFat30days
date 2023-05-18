@@ -31,7 +31,7 @@ public class Highlight {
     private float mYPx;
 
     /**
-     * the index of the data object - in case it refers to more than one
+     * the index of the com.nhn.fitness.data object - in case it refers to more than one
      */
     private int mDataIndex = -1;
 
@@ -134,7 +134,7 @@ public class Highlight {
     }
 
     /**
-     * the index of the data object - in case it refers to more than one
+     * the index of the com.nhn.fitness.data object - in case it refers to more than one
      *
      * @return
      */

@@ -12,6 +12,8 @@
     <string name="good_5_stars">Tốt,5 sao</string>
     <string name="not_good">Chưa tốt</string>
     <string name="title_dialog_feed_back">Gửi một góp ý</string>
+    <string name="title_follow_dialog">Cho phép app theo dõi chuyển động của bạn</string>
+    <string name="message_dialog_follow">Giữ thiết bị trên người bạn để ứng dụng có thể quan sát bạn tập</string>
     <string name="message_dialog_feed_back">Báo cáo lỗi hoặc yêu cầu chức năng mới</string>
     <string name="exit_app">Thoát</string>
     <string name="confirm_close">Bạn muốn đóng hoạt động này lại ?</string>

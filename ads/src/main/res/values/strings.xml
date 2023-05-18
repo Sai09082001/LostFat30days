@@ -11,6 +11,8 @@
     <string name="good_5_stars">Good, 5 stars</string>
     <string name="not_good">Not good</string>
     <string name="title_dialog_feed_back">Send a feed back</string>
+    <string name="title_follow_dialog">Allow the app to track your movemonts</string>
+    <string name="message_dialog_follow">Keep the device on you so the app can track you</string>
     <string name="message_dialog_feed_back">Request bug fix and implement new features via email</string>
     <string name="exit_app">Exit</string>
 

@@ -6,7 +6,7 @@ import com.github.mikephil.charting.interfaces.datasets.IBarLineScatterCandleBub
 import java.util.List;
 
 /**
- * Baseclass for all Line, Bar, Scatter, Candle and Bubble data.
+ * Baseclass for all Line, Bar, Scatter, Candle and Bubble com.nhn.fitness.data.
  * 
  * @author Philipp Jahoda
  */

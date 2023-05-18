@@ -33,12 +33,12 @@ public abstract class LineRadarDataSet<T extends Entry> extends LineScatterCandl
     private int mFillAlpha = 85;
 
     /**
-     * the width of the drawn data lines
+     * the width of the drawn com.nhn.fitness.data lines
      */
     private float mLineWidth = 2.5f;
 
     /**
-     * if true, the data will also be drawn filled
+     * if true, the com.nhn.fitness.data will also be drawn filled
      */
     private boolean mDrawFilled = false;
 

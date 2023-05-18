@@ -18,7 +18,7 @@ public class ChartHighlighter<T extends BarLineScatterCandleBubbleDataProvider> 
 {
 
     /**
-     * instance of the data-provider
+     * instance of the com.nhn.fitness.data-provider
      */
     protected T mChart;
 

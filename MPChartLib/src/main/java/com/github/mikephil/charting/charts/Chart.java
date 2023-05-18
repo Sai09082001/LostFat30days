@@ -72,7 +72,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     protected boolean mLogEnabled = false;
 
     /**
-     * object that holds all data that was originally set for the chart, before
+     * object that holds all com.nhn.fitness.data that was originally set for the chart, before
      * it was modified or any filtering algorithms had been applied
      */
     protected T mData = null;
@@ -96,7 +96,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     private float mDragDecelerationFrictionCoef = 0.9f;
 
     /**
-     * default value-formatter, number of digits depends on provided chart-data
+     * default value-formatter, number of digits depends on provided chart-com.nhn.fitness.data
      */
     protected DefaultValueFormatter mDefaultValueFormatter = new DefaultValueFormatter(0);
 
@@ -128,7 +128,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     protected Description mDescription;
 
     /**
-     * the legend object containing all data associated with the legend
+     * the legend object containing all com.nhn.fitness.data associated with the legend
      */
     protected Legend mLegend;
 
@@ -142,7 +142,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     /**
      * text that is displayed when the chart is empty
      */
-    private String mNoDataText = "No chart data available.";
+    private String mNoDataText = "No chart com.nhn.fitness.data available.";
 
     /**
      * Gesture listener for custom callbacks when making gestures on the chart.
@@ -152,7 +152,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     protected LegendRenderer mLegendRenderer;
 
     /**
-     * object responsible for rendering the data
+     * object responsible for rendering the com.nhn.fitness.data
      */
     protected DataRenderer mRenderer;
 
@@ -217,7 +217,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
             }
         });
 
-        // initialize the utils
+        // initialize the com.nhn.fitness.utils
         Utils.init(getContext());
         mMaxHighlightDistance = Utils.convertDpToPixel(500f);
 
@@ -267,14 +267,14 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     // DataSet set = new DataSet(yVals, "DataSet " + i);
     // dataSets.add(set); // add the datasets
     // }
-    // // create a data object with the datasets
-    // ChartData data = new ChartData(xVals, dataSets);
-    // setData(data);
+    // // create a com.nhn.fitness.data object with the datasets
+    // ChartData com.nhn.fitness.data = new ChartData(xVals, dataSets);
+    // setData(com.nhn.fitness.data);
     // invalidate();
     // }
 
     /**
-     * Sets a new data object for the chart. The data object contains all values
+     * Sets a new com.nhn.fitness.data object for the chart. The com.nhn.fitness.data object contains all values
      * and information needed for displaying.
      *
      * @param data
@@ -296,7 +296,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
                 set.setValueFormatter(mDefaultValueFormatter);
         }
 
-        // let the chart know there is new data
+        // let the chart know there is new com.nhn.fitness.data
         notifyDataSetChanged();
 
         if (mLogEnabled)
@@ -304,7 +304,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Clears the chart from all data (sets it to null) and refreshes it (by
+     * Clears the chart from all com.nhn.fitness.data (sets it to null) and refreshes it (by
      * calling invalidate()).
      */
     public void clear() {
@@ -316,7 +316,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Removes all DataSets (and thereby Entries) from the chart. Does not set the data object to null. Also refreshes the
+     * Removes all DataSets (and thereby Entries) from the chart. Does not set the com.nhn.fitness.data object to null. Also refreshes the
      * chart by calling invalidate().
      */
     public void clearValues() {
@@ -325,7 +325,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Returns true if the chart is empty (meaning it's data object is either
+     * Returns true if the chart is empty (meaning it's com.nhn.fitness.data object is either
      * null or contains no entries).
      *
      * @return
@@ -344,9 +344,9 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Lets the chart know its underlying data has changed and performs all
+     * Lets the chart know its underlying com.nhn.fitness.data has changed and performs all
      * necessary recalculations. It is crucial that this method is called
-     * everytime data is changed dynamically. Not calling this method can lead
+     * everytime com.nhn.fitness.data is changed dynamically. Not calling this method can lead
      * to crashes or unexpected behaviour.
      */
     public abstract void notifyDataSetChanged();
@@ -669,7 +669,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     public Highlight getHighlightByTouchPoint(float x, float y) {
 
         if (mData == null) {
-            Log.e(LOG_TAG, "Can't select by touch. No data set.");
+            Log.e(LOG_TAG, "Can't select by touch. No com.nhn.fitness.data set.");
             return null;
         } else
             return getHighlighter().getHighlight(x, y);
@@ -1135,7 +1135,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Sets the text that informs the user that there is no data available with
+     * Sets the text that informs the user that there is no com.nhn.fitness.data available with
      * which to draw the chart.
      *
      * @param text
@@ -1145,7 +1145,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Sets the color of the no data text.
+     * Sets the color of the no com.nhn.fitness.data text.
      *
      * @param color
      */
@@ -1154,7 +1154,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Sets the typeface to be used for the no data text.
+     * Sets the typeface to be used for the no com.nhn.fitness.data text.
      *
      * @param tf
      */
@@ -1388,7 +1388,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     /**
-     * Returns the Renderer object the chart uses for drawing data.
+     * Returns the Renderer object the chart uses for drawing com.nhn.fitness.data.
      *
      * @return
      */

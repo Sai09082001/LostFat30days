@@ -50,7 +50,7 @@ public class CandleEntry extends Entry {
      * @param shadowL The (shadow) low value
      * @param open
      * @param close
-     * @param data Spot for additional data this Entry represents
+     * @param data Spot for additional com.nhn.fitness.data this Entry represents
      */
     public CandleEntry(float x, float shadowH, float shadowL, float open, float close,
                        Object data) {
@@ -91,7 +91,7 @@ public class CandleEntry extends Entry {
      * @param open
      * @param close
      * @param icon Icon image
-     * @param data Spot for additional data this Entry represents
+     * @param data Spot for additional com.nhn.fitness.data this Entry represents
      */
     public CandleEntry(float x, float shadowH, float shadowL, float open, float close,
                        Drawable icon, Object data) {

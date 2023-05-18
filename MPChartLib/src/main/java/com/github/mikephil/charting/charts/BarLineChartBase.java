@@ -133,7 +133,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
 
     protected XAxisRenderer mXAxisRenderer;
 
-    // /** the approximator object used for data filtering */
+    // /** the approximator object used for com.nhn.fitness.data filtering */
     // private Approximator mApproximator;
 
     public BarLineChartBase(Context context, AttributeSet attrs, int defStyle) {
@@ -230,7 +230,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
         if (mAxisRight.isEnabled() && mAxisRight.isDrawLimitLinesBehindDataEnabled())
             mAxisRendererRight.renderLimitLines(canvas);
 
-        // make sure the data cannot be drawn outside the content-rect
+        // make sure the com.nhn.fitness.data cannot be drawn outside the content-rect
         int clipRestoreCount = canvas.save();
         canvas.clipRect(mViewPortHandler.getContentRect());
 
@@ -363,7 +363,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
 
         mXAxis.calculate(mData.getXMin(), mData.getXMax());
 
-        // calculate axis range (min / max) according to provided data
+        // calculate axis range (min / max) according to provided com.nhn.fitness.data
 
         if (mAxisLeft.isEnabled())
             mAxisLeft.calculate(mData.getYMin(AxisDependency.LEFT),
@@ -381,7 +381,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
 
         mXAxis.calculate(mData.getXMin(), mData.getXMax());
 
-        // calculate axis range (min / max) according to provided data
+        // calculate axis range (min / max) according to provided com.nhn.fitness.data
         mAxisLeft.calculate(mData.getYMin(AxisDependency.LEFT), mData.getYMax(AxisDependency.LEFT));
         mAxisRight.calculate(mData.getYMin(AxisDependency.RIGHT), mData.getYMax(AxisDependency
                 .RIGHT));
@@ -1571,7 +1571,7 @@ public abstract class BarLineChartBase<T extends BarLineScatterCandleBubbleData<
 
     /**
      * Flag that indicates if auto scaling on the y axis is enabled. This is
-     * especially interesting for charts displaying financial data.
+     * especially interesting for charts displaying financial com.nhn.fitness.data.
      *
      * @param enabled the y axis automatically adjusts to the min and max y
      *                values of the current x axis range whenever the viewport

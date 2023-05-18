@@ -30,8 +30,8 @@ public class YAxisRendererHorizontalBarChart extends YAxisRenderer {
     /**
      * Computes the axis values.
      *
-     * @param yMin - the minimum y-value in the data object for this axis
-     * @param yMax - the maximum y-value in the data object for this axis
+     * @param yMin - the minimum y-value in the com.nhn.fitness.data object for this axis
+     * @param yMax - the maximum y-value in the com.nhn.fitness.data object for this axis
      */
     @Override
     public void computeAxis(float yMin, float yMax, boolean inverted) {

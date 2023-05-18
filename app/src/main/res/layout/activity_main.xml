@@ -6,36 +6,27 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.vuthaihung.loseflat.ui.activities.MainActivity">
+    tools:context="com.nhn.fitness.ui.activities.MainActivity">
 
-    <com.vuthaihung.loseflat.ui.customViews.CustomViewPager
+    <com.nhn.fitness.ui.customViews.CustomViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-
-    <com.roughike.bottombar.BottomBar
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
         app:bb_activeTabAlpha="1"
-        app:bb_activeTabColor="@color/blueLight"
-        app:bb_badgesHideWhenActive="true"
-        app:bb_inActiveTabAlpha="0.6"
-        app:bb_inActiveTabColor="#222222"
-        app:bb_showShadow="true"
-        app:bb_tabXmlResource="@xml/bottom_bar_tab"
         app:bb_titleTypeFace="fonts/roboto_regular.ttf"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-    <include
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/layout_banner_control">
-    </include>
+        app:itemIconTint="@color/custom_tab_home"
+        app:bb_inActiveTabAlpha="0.6"
+        android:background="@color/grayTab"
+        app:itemTextColor="@color/grayTextColor"
+        app:bb_showShadow="true"
+        app:menu="@menu/navigation_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </LinearLayout>

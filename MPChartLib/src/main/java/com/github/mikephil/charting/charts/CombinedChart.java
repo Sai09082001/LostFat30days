@@ -21,7 +21,7 @@ import com.github.mikephil.charting.renderer.CombinedChartRenderer;
 
 /**
  * This chart class allows the combination of lines, bars, scatter and candle
- * data all displayed in one chart area.
+ * com.nhn.fitness.data all displayed in one chart area.
  *
  * @author Philipp Jahoda
  */
@@ -48,7 +48,7 @@ public class CombinedChart extends BarLineChartBase<CombinedData> implements Com
     protected DrawOrder[] mDrawOrder;
 
     /**
-     * enum that allows to specify the order in which the different data objects
+     * enum that allows to specify the order in which the different com.nhn.fitness.data objects
      * for the combined-chart are drawn
      */
     public enum DrawOrder {
@@ -110,7 +110,7 @@ public class CombinedChart extends BarLineChartBase<CombinedData> implements Com
     public Highlight getHighlightByTouchPoint(float x, float y) {
 
         if (mData == null) {
-            Log.e(LOG_TAG, "Can't select by touch. No data set.");
+            Log.e(LOG_TAG, "Can't select by touch. No com.nhn.fitness.data set.");
             return null;
         } else {
             Highlight h = getHighlighter().getHighlight(x, y);
@@ -217,7 +217,7 @@ public class CombinedChart extends BarLineChartBase<CombinedData> implements Com
     }
 
     /**
-     * Sets the order in which the provided data objects should be drawn. The
+     * Sets the order in which the provided com.nhn.fitness.data objects should be drawn. The
      * earlier you place them in the provided array, the further they will be in
      * the background. e.g. if you provide new DrawOrer[] { DrawOrder.BAR,
      * DrawOrder.LINE }, the bars will be drawn behind the lines.

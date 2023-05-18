@@ -39,7 +39,7 @@
             android:layout_weight="14"
             android:layout_width="match_parent"
             android:layout_height="0dp">
-            <com.vuthaihung.loseflat.ui.customViews.CustomScrollView
+            <com.nhn.fitness.ui.customViews.CustomScrollView
                 android:layout_marginBottom="16dp"
                 android:id="@+id/sv_policy"
                 android:layout_width="fill_parent"
@@ -512,7 +512,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-            </com.vuthaihung.loseflat.ui.customViews.CustomScrollView>
+            </com.nhn.fitness.ui.customViews.CustomScrollView>
         </LinearLayout>
 
     <LinearLayout

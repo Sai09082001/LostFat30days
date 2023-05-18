@@ -149,7 +149,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
     public void calculateOffsets() {
         super.calculateOffsets();
 
-        // prevent nullpointer when no data set
+        // prevent nullpointer when no com.nhn.fitness.data set
         if (mData == null)
             return;
 

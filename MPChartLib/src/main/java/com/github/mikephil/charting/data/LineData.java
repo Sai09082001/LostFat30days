@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Data object that encapsulates all data associated with a LineChart.
+ * Data object that encapsulates all com.nhn.fitness.data associated with a LineChart.
  * 
  * @author Philipp Jahoda
  */

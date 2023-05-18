@@ -202,7 +202,7 @@ public class HorizontalBarChart extends BarChart {
 
         if (mData == null) {
             if (mLogEnabled)
-                Log.e(LOG_TAG, "Can't select by touch. No data set.");
+                Log.e(LOG_TAG, "Can't select by touch. No com.nhn.fitness.data set.");
             return null;
         } else
             return getHighlighter().getHighlight(y, x); // switch x and y

@@ -48,7 +48,7 @@ public class BarEntry extends Entry {
      *
      * @param x
      * @param y
-     * @param data - Spot for additional data this Entry represents.
+     * @param data - Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public BarEntry(float x, float y, Object data) {
         super(x, y, data);
@@ -71,14 +71,14 @@ public class BarEntry extends Entry {
      * @param x
      * @param y
      * @param icon - icon image
-     * @param data - Spot for additional data this Entry represents.
+     * @param data - Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public BarEntry(float x, float y, Drawable icon, Object data) {
         super(x, y, icon, data);
     }
 
     /**
-     * Constructor for stacked bar entries. One data object for whole stack
+     * Constructor for stacked bar entries. One com.nhn.fitness.data object for whole stack
      *
      * @param x
      * @param vals - the stack values, use at least 2
@@ -92,11 +92,11 @@ public class BarEntry extends Entry {
     }
 
     /**
-     * Constructor for stacked bar entries. One data object for whole stack
+     * Constructor for stacked bar entries. One com.nhn.fitness.data object for whole stack
      *
      * @param x
      * @param vals - the stack values, use at least 2
-     * @param data - Spot for additional data this Entry represents.
+     * @param data - Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public BarEntry(float x, float[] vals, Object data) {
         super(x, calcSum(vals), data);
@@ -107,7 +107,7 @@ public class BarEntry extends Entry {
     }
 
     /**
-     * Constructor for stacked bar entries. One data object for whole stack
+     * Constructor for stacked bar entries. One com.nhn.fitness.data object for whole stack
      *
      * @param x
      * @param vals - the stack values, use at least 2
@@ -122,12 +122,12 @@ public class BarEntry extends Entry {
     }
 
     /**
-     * Constructor for stacked bar entries. One data object for whole stack
+     * Constructor for stacked bar entries. One com.nhn.fitness.data object for whole stack
      *
      * @param x
      * @param vals - the stack values, use at least 2
      * @param icon - icon image
-     * @param data - Spot for additional data this Entry represents.
+     * @param data - Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public BarEntry(float x, float[] vals, Drawable icon, Object data) {
         super(x, calcSum(vals), icon, data);

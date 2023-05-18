@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@color/white"
-	tools:context="com.vuthaihung.loseflat.ui.activities.EditTrainingActivity">
+	tools:context="com.nhn.fitness.ui.activities.EditTrainingActivity">
 
 	<LinearLayout
 		android:id="@+id/new_training_action_bar"

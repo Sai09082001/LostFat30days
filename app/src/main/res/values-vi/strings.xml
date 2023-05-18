@@ -145,7 +145,10 @@
     <string name="settings_down_more_tts_language">Tải xuống thêm dữ liệu ngôn ngữ TTS</string>
     <string name="settings_device_tts">Cài đặt TTS thiết bị</string>
     <string name="title_general">Chung</string>
+    <string name="title_advance">Nâng cao</string>
     <string name="settings_language">Ngôn ngữ</string>
+    <string name="settings_walk">Đi bộ</string>
+    <string name="settings_gym_location">Phòng tập gym</string>
     <string name="settings_share">Chia sẻ với bạn bè</string>
     <string name="title_support">Hỗ trợ</string>
     <string name="settings_ratings">Đánh giá 5 sao</string>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.vuthaihung.loseflat.ui.fragments.TotalFragment">
+    tools:context="com.nhn.fitness.ui.fragments.TotalFragment">
 
     <TextView
         android:layout_marginBottom="8dp"
@@ -201,7 +201,7 @@
         </LinearLayout>
     </FrameLayout>
 
-    <com.vuthaihung.loseflat.ui.customViews.CurrentWeekView
+    <com.nhn.fitness.ui.customViews.CurrentWeekView
         android:id="@+id/current_week_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

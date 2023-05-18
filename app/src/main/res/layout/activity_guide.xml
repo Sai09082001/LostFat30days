@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_guide_activity"
     android:fitsSystemWindows="true"
-    tools:context="com.vuthaihung.loseflat.ui.activities.GuideActivity">
+    tools:context="com.nhn.fitness.ui.activities.GuideActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         fontPath="@string/font_bold"

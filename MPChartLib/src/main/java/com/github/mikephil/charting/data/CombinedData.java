@@ -127,7 +127,7 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
     }
 
     /**
-     * Returns all data objects in row: line-bar-scatter-candle-bubble if not null.
+     * Returns all com.nhn.fitness.data objects in row: line-bar-scatter-candle-bubble if not null.
      *
      * @return
      */

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Class representing the legend of the chart. The legend will contain one entry
  * per color and DataSet. Multiple colors in one DataSet are grouped together.
- * The legend object is NOT available before setting data to the chart.
+ * The legend object is NOT available before setting com.nhn.fitness.data to the chart.
  *
  * @author Philipp Jahoda
  */

@@ -8,14 +8,14 @@ import java.util.List;
  * recreate.
  * 
  * @author Philipp Jahoda
- * @param <T> The data the buffer accepts to be fed with.
+ * @param <T> The com.nhn.fitness.data the buffer accepts to be fed with.
  */
 public abstract class AbstractBuffer<T> {
 
     /** index in the buffer */
     protected int index = 0;
 
-    /** float-buffer that holds the data points to draw, order: x,y,x,y,... */
+    /** float-buffer that holds the com.nhn.fitness.data points to draw, order: x,y,x,y,... */
     public final float[] buffer;
 
     /** animation phase x-axis */
@@ -24,10 +24,10 @@ public abstract class AbstractBuffer<T> {
     /** animation phase y-axis */
     protected float phaseY = 1f;
 
-    /** indicates from which x-index the visible data begins */
+    /** indicates from which x-index the visible com.nhn.fitness.data begins */
     protected int mFrom = 0;
 
-    /** indicates to which x-index the visible data ranges */
+    /** indicates to which x-index the visible com.nhn.fitness.data ranges */
     protected int mTo = 0;
 
     /**
@@ -82,7 +82,7 @@ public abstract class AbstractBuffer<T> {
     }
 
     /**
-     * Builds up the buffer with the provided data and resets the buffer-index
+     * Builds up the buffer with the provided com.nhn.fitness.data and resets the buffer-index
      * after feed-completion. This needs to run FAST.
      * 
      * @param data

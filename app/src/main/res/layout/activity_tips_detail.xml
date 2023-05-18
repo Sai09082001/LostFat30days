@@ -6,7 +6,7 @@
 	android:layout_height="match_parent"
 	android:background="@color/white"
 	android:fitsSystemWindows="true"
-	tools:context="com.vuthaihung.loseflat.ui.activities.TipsDetailActivity">
+	tools:context="com.nhn.fitness.ui.activities.TipsDetailActivity">
 
 	<com.google.android.material.appbar.AppBarLayout
 		android:id="@+id/appBar"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.vuthaihung.loseflat.ui.activities.EditPlanActivity">
+    tools:context="com.nhn.fitness.ui.activities.EditPlanActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"

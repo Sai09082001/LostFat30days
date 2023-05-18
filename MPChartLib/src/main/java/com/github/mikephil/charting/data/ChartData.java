@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class that holds all relevant data that represents the chart. That involves
+ * Class that holds all relevant com.nhn.fitness.data that represents the chart. That involves
  * at least one (or more) DataSets, and an array of x-values.
  *
  * @author Philipp Jahoda
@@ -88,7 +88,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * constructor for chart data
+     * constructor for chart com.nhn.fitness.data
      *
      * @param sets the dataset array
      */
@@ -98,9 +98,9 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Call this method to let the ChartData know that the underlying data has
+     * Call this method to let the ChartData know that the underlying com.nhn.fitness.data has
      * changed. Calling this performs all necessary recalculations needed when
-     * the contained data has changed.
+     * the contained com.nhn.fitness.data has changed.
      */
     public void notifyDataChanged() {
         calcMinMax();
@@ -119,7 +119,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
             set.calcMinMaxY(fromX, toX);
         }
 
-        // apply the new data
+        // apply the new com.nhn.fitness.data
         calcMinMax();
     }
 
@@ -198,7 +198,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Returns the smallest y-value the data object contains.
+     * Returns the smallest y-value the com.nhn.fitness.data object contains.
      *
      * @return
      */
@@ -228,7 +228,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Returns the greatest y-value the data object contains.
+     * Returns the greatest y-value the com.nhn.fitness.data object contains.
      *
      * @return
      */
@@ -258,7 +258,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Returns the minimum x-value this data object contains.
+     * Returns the minimum x-value this com.nhn.fitness.data object contains.
      *
      * @return
      */
@@ -267,7 +267,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Returns the maximum x-value this data object contains.
+     * Returns the maximum x-value this com.nhn.fitness.data object contains.
      *
      * @return
      */
@@ -384,7 +384,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Removes the given DataSet from this data object. Also recalculates all
+     * Removes the given DataSet from this com.nhn.fitness.data object. Also recalculates all
      * minimum and maximum values. Returns true if a DataSet was removed, false
      * if no DataSet could be removed.
      *
@@ -406,7 +406,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Removes the DataSet at the given index in the DataSet array from the data
+     * Removes the DataSet at the given index in the DataSet array from the com.nhn.fitness.data
      * object. Also recalculates all minimum and maximum values. Returns true if
      * a DataSet was removed, false if no DataSet could be removed.
      *
@@ -638,7 +638,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Returns the index of the provided DataSet in the DataSet array of this data object, or -1 if it does not exist.
+     * Returns the index of the provided DataSet in the DataSet array of this com.nhn.fitness.data object, or -1 if it does not exist.
      *
      * @param dataSet
      * @return
@@ -676,7 +676,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Sets a custom IValueFormatter for all DataSets this data object contains.
+     * Sets a custom IValueFormatter for all DataSets this com.nhn.fitness.data object contains.
      *
      * @param f
      */
@@ -692,7 +692,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
 
     /**
      * Sets the color of the value-text (color in which the value-labels are
-     * drawn) for all DataSets this data object contains.
+     * drawn) for all DataSets this com.nhn.fitness.data object contains.
      *
      * @param color
      */
@@ -704,7 +704,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
 
     /**
      * Sets the same list of value-colors for all DataSets this
-     * data object contains.
+     * com.nhn.fitness.data object contains.
      *
      * @param colors
      */
@@ -715,7 +715,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Sets the Typeface for all value-labels for all DataSets this data object
+     * Sets the Typeface for all value-labels for all DataSets this com.nhn.fitness.data object
      * contains.
      *
      * @param tf
@@ -727,7 +727,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Sets the size (in dp) of the value-text for all DataSets this data object
+     * Sets the size (in dp) of the value-text for all DataSets this com.nhn.fitness.data object
      * contains.
      *
      * @param size
@@ -739,7 +739,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Enables / disables drawing values (value-text) for all DataSets this data
+     * Enables / disables drawing values (value-text) for all DataSets this com.nhn.fitness.data
      * object contains.
      *
      * @param enabled
@@ -751,7 +751,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Enables / disables highlighting values for all DataSets this data object
+     * Enables / disables highlighting values for all DataSets this com.nhn.fitness.data object
      * contains. If set to true, this means that values can
      * be highlighted programmatically or by touch gesture.
      */
@@ -776,7 +776,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Clears this data object from all DataSets and removes all Entries. Don't
+     * Clears this com.nhn.fitness.data object from all DataSets and removes all Entries. Don't
      * forget to invalidate the chart after this.
      */
     public void clearValues() {
@@ -787,7 +787,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Checks if this data object contains the specified DataSet. Returns true
+     * Checks if this com.nhn.fitness.data object contains the specified DataSet. Returns true
      * if so, false if not.
      *
      * @param dataSet
@@ -804,7 +804,7 @@ public abstract class ChartData<T extends IDataSet<? extends Entry>> {
     }
 
     /**
-     * Returns the total entry count across all DataSet objects this data object contains.
+     * Returns the total entry count across all DataSet objects this com.nhn.fitness.data object contains.
      *
      * @return
      */

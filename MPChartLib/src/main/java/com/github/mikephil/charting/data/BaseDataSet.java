@@ -39,7 +39,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
     protected List<Integer> mValueColors = null;
 
     /**
-     * label that describes the DataSet or the data the DataSet represents
+     * label that describes the DataSet or the com.nhn.fitness.data the DataSet represents
      */
     private String mLabel = "DataSet";
 
@@ -116,7 +116,7 @@ public abstract class BaseDataSet<T extends Entry> implements IDataSet<T> {
     }
 
     /**
-     * Use this method to tell the data set that the underlying data has changed.
+     * Use this method to tell the com.nhn.fitness.data set that the underlying com.nhn.fitness.data has changed.
      */
     public void notifyDataSetChanged() {
         calcMinMax();

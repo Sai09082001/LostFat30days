@@ -35,7 +35,7 @@ public class BubbleEntry extends Entry {
      * @param x The value on the x-axis.
      * @param y The value on the y-axis.
      * @param size The size of the bubble.
-     * @param data Spot for additional data this Entry represents.
+     * @param data Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public BubbleEntry(float x, float y, float size, Object data) {
         super(x, y, data);
@@ -62,7 +62,7 @@ public class BubbleEntry extends Entry {
      * @param y The value on the y-axis.
      * @param size The size of the bubble.
      * @param icon Icon image
-     * @param data Spot for additional data this Entry represents.
+     * @param data Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public BubbleEntry(float x, float y, float size, Drawable icon, Object data) {
         super(x, y, icon, data);

@@ -11,7 +11,7 @@ import com.github.mikephil.charting.utils.Utils;
  * access public variables directly. Be aware that not all features the YLabels class provides
  * are suitable for the
  * RadarChart. Customizations that affect the value range of the axis need to be applied before
- * setting data for the
+ * setting com.nhn.fitness.data for the
  * chart.
  *
  * @author Philipp Jahoda

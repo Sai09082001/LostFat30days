@@ -39,7 +39,7 @@ public class Entry extends BaseEntry implements Parcelable {
      *
      * @param x the x value
      * @param y the y value (the actual value of the entry)
-     * @param data Spot for additional data this Entry represents.
+     * @param data Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public Entry(float x, float y, Object data) {
         super(y, data);
@@ -64,7 +64,7 @@ public class Entry extends BaseEntry implements Parcelable {
      * @param x the x value
      * @param y the y value (the actual value of the entry)
      * @param icon icon image
-     * @param data Spot for additional data this Entry represents.
+     * @param data Spot for additional com.nhn.fitness.data this Entry represents.
      */
     public Entry(float x, float y, Drawable icon, Object data) {
         super(y, icon, data);
@@ -100,7 +100,7 @@ public class Entry extends BaseEntry implements Parcelable {
     }
 
     /**
-     * Compares value, xIndex and data of the entries. Returns true if entries
+     * Compares value, xIndex and com.nhn.fitness.data of the entries. Returns true if entries
      * are equal in those points, false if not. Does not check by hash-code like
      * it's done by the "equals" method.
      * 
@@ -146,7 +146,7 @@ public class Entry extends BaseEntry implements Parcelable {
                 dest.writeInt(1);
                 dest.writeParcelable((Parcelable) this.getData(), flags);
             } else {
-                throw new ParcelFormatException("Cannot parcel an Entry with non-parcelable data");
+                throw new ParcelFormatException("Cannot parcel an Entry with non-parcelable com.nhn.fitness.data");
             }
         } else {
             dest.writeInt(0);

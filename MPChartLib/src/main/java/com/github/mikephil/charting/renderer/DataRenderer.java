@@ -14,14 +14,14 @@ import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
 /**
- * Superclass of all render classes for the different data types (line, bar, ...).
+ * Superclass of all render classes for the different com.nhn.fitness.data types (line, bar, ...).
  *
  * @author Philipp Jahoda
  */
 public abstract class DataRenderer extends Renderer {
 
     /**
-     * the animator object used to perform animations on the chart data
+     * the animator object used to perform animations on the chart com.nhn.fitness.data
      */
     protected ChartAnimator mAnimator;
 
@@ -117,7 +117,7 @@ public abstract class DataRenderer extends Renderer {
     public abstract void initBuffers();
 
     /**
-     * Draws the actual data in form of lines, bars, ... depending on Renderer subclass.
+     * Draws the actual com.nhn.fitness.data in form of lines, bars, ... depending on Renderer subclass.
      *
      * @param c
      */

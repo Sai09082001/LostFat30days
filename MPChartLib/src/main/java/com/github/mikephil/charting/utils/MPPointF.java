@@ -56,7 +56,7 @@ public class MPPointF extends ObjectPool.Poolable {
 
     public static final Parcelable.Creator<MPPointF> CREATOR = new Parcelable.Creator<MPPointF>() {
         /**
-         * Return a new point from the data in the specified parcel.
+         * Return a new point from the com.nhn.fitness.data in the specified parcel.
          */
         public MPPointF createFromParcel(Parcel in) {
             MPPointF r = new MPPointF(0,0);
@@ -73,7 +73,7 @@ public class MPPointF extends ObjectPool.Poolable {
     };
 
     /**
-     * Set the point's coordinates from the data stored in the specified
+     * Set the point's coordinates from the com.nhn.fitness.data stored in the specified
      * parcel. To write a point to a parcel, call writeToParcel().
      * Provided to support older Android devices.
      *

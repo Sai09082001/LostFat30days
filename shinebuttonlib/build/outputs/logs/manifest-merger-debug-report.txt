@@ -1,0 +1,21 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml:1:1-6:12
+	package
+		ADDED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml:1:11-51
+		INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml:1:1-6:12
+application
+ADDED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml:3:5-4:19
+uses-sdk
+INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml
+INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml
+		ADDED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml

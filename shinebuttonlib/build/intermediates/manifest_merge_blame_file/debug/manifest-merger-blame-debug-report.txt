@@ -1,0 +1,12 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.sackcentury.shinebuttonlib" >
+4
+5    <uses-sdk android:minSdkVersion="14" />
+5-->C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml
+6
+7    <application>
+7-->C:\Users\admin\AndroidStudioProjects\lost-fat-30-days\shinebuttonlib\src\main\AndroidManifest.xml:3:5-4:19
+8    </application>
+9
+10</manifest>

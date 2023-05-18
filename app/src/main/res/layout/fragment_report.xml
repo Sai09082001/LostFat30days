@@ -5,7 +5,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@android:color/white"
-	tools:context="com.vuthaihung.loseflat.ui.fragments.ReportFragment">
+	tools:context="com.nhn.fitness.ui.fragments.ReportFragment">
 
 	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/toolBar"
@@ -70,10 +70,6 @@
 				android:layout_width="match_parent"
 				android:layout_height="@dimen/height_divider_group"
 				android:background="@color/theme_bg_gray" />
-			<FrameLayout
-				android:id="@+id/ads"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content" />
 
 			<View
 				android:layout_width="match_parent"

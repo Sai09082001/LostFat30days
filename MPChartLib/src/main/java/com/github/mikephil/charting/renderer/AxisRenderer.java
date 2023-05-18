@@ -119,8 +119,8 @@ public abstract class AxisRenderer extends Renderer {
     /**
      * Computes the axis values.
      *
-     * @param min - the minimum value in the data object for this axis
-     * @param max - the maximum value in the data object for this axis
+     * @param min - the minimum value in the com.nhn.fitness.data object for this axis
+     * @param max - the maximum value in the com.nhn.fitness.data object for this axis
      */
     public void computeAxis(float min, float max, boolean inverted) {
 

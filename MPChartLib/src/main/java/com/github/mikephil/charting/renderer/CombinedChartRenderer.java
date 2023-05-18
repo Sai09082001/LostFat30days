@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Renderer class that is responsible for rendering multiple different data-types.
+ * Renderer class that is responsible for rendering multiple different com.nhn.fitness.data-types.
  */
 public class CombinedChartRenderer extends DataRenderer {
 
     /**
-     * all rederers for the different kinds of data this combined-renderer can draw
+     * all rederers for the different kinds of com.nhn.fitness.data this combined-renderer can draw
      */
     protected List<DataRenderer> mRenderers = new ArrayList<DataRenderer>(5);
 

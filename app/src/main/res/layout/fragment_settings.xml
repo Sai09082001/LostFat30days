@@ -4,7 +4,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	tools:context="com.vuthaihung.loseflat.ui.fragments.SettingsFragment">
+	tools:context="com.nhn.fitness.ui.fragments.SettingsFragment">
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -455,76 +455,13 @@
 						android:layout_height="wrap_content"/>
 				</LinearLayout>
 
-				<!--				<LinearLayout-->
-				<!--					android:id="@+id/row_engine"-->
-				<!--					style="@style/RowSettings"-->
-				<!--					android:layout_width="match_parent"-->
-				<!--					android:layout_height="wrap_content"-->
-				<!--					android:layout_gravity="center"-->
-				<!--					android:orientation="horizontal"-->
-				<!--					android:padding="15dp">-->
-
-				<!--					<androidx.appcompat.widget.AppCompatImageView-->
-				<!--						android:layout_width="20dp"-->
-				<!--						android:layout_height="20dp"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:src="@drawable/sendmove" />-->
-
-				<!--					<androidx.appcompat.widget.AppCompatTextView-->
-				<!--						style="@style/TextSettings"-->
-				<!--						android:layout_width="wrap_content"-->
-				<!--						android:layout_height="wrap_content"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:layout_marginLeft="33.3dp"-->
-				<!--						android:layout_weight="1"-->
-				<!--						android:fontFamily="@font/sfprodisplay_regular"-->
-				<!--						android:letterSpacing="0.0625"-->
-				<!--						android:text="@string/settings_select_tts_engine"-->
-				<!--						android:textSize="15sp" />-->
-
-				<!--					<androidx.appcompat.widget.AppCompatTextView-->
-				<!--						android:id="@+id/txt_engine_value"-->
-				<!--						style="@style/TextValueSettings"-->
-				<!--						android:layout_width="wrap_content"-->
-				<!--						android:layout_height="wrap_content"-->
-				<!--						android:gravity="center"-->
-				<!--						android:text="Pico TTS" />-->
-				<!--				</LinearLayout>-->
-
-				<!--				<LinearLayout-->
-				<!--					android:id="@+id/row_download_engine"-->
-				<!--					style="@style/RowSettings"-->
-				<!--					android:layout_width="match_parent"-->
-				<!--					android:layout_height="wrap_content"-->
-				<!--					android:orientation="horizontal"-->
-				<!--					android:padding="15dp">-->
-
-				<!--					<androidx.appcompat.widget.AppCompatImageView-->
-				<!--						android:layout_width="20dp"-->
-				<!--						android:layout_height="20dp"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:src="@drawable/downloadlang" />-->
-
-				<!--					<androidx.appcompat.widget.AppCompatTextView-->
-				<!--						style="@style/TextSettings"-->
-				<!--						android:layout_width="wrap_content"-->
-				<!--						android:layout_height="wrap_content"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:layout_marginLeft="33.3dp"-->
-				<!--						android:layout_weight="1"-->
-				<!--						android:fontFamily="@font/sfprodisplay_regular"-->
-				<!--						android:letterSpacing="0.0625"-->
-				<!--						android:text="@string/settings_download_tts_engine"-->
-				<!--						android:textSize="15sp" />-->
-
-				<!--				</LinearLayout>-->
-
 				<View
 					android:layout_width="match_parent"
 					android:layout_height="1dp"
 					android:background="#ececec" />
 
 				<LinearLayout
+					android:visibility="gone"
 					android:gravity="center"
 					android:id="@+id/row_voice_language"
 					style="@style/RowSettings"
@@ -579,63 +516,6 @@
 					android:layout_width="match_parent"
 					android:layout_height="1dp"
 					android:background="#ececec" />
-
-				<!--				<LinearLayout-->
-				<!--					android:id="@+id/row_download_more"-->
-				<!--					style="@style/RowSettings"-->
-				<!--					android:layout_width="match_parent"-->
-				<!--					android:layout_height="wrap_content"-->
-				<!--					android:orientation="horizontal"-->
-				<!--					android:padding="15dp">-->
-
-				<!--					<androidx.appcompat.widget.AppCompatImageView-->
-				<!--						android:layout_width="20dp"-->
-				<!--						android:layout_height="20dp"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:src="@drawable/downmore" />-->
-
-				<!--					<androidx.appcompat.widget.AppCompatTextView-->
-				<!--						style="@style/TextSettings"-->
-				<!--						android:layout_width="wrap_content"-->
-				<!--						android:layout_height="wrap_content"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:layout_marginLeft="33.3dp"-->
-				<!--						android:layout_weight="1"-->
-				<!--						android:fontFamily="@font/sfprodisplay_regular"-->
-				<!--						android:letterSpacing="0.0625"-->
-				<!--						android:text="@string/settings_down_more_tts_language"-->
-				<!--						android:textSize="15sp" />-->
-
-				<!--				</LinearLayout>-->
-
-
-				<!--				<LinearLayout-->
-				<!--					android:id="@+id/row_device_setting"-->
-				<!--					style="@style/RowSettings"-->
-				<!--					android:layout_width="match_parent"-->
-				<!--					android:layout_height="wrap_content"-->
-				<!--					android:orientation="horizontal"-->
-				<!--					android:padding="15dp">-->
-
-				<!--					<androidx.appcompat.widget.AppCompatImageView-->
-				<!--						android:layout_width="20dp"-->
-				<!--						android:layout_height="20dp"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:src="@drawable/devicesetting" />-->
-
-				<!--					<androidx.appcompat.widget.AppCompatTextView-->
-				<!--						style="@style/TextSettings"-->
-				<!--						android:layout_width="wrap_content"-->
-				<!--						android:layout_height="wrap_content"-->
-				<!--						android:layout_gravity="center"-->
-				<!--						android:layout_marginLeft="33.3dp"-->
-				<!--						android:layout_weight="1"-->
-				<!--						android:fontFamily="@font/sfprodisplay_regular"-->
-				<!--						android:letterSpacing="0.0625"-->
-				<!--						android:text="@string/settings_device_tts"-->
-				<!--						android:textSize="15sp" />-->
-
-				<!--				</LinearLayout>-->
 
 				<LinearLayout
 					android:layout_width="match_parent"
@@ -795,47 +675,6 @@
 					android:layout_width="match_parent"
 					android:layout_height="1dp"
 					android:background="#ececec" />
-
-				<LinearLayout
-					android:id="@+id/row_delete_all_data"
-					style="@style/RowSettings"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="8dp">
-
-					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:src="@drawable/ic_delete_all" />
-
-					<androidx.appcompat.widget.AppCompatTextView
-						style="@style/TextSettings"
-						android:layout_width="0dp"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:textColor="@color/black"
-						android:layout_marginStart="12dp"
-						android:layout_weight="1"
-						android:fontFamily="sans-serif"
-						android:text="@string/settings_delete_all_dât"
-						android:textSize="16dp"
-						tools:ignore="SpUsage" />
-
-					<androidx.appcompat.widget.AppCompatImageView
-						android:src="@drawable/ic_next"
-						android:layout_gravity="center"
-						android:layout_marginEnd="16dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"/>
-				</LinearLayout>
-
-				<View
-					android:layout_width="match_parent"
-					android:layout_height="1dp"
-					android:background="#ececec" />
-
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -849,29 +688,28 @@
 						android:layout_height="wrap_content"
 						android:layout_gravity="center_vertical"
 						android:fontFamily="sans-serif-medium"
-						android:text="@string/title_support"
+						android:text="@string/title_advance"
 						android:textSize="18dp" />
 				</LinearLayout>
-
 				<View
 					android:layout_width="match_parent"
 					android:layout_height="1dp"
 					android:background="#ececec" />
-
 				<LinearLayout
-					android:id="@+id/row_rating"
-					style="@style/RowSettings"
 					android:gravity="center"
+					android:id="@+id/row_gym_map"
+					style="@style/RowSettings"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:layout_gravity="center"
 					android:orientation="horizontal"
 					android:padding="8dp">
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
 						android:layout_gravity="center"
-						android:src="@drawable/ic_review" />
+						android:src="@drawable/ic_place_gym" />
 
 					<androidx.appcompat.widget.AppCompatTextView
 						style="@style/TextSettings"
@@ -882,8 +720,9 @@
 						android:layout_marginStart="12dp"
 						android:layout_weight="1"
 						android:fontFamily="sans-serif"
-						android:text="@string/settings_ratings"
+						android:text="@string/settings_gym_location"
 						android:textSize="16dp" />
+
 
 					<androidx.appcompat.widget.AppCompatImageView
 						android:src="@drawable/ic_next"
@@ -891,173 +730,49 @@
 						android:layout_marginEnd="16dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"/>
-				</LinearLayout>
 
+				</LinearLayout>
 				<View
 					android:layout_width="match_parent"
 					android:layout_height="1dp"
 					android:background="#ececec" />
-
 				<LinearLayout
-					android:id="@+id/row_share"
-					style="@style/RowSettings"
 					android:gravity="center"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:padding="8dp">
-
-					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:src="@drawable/ic_share" />
-
-					<androidx.appcompat.widget.AppCompatTextView
-						style="@style/TextSettings"
-						android:layout_width="0dp"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:textColor="@color/black"
-						android:layout_marginStart="12dp"
-						android:layout_weight="1"
-						android:fontFamily="sans-serif"
-						android:text="@string/settings_share"
-						android:textSize="16dp" />
-
-					<androidx.appcompat.widget.AppCompatImageView
-						android:src="@drawable/ic_next"
-						android:layout_gravity="center"
-						android:layout_marginEnd="16dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"/>
-				</LinearLayout>
-
-				<View
-					android:layout_width="match_parent"
-					android:layout_height="1dp"
-					android:background="#ececec" />
-
-				<LinearLayout
-					android:id="@+id/row_feed_back"
+					android:id="@+id/row_feet"
 					style="@style/RowSettings"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:layout_gravity="center"
 					android:orientation="horizontal"
 					android:padding="8dp">
 
 					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
 						android:layout_gravity="center"
-						android:src="@drawable/ic_feedback" />
+						android:src="@drawable/ic_feet"/>
 
 					<androidx.appcompat.widget.AppCompatTextView
 						style="@style/TextSettings"
 						android:layout_width="0dp"
 						android:layout_height="wrap_content"
 						android:layout_gravity="center"
-						android:textColor="@color/black"
 						android:layout_marginStart="12dp"
 						android:layout_weight="1"
 						android:fontFamily="sans-serif"
-						android:text="@string/settings_feedback"
+						android:text="@string/settings_walk"
+						android:textColor="@color/black"
 						android:textSize="16dp" />
 
 					<androidx.appcompat.widget.AppCompatImageView
 						android:src="@drawable/ic_next"
 						android:layout_gravity="center"
+						android:id="@+id/row_rating"
 						android:layout_marginEnd="16dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"/>
+
 				</LinearLayout>
-
-				<View
-					android:layout_width="match_parent"
-					android:layout_height="1dp"
-					android:background="#ececec" />
-
-<!--				<LinearLayout-->
-<!--					android:id="@+id/row_help"-->
-<!--					style="@style/RowSettings"-->
-<!--					android:gravity="center"-->
-<!--					android:layout_width="match_parent"-->
-<!--					android:layout_height="wrap_content"-->
-<!--					android:orientation="horizontal"-->
-<!--					android:padding="8dp">-->
-
-<!--					<androidx.appcompat.widget.AppCompatImageView-->
-<!--						android:layout_width="wrap_content"-->
-<!--						android:layout_height="wrap_content"-->
-<!--						android:layout_gravity="center"-->
-<!--						android:src="@drawable/ic_help" />-->
-
-<!--					<androidx.appcompat.widget.AppCompatTextView-->
-<!--						style="@style/TextSettings"-->
-<!--						android:layout_width="0dp"-->
-<!--						android:layout_height="wrap_content"-->
-<!--						android:layout_gravity="center"-->
-<!--						android:textColor="@color/black"-->
-<!--						android:layout_marginStart="12dp"-->
-<!--						android:layout_weight="1"-->
-<!--						android:fontFamily="sans-serif"-->
-<!--						android:text="@string/settings_help"-->
-<!--						android:textSize="16dp" />-->
-
-<!--					<androidx.appcompat.widget.AppCompatImageView-->
-<!--						android:src="@drawable/ic_next"-->
-<!--						android:layout_gravity="center"-->
-<!--						android:layout_marginEnd="16dp"-->
-<!--						android:layout_width="wrap_content"-->
-<!--						android:layout_height="wrap_content"/>-->
-<!--				</LinearLayout>-->
-
-<!--				<View-->
-<!--					android:layout_width="match_parent"-->
-<!--					android:layout_height="1dp"-->
-<!--					android:background="#ececec" />-->
-
-				<LinearLayout
-					android:id="@+id/row_policy"
-					style="@style/RowSettings"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginBottom="8dp"
-					android:gravity="center"
-					android:orientation="horizontal"
-					android:padding="8dp">
-
-					<androidx.appcompat.widget.AppCompatImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:src="@drawable/ic_policy" />
-
-					<androidx.appcompat.widget.AppCompatTextView
-						style="@style/TextSettings"
-						android:layout_width="0dp"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center"
-						android:textColor="@color/black"
-						android:layout_marginStart="12dp"
-						android:layout_weight="1"
-						android:fontFamily="sans-serif"
-						android:text="@string/settings_policy"
-						android:textSize="16dp" />
-
-					<androidx.appcompat.widget.AppCompatImageView
-						android:src="@drawable/ic_next"
-						android:layout_gravity="center"
-						android:layout_marginEnd="16dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"/>
-				</LinearLayout>
-
-				<View
-					android:layout_width="match_parent"
-					android:layout_height="40dp"
-					android:layout_marginBottom="50dp"
-					android:background="#ececec" />
 			</LinearLayout>
 		</ScrollView>
 	</LinearLayout>

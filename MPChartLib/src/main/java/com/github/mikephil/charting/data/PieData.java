@@ -26,7 +26,7 @@ public class PieData extends ChartData<IPieDataSet> {
     }
 
     /**
-     * Sets the PieDataSet this data object should represent.
+     * Sets the PieDataSet this com.nhn.fitness.data object should represent.
      *
      * @param dataSet
      */

@@ -306,7 +306,7 @@ public class LineChartRenderer extends LineRadarRenderer {
 
         Canvas canvas = null;
 
-        // if the data-set is dashed, draw on bitmap-canvas
+        // if the com.nhn.fitness.data-set is dashed, draw on bitmap-canvas
         if (dataSet.isDashedLineEnabled()) {
             canvas = mBitmapCanvas;
         } else {
@@ -478,7 +478,7 @@ public class LineChartRenderer extends LineRadarRenderer {
      * @param dataSet    The dataset from which to read the entries.
      * @param startIndex The index from which to start reading the dataset
      * @param endIndex   The index from which to stop reading the dataset
-     * @param outputPath The path object that will be assigned the chart data.
+     * @param outputPath The path object that will be assigned the chart com.nhn.fitness.data.
      * @return
      */
     private void generateFilledPath(final ILineDataSet dataSet, final int startIndex, final int endIndex, final Path outputPath) {

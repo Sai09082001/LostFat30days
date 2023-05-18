@@ -152,7 +152,10 @@
 	<string name="settings_down_more_tts_language">Download more TTS language data</string>
 	<string name="settings_device_tts">Device TTS Setting</string>
 	<string name="title_general">General</string>
+	<string name="title_advance">Advance</string>
 	<string name="settings_language">Language</string>
+	<string name="settings_walk">Walk</string>
+	<string name="settings_gym_location">Gym Location</string>
 	<string name="settings_share">Share with friends</string>
 	<string name="title_support">Support</string>
 	<string name="settings_ratings">Review</string>
@@ -290,4 +293,11 @@
 	<string name="txt_email_feedback">Email</string>
 	<string name="txt_input_your_email">Input your email</string>
     <string name="this_action_contain_ads">This action contain Ads....</string>
+    <string name="API_KEY">AIzaSyAQHOhnBWSTR7AaKwSr2r4l3_Qqreefnwg</string>
+	<string name="txt_gym_california_fitness_yoga_machinco">California Fitness và Yoga Machinco</string>
+	<string name="txt_gym_california_fitness_yoga_machinco_address">MAC Plaza, Tầng 5-6, 10 Trần Phú, P. Mộ Lao, Hà Đông, Hà Nội, Việt Nam</string>
+	<string name="txt_california_fitness_yoga_machinco_content">Đây là phòng Gym uy tín nhất khu vực Hà Đông</string>
+	<string name="txt_master_gym_club">Master Gym Club</string>
+	<string name="txt_master_gym_club_address">Tầng 4 nhà H10 ngõ 475 Nguyễn Trãi, Thanh Xuân, Hà Nội</string>
+	<string name="txt_master_gym_club_content">Master Gym Club: Các trang thiết bị phòng tập đều được sản xuất hoặc nhập khẩu từ Châu Âu. </string>
 </resources>

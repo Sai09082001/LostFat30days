@@ -376,7 +376,7 @@ public class LineDataSet extends LineRadarDataSet<Entry> implements ILineDataSet
     }
 
     /**
-     * Set this to true to allow drawing a hole in each data circle.
+     * Set this to true to allow drawing a hole in each com.nhn.fitness.data circle.
      *
      * @param enabled
      */

@@ -6,7 +6,7 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import java.util.List;
 
 /**
- * Data object that represents all data for the BarChart.
+ * Data object that represents all com.nhn.fitness.data for the BarChart.
  *
  * @author Philipp Jahoda
  */
@@ -44,7 +44,7 @@ public class BarData extends BarLineScatterCandleBubbleData<IBarDataSet> {
     }
 
     /**
-     * Groups all BarDataSet objects this data object holds together by modifying the x-value of their entries.
+     * Groups all BarDataSet objects this com.nhn.fitness.data object holds together by modifying the x-value of their entries.
      * Previously set x-values of entries will be overwritten. Leaves space between bars and groups as specified
      * by the parameters.
      * Do not forget to call notifyDataSetChanged() on your BarChart object after calling this method.

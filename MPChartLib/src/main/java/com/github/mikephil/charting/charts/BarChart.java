@@ -71,7 +71,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
             mXAxis.calculate(mData.getXMin(), mData.getXMax());
         }
 
-        // calculate axis range (min / max) according to provided data
+        // calculate axis range (min / max) according to provided com.nhn.fitness.data
         mAxisLeft.calculate(mData.getYMin(YAxis.AxisDependency.LEFT), mData.getYMax(YAxis.AxisDependency.LEFT));
         mAxisRight.calculate(mData.getYMin(YAxis.AxisDependency.RIGHT), mData.getYMax(YAxis.AxisDependency
                 .RIGHT));
@@ -90,7 +90,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
     public Highlight getHighlightByTouchPoint(float x, float y) {
 
         if (mData == null) {
-            Log.e(LOG_TAG, "Can't select by touch. No data set.");
+            Log.e(LOG_TAG, "Can't select by touch. No com.nhn.fitness.data set.");
             return null;
         } else {
             Highlight h = getHighlighter().getHighlight(x, y);
@@ -105,7 +105,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
 
     /**
      * Returns the bounding box of the specified Entry in the specified DataSet. Returns null if the Entry could not be
-     * found in the charts data.  Performance-intensive code should use void getBarBounds(BarEntry, RectF) instead.
+     * found in the charts com.nhn.fitness.data.  Performance-intensive code should use void getBarBounds(BarEntry, RectF) instead.
      *
      * @param e
      * @return
@@ -120,7 +120,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
 
     /**
      * The passed outputRect will be assigned the values of the bounding box of the specified Entry in the specified DataSet.
-     * The rect will be assigned Float.MIN_VALUE in all locations if the Entry could not be found in the charts data.
+     * The rect will be assigned Float.MIN_VALUE in all locations if the Entry could not be found in the charts com.nhn.fitness.data.
      *
      * @param e
      * @return
@@ -237,7 +237,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
     }
 
     /**
-     * Groups all BarDataSet objects this data object holds together by modifying the x-value of their entries.
+     * Groups all BarDataSet objects this com.nhn.fitness.data object holds together by modifying the x-value of their entries.
      * Previously set x-values of entries will be overwritten. Leaves space between bars and groups as specified
      * by the parameters.
      * Calls notifyDataSetChanged() afterwards.
@@ -249,7 +249,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
     public void groupBars(float fromX, float groupSpace, float barSpace) {
 
         if (getBarData() == null) {
-            throw new RuntimeException("You need to set data for the chart before grouping bars.");
+            throw new RuntimeException("You need to set com.nhn.fitness.data for the chart before grouping bars.");
         } else {
             getBarData().groupBars(fromX, groupSpace, barSpace);
             notifyDataSetChanged();

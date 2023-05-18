@@ -10,7 +10,7 @@ public abstract class BaseEntry {
     /** the y value */
     private float y = 0f;
 
-    /** optional spot for additional data this Entry represents */
+    /** optional spot for additional com.nhn.fitness.data this Entry represents */
     private Object mData = null;
 
     /** optional icon image */
@@ -77,8 +77,8 @@ public abstract class BaseEntry {
     }
 
     /**
-     * Returns the data, additional information that this Entry represents, or
-     * null, if no data has been specified.
+     * Returns the com.nhn.fitness.data, additional information that this Entry represents, or
+     * null, if no com.nhn.fitness.data has been specified.
      *
      * @return
      */
@@ -87,7 +87,7 @@ public abstract class BaseEntry {
     }
 
     /**
-     * Sets additional data this Entry should represent.
+     * Sets additional com.nhn.fitness.data this Entry should represent.
      *
      * @param data
      */

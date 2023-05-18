@@ -435,7 +435,7 @@ public abstract class AxisBase extends ComponentBase {
     }
 
     /**
-     * If this is set to true, the LimitLines are drawn behind the actual data,
+     * If this is set to true, the LimitLines are drawn behind the actual com.nhn.fitness.data,
      * otherwise on top. Default: false
      *
      * @param enabled
@@ -449,7 +449,7 @@ public abstract class AxisBase extends ComponentBase {
     }
 
     /**
-     * If this is set to false, the grid lines are draw on top of the actual data,
+     * If this is set to false, the grid lines are draw on top of the actual com.nhn.fitness.data,
      * otherwise behind. Default: true
      *
      * @param enabled
@@ -674,7 +674,7 @@ public abstract class AxisBase extends ComponentBase {
     /**
      * Set a custom minimum value for this axis. If set, this value will not be calculated
      * automatically depending on
-     * the provided data. Use resetAxisMinValue() to undo this. Do not forget to call
+     * the provided com.nhn.fitness.data. Use resetAxisMinValue() to undo this. Do not forget to call
      * setStartAtZero(false) if you use
      * this method. Otherwise, the axis-minimum value will still be forced to 0.
      *
@@ -699,7 +699,7 @@ public abstract class AxisBase extends ComponentBase {
     /**
      * Set a custom maximum value for this axis. If set, this value will not be calculated
      * automatically depending on
-     * the provided data. Use resetAxisMaxValue() to undo this.
+     * the provided com.nhn.fitness.data. Use resetAxisMaxValue() to undo this.
      *
      * @param max
      */
@@ -721,14 +721,14 @@ public abstract class AxisBase extends ComponentBase {
 
     /**
      * Calculates the minimum / maximum  and range values of the axis with the given
-     * minimum and maximum values from the chart data.
+     * minimum and maximum values from the chart com.nhn.fitness.data.
      *
-     * @param dataMin the min value according to chart data
-     * @param dataMax the max value according to chart data
+     * @param dataMin the min value according to chart com.nhn.fitness.data
+     * @param dataMax the max value according to chart com.nhn.fitness.data
      */
     public void calculate(float dataMin, float dataMax) {
 
-        // if custom, use value as is, else use data value
+        // if custom, use value as is, else use com.nhn.fitness.data value
         float min = mCustomAxisMin ? mAxisMinimum : (dataMin - mSpaceMin);
         float max = mCustomAxisMax ? mAxisMaximum : (dataMax + mSpaceMax);
 
